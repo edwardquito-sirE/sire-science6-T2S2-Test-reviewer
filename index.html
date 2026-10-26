@@ -1,1543 +1,1850 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade 6 Science Master Reviewer - Ecosystems & Simple Machines</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-green: #2e7d32;
-            --light-green: #4caf50;
-            --accent-lime: #8bc34a;
-            --bg-cream: #f4f8f3;
-            --card-bg: #ffffff;
-            --text-dark: #1b5e20;
-            --text-body: #2c3e50;
-            --sky-blue: #0288d1;
-            --light-blue: #e0f7fa;
-            --sun-yellow: #fbc02d;
-            --coral-orange: #ff7043;
-            --purple-accent: #8e24aa;
-            --shadow-soft: 0 8px 24px rgba(0,0,0,0.08);
-            --shadow-hover: 0 12px 32px rgba(0,0,0,0.15);
-            --radius-lg: 20px;
-            --radius-md: 14px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-cream);
-            color: var(--text-body);
-            line-height: 1.6;
-            padding-bottom: 60px;
-        }
-
-        /* --- HEADER & NAVIGATION --- */
-        header {
-            background: linear-gradient(135deg, #1b5e20, #2e7d32, #0288d1);
-            color: white;
-            padding: 22px 20px 14px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content h1 {
-            font-family: 'Fredoka', cursive;
-            font-size: 2.1rem;
-            letter-spacing: 0.8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .header-content p {
-            font-size: 1rem;
-            opacity: 0.95;
-            margin-top: 4px;
-            font-weight: 600;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-
-        .nav-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-family: 'Fredoka', cursive;
-            font-size: 0.92rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-btn:hover, .nav-btn.active {
-            background: #ffffff;
-            color: var(--primary-green);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* --- CONTAINER & SECTIONS --- */
-        .container {
-            max-width: 1140px;
-            margin: 28px auto;
-            padding: 0 20px;
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- CARDS & MODULES --- */
-        .section-header {
-            background: white;
-            padding: 20px 25px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 25px;
-            border-left: 8px solid var(--light-green);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .section-header h2 {
-            font-family: 'Fredoka', cursive;
-            color: var(--primary-green);
-            font-size: 1.75rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .badge-competency {
-            background: #e8f5e9;
-            color: var(--primary-green);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border: 1px solid #c8e6c9;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 22px;
-            margin-bottom: 25px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .info-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 22px;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-lime);
-        }
-
-        .card-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.7rem;
-            margin-bottom: 15px;
-        }
-
-        .icon-good { background: #e8f5e9; color: #2e7d32; }
-        .icon-harm { background: #ffebee; color: #c62828; }
-        .icon-machine { background: #e0f7fa; color: #0288d1; }
-        .icon-investigate { background: #fff3e0; color: #e65100; }
-
-        .info-card h3 {
-            font-family: 'Fredoka', cursive;
-            font-size: 1.35rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .info-card p {
-            font-size: 0.98rem;
-            color: #555;
-            margin-bottom: 12px;
-        }
-
-        .example-box {
-            background: #f8f9fa;
-            border-left: 4px solid var(--light-green);
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: #444;
-            margin-top: 10px;
-        }
-
-        .example-box-harm {
-            background: #fff5f5;
-            border-left: 4px solid #ef5350;
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: #444;
-            margin-top: 10px;
-        }
-
-        /* --- INTERACTIVE LAB & SIMULATOR --- */
-        .simulator-box {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 25px;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 30px;
-            border: 2px dashed var(--sky-blue);
-        }
-
-        .sim-controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .control-group {
-            background: #e0f7fa;
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-        }
-
-        .control-group label {
-            font-weight: 700;
-            color: #0277bd;
-            display: block;
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        .control-group input[type="range"], .control-group select {
-            width: 100%;
-            accent-color: #0288d1;
-            padding: 6px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-
-        .machine-demo-stage {
-            height: 220px;
-            background: #f1f8e9;
-            border-radius: var(--radius-md);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .force-display-badge {
-            display: inline-block;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-top: 12px;
-            color: white;
-            background: #0288d1;
-        }
-
-        /* --- PRACTICE GAMES ZONE --- */
-        .game-nav-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-        }
-
-        .game-tab-btn {
-            background: white;
-            border: 2px solid var(--sky-blue);
-            color: #0288d1;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-family: 'Fredoka', cursive;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .game-tab-btn.active, .game-tab-btn:hover {
-            background: #0288d1;
-            color: white;
-        }
-
-        .game-container-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 25px;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 25px;
-        }
-
-        .sort-items-pool {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-            min-height: 60px;
-            padding: 12px;
-            background: #f1f8e9;
-            border-radius: var(--radius-md);
-        }
-
-        .draggable-item {
-            background: white;
-            border: 2px solid var(--light-green);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            color: var(--primary-green);
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            user-select: none;
-            transition: transform 0.2s;
-        }
-
-        .draggable-item:hover {
-            transform: scale(1.05);
-        }
-
-        .sorter-arena {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .drop-bucket {
-            border: 3px dashed #bbb;
-            border-radius: var(--radius-md);
-            padding: 18px;
-            min-height: 180px;
-            background: #fafafa;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .drop-bucket:hover {
-            background: #e0f7fa;
-            border-color: #0288d1;
-        }
-
-        .drop-bucket h3 {
-            font-family: 'Fredoka', cursive;
-            margin-bottom: 12px;
-        }
-
-        .blitz-card {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: var(--radius-md);
-            margin-bottom: 20px;
-            border: 2px solid #e0e0e0;
-        }
-
-        .blitz-organism-name {
-            font-family: 'Fredoka', cursive;
-            font-size: 1.8rem;
-            color: var(--primary-green);
-            margin: 10px 0;
-        }
-
-        .blitz-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* --- FLASHCARDS DECK --- */
-        .game-card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 18px;
-            margin-top: 20px;
-        }
-
-        .flashcard {
-            background: white;
-            height: 190px;
-            border-radius: var(--radius-md);
-            perspective: 1000px;
-            cursor: pointer;
-        }
-
-        .flashcard-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            box-shadow: var(--shadow-soft);
-            border-radius: var(--radius-md);
-        }
-
-        .flashcard.flipped .flashcard-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flashcard-front, .flashcard-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: var(--radius-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-
-        .flashcard-front {
-            background: #ffffff;
-            border: 2px solid #e0e0e0;
-            color: var(--primary-green);
-        }
-
-        .flashcard-back {
-            background: var(--primary-green);
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        /* --- QUIZ SECTION --- */
-        .quiz-container {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 18px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .quiz-progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .quiz-progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--light-green), var(--sky-blue));
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            gap: 8px;
-            margin-bottom: 22px;
-        }
-
-        .nav-num {
-            background: #f1f8e9;
-            border: 1px solid #c8e6c9;
-            padding: 8px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .nav-num.active {
-            background: var(--primary-green);
-            color: white;
-            border-color: var(--primary-green);
-        }
-
-        .nav-num.answered {
-            border-left: 4px solid #4caf50;
-        }
-
-        .question-card {
-            display: none;
-            background: #fafafa;
-            border: 2px solid #e0e0e0;
-            border-radius: var(--radius-md);
-            padding: 22px;
-            margin-bottom: 20px;
-        }
-
-        .question-card.active {
-            display: block;
-        }
-
-        .question-meta {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .q-badge {
-            font-size: 0.75rem;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .question-text {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 18px;
-        }
-
-        .options-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .option-btn {
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: var(--radius-md);
-            padding: 14px 18px;
-            text-align: left;
-            font-size: 0.98rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-        }
-
-        .option-btn:hover {
-            border-color: var(--light-green);
-            background: #f1f8e9;
-        }
-
-        .option-btn.selected {
-            border-color: var(--primary-green);
-            background: #e8f5e9;
-            color: var(--primary-green);
-        }
-
-        .option-letter {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-
-        .option-btn.selected .option-letter {
-            background: var(--primary-green);
-            color: white;
-        }
-
-        .quiz-controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
-            gap: 15px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 30px;
-            border: none;
-            font-family: 'Fredoka', cursive;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--primary-green);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #1b5e20;
-            box-shadow: 0 4px 12px rgba(46,125,50,0.3);
-        }
-
-        .btn-secondary {
-            background: #e0e0e0;
-            color: #333;
-        }
-
-        .btn-secondary:hover {
-            background: #d6d6d6;
-        }
-
-        /* --- RESULT SUMMARY & CERTIFICATE --- */
-        .result-box {
-            display: none;
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .score-circle {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 8px 20px rgba(46,125,50,0.3);
-        }
-
-        .score-num {
-            font-family: 'Fredoka', cursive;
-            font-size: 2.8rem;
-            line-height: 1;
-        }
-
-        .score-denom {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .breakdown-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
-
-        .breakdown-table th, .breakdown-table td {
-            padding: 12px;
-            border: 1px solid #e0e0e0;
-            text-align: left;
-        }
-
-        .breakdown-table th {
-            background: #f1f8e9;
-            color: var(--primary-green);
-        }
-
-        .cert-controls-card {
-            background: white;
-            padding: 20px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 25px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .cert-input-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .cert-input-group input {
-            padding: 10px 16px;
-            border-radius: 20px;
-            border: 2px solid var(--light-green);
-            font-size: 1rem;
-            width: 100%;
-            outline: none;
-        }
-
-        .printable-cert-frame {
-            background: #ffffff;
-            border: 12px double var(--primary-green);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-soft);
-            text-align: center;
-            position: relative;
-            background-image: radial-gradient(#e8f5e9 10%, transparent 11%);
-            background-size: 20px 20px;
-        }
-
-        .cert-header-icon {
-            font-size: 3.5rem;
-            color: var(--primary-green);
-            margin-bottom: 10px;
-        }
-
-        .cert-title {
-            font-family: 'Fredoka', cursive;
-            font-size: 2.3rem;
-            color: var(--primary-green);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .cert-subtitle {
-            font-size: 1.05rem;
-            color: #555;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-
-        .cert-name {
-            font-family: 'Fredoka', cursive;
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            border-bottom: 3px dashed var(--light-green);
-            display: inline-block;
-            padding: 0 30px 5px;
-            margin: 15px 0;
-        }
-
-        .cert-body-text {
-            font-size: 1.05rem;
-            max-width: 750px;
-            margin: 0 auto 25px;
-            color: #444;
-            line-height: 1.8;
-        }
-
-        .cert-info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            background: #f1f8e9;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            font-weight: 700;
-            color: var(--primary-green);
-        }
-
-        .cert-footer-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-top: 30px;
-            padding: 0 20px;
-        }
-
-        .cert-seal {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: var(--sun-yellow);
-            border: 4px dashed #f57f17;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.75rem;
-            color: #5d4037;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .cert-signature-box {
-            text-align: center;
-            width: 200px;
-        }
-
-        .cert-signature-line {
-            border-bottom: 2px solid #333;
-            margin-bottom: 6px;
-        }
-
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            #printable-cert-area, #printable-cert-area * {
-                visibility: visible;
-            }
-            #printable-cert-area {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                margin: 0;
-                padding: 30px;
-                box-shadow: none;
-                border: 12px double var(--primary-green);
-                background-color: white !important;
-            }
-            header, nav, .cert-controls-card, .quiz-controls, .btn {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-content h1 { font-size: 1.5rem; }
-            .nav-grid { grid-template-columns: repeat(5, 1fr); }
-            .quiz-controls { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .cert-footer-row { flex-direction: column; align-items: center; gap: 20px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 6 Science Master Reviewer: Ecosystems & Simple Machines</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Fredoka & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            fredoka: ['Fredoka', 'sans-serif'],
+            quicksand: ['Quicksand', 'sans-serif']
+          },
+          colors: {
+            eco: { light: '#dcfce7', DEFAULT: '#10b981', dark: '#047857' },
+            phys: { light: '#e0f2fe', DEFAULT: '#0284c7', dark: '#0369a1' },
+            game: { light: '#fef3c7', DEFAULT: '#f59e0b', dark: '#b45309' },
+            cert: { light: '#f3e8ff', DEFAULT: '#8b5cf6', dark: '#6d28d9' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    /* 3D Flip Card Animation */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Certificate Print Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printable-certificate-area, #printable-certificate-area * {
+        visibility: visible;
+      }
+      #printable-certificate-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #ffffff !important;
+        box-shadow: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-amber-200 selection:text-amber-900">
 
-    <!-- HEADER SECTION -->
-    <header>
-        <div class="header-content">
-            <h1><i class="fa-solid fa-graduation-cap"></i> Grade 6 Science Master Reviewer</h1>
-            <p>Ecosystem Interactions & Simple Machines Hub | School Year 2026-2027</p>
-            <nav>
-                <button class="nav-btn active" onclick="switchTab('interactions-tab')"><i class="fa-solid fa-tree"></i> Ecosystem Interactions</button>
-                <button class="nav-btn" onclick="switchTab('machines-tab')"><i class="fa-solid fa-gears"></i> Simple Machines</button>
-                <button class="nav-btn" onclick="switchTab('investigation-tab')"><i class="fa-solid fa-flask"></i> Machine Investigations</button>
-                <button class="nav-btn" onclick="switchTab('simulator-tab')"><i class="fa-solid fa-sliders"></i> Machine Lab</button>
-                <button class="nav-btn" onclick="switchTab('practice-games')"><i class="fa-solid fa-gamepad"></i> Practice Arena</button>
-                <button class="nav-btn" onclick="switchTab('flashcards')"><i class="fa-solid fa-layer-group"></i> Flashcard Deck</button>
-                <button class="nav-btn" style="background: var(--sun-yellow); color: #333;" onclick="switchTab('quiz')"><i class="fa-solid fa-pen-to-square"></i> 30-Item Mock Test</button>
-                <button class="nav-btn" style="background: var(--coral-orange); color: white;" onclick="switchTab('certificate-tab')"><i class="fa-solid fa-award"></i> Certificate</button>
-            </nav>
+  <!-- TOP HEADER & NAVBAR -->
+  <header class="bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-3">
+      
+      <!-- Brand Logo & Title -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('lessons')">
+        <div class="w-11 h-11 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-white/30">
+          🔬
         </div>
-    </header>
-
-    <div class="container">
-
-        <!-- TAB 1: ECOSYSTEM INTERACTIONS (GOOD & HARM) -->
-        <div id="interactions-tab" class="tab-content active">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-tree"></i> Competency 1: Ecosystem Interactions (Good & Harm)</h2>
-                <span class="badge-competency">Items 1–10 in Mock Test</span>
-            </div>
-
-            <div class="grid-2">
-                <!-- Beneficial Biotic Interactions -->
-                <div class="info-card">
-                    <div class="card-icon icon-good"><i class="fa-solid fa-handshake-angle"></i></div>
-                    <h3>1. Helpful Living-to-Living Interactions</h3>
-                    <p>Organisms interact in nature to gain food, shelter, or reproduction support.</p>
-
-                    <div class="example-box">
-                        <strong>Mutualism (+/+):</strong> Honeybees gather nectar from flowers while helping flowers pollinate. Both benefit!
-                    </div>
-                    <div class="example-box">
-                        <strong>Commensalism (+/0):</strong> Orchids grow on high hardwood tree branches to reach sunlight. The orchid gets light while the tree is unharmed.
-                    </div>
-                    <div class="example-box">
-                        <strong>Balanced Predation:</strong> Frogs prey on grasshoppers, keeping insect pest populations under control so crops are protected.
-                    </div>
-                </div>
-
-                <!-- Harmful Biotic Interactions -->
-                <div class="info-card">
-                    <div class="card-icon icon-harm"><i class="fa-solid fa-bug"></i></div>
-                    <h3>2. Harmful Living-to-Living Interactions</h3>
-                    <p>Some biological relationships cause disease, structural injury, or growth stuntedness.</p>
-
-                    <div class="example-box-harm">
-                        <strong>Parasitism (+/-):</strong> Mosquitoes suck blood from humans, causing skin itching and transmitting illnesses like dengue fever.
-                    </div>
-                    <div class="example-box-harm">
-                        <strong>Resource Competition:</strong> Weeds growing in a cornfield compete with corn crops for limited soil minerals, water, and sunlight.
-                    </div>
-                </div>
-
-                <!-- Beneficial Living-to-Nonliving -->
-                <div class="info-card">
-                    <div class="card-icon icon-good"><i class="fa-solid fa-sun"></i></div>
-                    <h3>3. Helpful Living-to-Nonliving Interactions</h3>
-                    <p>Living organisms depend completely on non-living physical components for survival.</p>
-
-                    <div class="example-box">
-                        <strong>Sunlight & Plants:</strong> Green plants use light energy, water, and carbon dioxide to make food through <em>Photosynthesis</em>.
-                    </div>
-                    <div class="example-box">
-                        <strong>Soil & Nutrients:</strong> Rich loam soil provides physical root support and minerals for growing trees.
-                    </div>
-                </div>
-
-                <!-- Harmful Living-to-Nonliving -->
-                <div class="info-card">
-                    <div class="card-icon icon-harm"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
-                    <h3>4. Harmful Living-to-Nonliving Conditions</h3>
-                    <p>Extreme environmental non-living conditions can harm or destroy living organisms.</p>
-
-                    <div class="example-box-harm">
-                        <strong>Drought & Heat:</strong> Prolonged lack of rain (water scarcity) and high temperatures cause garden plants to wilt and die.
-                    </div>
-                    <div class="example-box-harm">
-                        <strong>Flooding:</strong> Waterlogged soil starves plant roots of air oxygen, causing root rot.
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-bold tracking-wide leading-tight">Grade 6 Science Master Reviewer</h1>
+          <p class="text-xs text-emerald-100 font-medium">Ecosystem Interactions &amp; Simple Machines</p>
         </div>
+      </div>
 
-        <!-- TAB 2: SIMPLE MACHINES AT HOME, SCHOOL & COMMUNITY -->
-        <div id="machines-tab" class="tab-content">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-gears"></i> Competency 2: Simple Machines Everywhere</h2>
-                <span class="badge-competency">Items 11–20 in Mock Test</span>
-            </div>
-
-            <div class="grid-3">
-                <div class="info-card">
-                    <div class="card-icon icon-machine"><i class="fa-solid fa-person-wheelchair"></i></div>
-                    <h3>1. Inclined Plane</h3>
-                    <p>A slanted flat surface that connects a lower elevation to a higher elevation.</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Wheelchair ramps at school, playground slides, loading ramps on trucks, stairs.
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-icon icon-machine"><i class="fa-solid fa-scissors"></i></div>
-                    <h3>2. Wedge</h3>
-                    <p>Two inclined planes placed back-to-back, ending in a sharp thin edge used to split or cut objects.</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Kitchen knives, axes, scissors blades, doorstops, push pins, nails.
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-icon icon-machine"><i class="fa-solid fa-scale-unbalanced"></i></div>
-                    <h3>3. Lever</h3>
-                    <p>A rigid bar or board that pivots around a fixed point called a <strong>Fulcrum</strong>.</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Playground see-saws, bottle openers, crowbars, wheelbarrows, tweezers, brooms.
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-icon icon-machine"><i class="fa-solid fa-dharmachakra"></i></div>
-                    <h3>4. Pulley</h3>
-                    <p>A grooved wheel holding a rope, chain, or cable used to lift heavy loads upward.</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Flagpole pulleys at school, window blinds, water well buckets, construction cranes.
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-icon icon-machine"><i class="fa-solid fa-circle-notch"></i></div>
-                    <h3>5. Wheel & Axle</h3>
-                    <p>A larger round wheel attached to a smaller central shaft or rod (axle) that rotate together.</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Classroom doorknobs, bicycle wheels, car steering wheels, rolling pins.
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="card-icon icon-machine"><i class="fa-solid fa-screw"></i></div>
-                    <h3>6. Screw</h3>
-                    <p>An inclined plane wrapped spirally around a central shaft or cylinder (threads).</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Wood screws, jar lids, light bulb bases, swivel chairs, bottle caps.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 3: MACHINE INVESTIGATIONS (ADVANTAGES & LIMITATIONS) -->
-        <div id="investigation-tab" class="tab-content">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-flask"></i> Competency 3: Advantages & Limitations of Simple Machines</h2>
-                <span class="badge-competency">Items 21–30 in Mock Test</span>
-            </div>
-
-            <div class="grid-2">
-                <!-- Inclined Plane Investigation -->
-                <div class="info-card">
-                    <div class="card-icon icon-investigate"><i class="fa-solid fa-slope-upward"></i></div>
-                    <h3>1. Inclined Plane Investigation</h3>
-                    <p><strong>Golden Rule:</strong> Work = Force × Distance ($W = F \times d$).</p>
-                    <div class="example-box">
-                        <strong><i class="fa-solid fa-circle-check" style="color:green;"></i> Advantage:</strong> Reduces the required pushing/pulling effort force to raise a heavy load. A longer, gentler slope makes lifting easier!
-                    </div>
-                    <div class="example-box-harm">
-                        <strong><i class="fa-solid fa-circle-xmark" style="color:red;"></i> Limitation:</strong> You must move the load over a significantly longer distance compared to lifting it straight up.
-                    </div>
-                </div>
-
-                <!-- Wedge Investigation -->
-                <div class="info-card">
-                    <div class="card-icon icon-investigate"><i class="fa-solid fa-ruler-combined"></i></div>
-                    <h3>2. Wedge Investigation</h3>
-                    <p>Converts a single forward pushing force into two perpendicular outward forces.</p>
-                    <div class="example-box">
-                        <strong><i class="fa-solid fa-circle-check" style="color:green;"></i> Advantage:</strong> Concentrates force to split logs, cut food, or hold doors tightly in place.
-                    </div>
-                    <div class="example-box-harm">
-                        <strong><i class="fa-solid fa-circle-xmark" style="color:red;"></i> Limitation:</strong> Requires high friction to stay wedged; cutting edges become dull over time and require re-sharpening.
-                    </div>
-                </div>
-
-                <!-- Lever Investigation -->
-                <div class="info-card">
-                    <div class="card-icon icon-investigate"><i class="fa-solid fa-anchor"></i></div>
-                    <h3>3. Lever Classes Investigation</h3>
-                    <p>Performance depends on the relative positions of Fulcrum, Load, and Effort.</p>
-                    <div class="example-box">
-                        <strong>Class 1 (Fulcrum in Middle - Crowbar, Scissors):</strong> Changes direction of force and multiplies force.
-                    </div>
-                    <div class="example-box">
-                        <strong>Class 2 (Load in Middle - Wheelbarrow):</strong> Always multiplies force (effort force is less than load force).
-                    </div>
-                    <div class="example-box-harm">
-                        <strong>Class 3 (Effort in Middle - Sweeping Broom, Tweezers):</strong> Requires MORE effort force, but increases speed and reach!
-                    </div>
-                </div>
-
-                <!-- Pulley Investigation -->
-                <div class="info-card">
-                    <div class="card-icon icon-investigate"><i class="fa-solid fa-weight-hanging"></i></div>
-                    <h3>4. Pulley Systems Investigation</h3>
-                    <p>Compares Fixed Pulleys vs Movable Pulleys vs Block & Tackle.</p>
-                    <div class="example-box">
-                        <strong>Fixed Pulley (Flagpole):</strong> MA = 1. Changes direction (pull down to lift up), but requires effort equal to load weight.
-                    </div>
-                    <div class="example-box">
-                        <strong>Movable Pulley:</strong> MA = 2. Cuts required effort force in half!
-                    </div>
-                    <div class="example-box-harm">
-                        <strong>Block & Tackle Limitation:</strong> Multiple pulleys require pulling a huge length of rope, and friction reduces efficiency.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 4: INTERACTIVE MACHINE LAB / SIMULATOR -->
-        <div id="simulator-tab" class="tab-content">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-sliders"></i> Interactive Machine Mechanics Lab</h2>
-                <span class="badge-competency">Test Ramp Slopes & Mechanical Advantage</span>
-            </div>
-
-            <div class="simulator-box">
-                <p>Adjust the ramp length slider to observe how the required pushing force decreases as the slope distance increases!</p>
-
-                <div class="sim-controls">
-                    <div class="control-group">
-                        <label><i class="fa-solid fa-weight-hanging"></i> Heavy Box Weight: <span id="val-weight">100</span> N</label>
-                        <input type="range" id="sim-weight" min="50" max="200" value="100" oninput="updateMachineSim()">
-                    </div>
-                    <div class="control-group">
-                        <label><i class="fa-solid fa-ruler-horizontal"></i> Ramp Length (Distance): <span id="val-ramp">2</span> meters</label>
-                        <input type="range" id="sim-ramp" min="1" max="10" value="2" oninput="updateMachineSim()">
-                    </div>
-                </div>
-
-                <div class="machine-demo-stage">
-                    <h3 style="color:#0288d1; font-family:'Fredoka',cursive; margin-bottom:10px;">Simulation Results:</h3>
-                    <p id="sim-explanation" style="font-size:1.05rem; font-weight:600; color:#333;">Lifting 100 N box straight up 1 meter height.</p>
-                    <div class="force-display-badge" id="sim-force-badge">Required Pushing Effort: 50 N</div>
-                    <p style="font-size:0.85rem; color:#666; margin-top:10px;" id="sim-tradeoff">Trade-off: You push with half the force, but must travel twice the distance!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 5: PRACTICE GAMES ARENA -->
-        <div id="practice-games" class="tab-content">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-gamepad"></i> Interactive Practice Arena</h2>
-                <span class="badge-competency">Build Concept Mastery</span>
-            </div>
-
-            <div class="game-nav-bar">
-                <button class="game-tab-btn active" onclick="switchGame('game-sorter')"><i class="fa-solid fa-boxes-stacked"></i> Game 1: Machine Type Classifier</button>
-                <button class="game-tab-btn" onclick="switchGame('game-blitz')"><i class="fa-solid fa-bolt"></i> Game 2: Ecosystem Interactions Blitz</button>
-            </div>
-
-            <!-- GAME 1: MACHINE CLASSIFIER -->
-            <div id="game-sorter" class="game-container-card">
-                <h3 style="font-family:'Fredoka',cursive; color:#0288d1; margin-bottom:8px;">Simple Machines Sorting Challenge</h3>
-                <p style="font-size:0.95rem; color:#666;">Click an item from the pool, then click the correct machine type bucket to categorize it!</p>
-
-                <div class="sort-items-pool" id="sorter-pool"></div>
-
-                <div class="sorter-arena">
-                    <div class="drop-bucket" onclick="placeSelectedItem('inclined')">
-                        <h3 style="color:#2e7d32;"><i class="fa-solid fa-person-wheelchair"></i> INCLINED PLANE</h3>
-                        <div id="bucket-inclined" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
-                    </div>
-                    <div class="drop-bucket" onclick="placeSelectedItem('lever')">
-                        <h3 style="color:#0288d1;"><i class="fa-solid fa-scale-unbalanced"></i> LEVER</h3>
-                        <div id="bucket-lever" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
-                    </div>
-                    <div class="drop-bucket" onclick="placeSelectedItem('wedge')">
-                        <h3 style="color:#e65100;"><i class="fa-solid fa-scissors"></i> WEDGE</h3>
-                        <div id="bucket-wedge" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
-                    </div>
-                    <div class="drop-bucket" onclick="placeSelectedItem('pulley')">
-                        <h3 style="color:#7b1fa2;"><i class="fa-solid fa-dharmachakra"></i> PULLEY</h3>
-                        <div id="bucket-pulley" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
-                    </div>
-                </div>
-
-                <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center;">
-                    <span id="sorter-score" style="font-weight:700; font-size:1.1rem; color:var(--primary-green);">Score: 0 / 8</span>
-                    <button class="btn btn-primary" onclick="initSorterGame()"><i class="fa-solid fa-rotate-right"></i> Reset Sorter Game</button>
-                </div>
-            </div>
-
-            <!-- GAME 2: ECOSYSTEM BLITZ -->
-            <div id="game-blitz" class="game-container-card" style="display:none;">
-                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Ecosystem Interactions Speed Blitz</h3>
-                <p style="font-size:0.95rem; color:#666; margin-bottom:15px;">Read the scenario and identify whether the interaction is Beneficial or Harmful!</p>
-
-                <div class="blitz-card">
-                    <span style="font-size:0.9rem; font-weight:700; color:#888;">Scenario Target:</span>
-                    <div class="blitz-organism-name" id="blitz-target-name">"Mosquito sucking human blood"</div>
-                    <div style="margin-top:15px;" class="blitz-buttons">
-                        <button class="btn btn-primary" onclick="checkBlitzAnswer('Harmful')">Harmful Interaction</button>
-                        <button class="btn btn-primary" style="background:#0288d1;" onclick="checkBlitzAnswer('Helpful')">Helpful / Beneficial Interaction</button>
-                    </div>
-                </div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <span id="blitz-streak" style="font-weight:700; font-size:1.1rem; color:var(--coral-orange);">Streak: 0 🔥</span>
-                    <span id="blitz-feedback" style="font-weight:700;"></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 6: FLASHCARDS DECK -->
-        <div id="flashcards" class="tab-content">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-layer-group"></i> Master Flashcard Deck</h2>
-                <span class="badge-competency">Tap Cards to Reveal Key Definitions</span>
-            </div>
-
-            <div class="game-card-container">
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-handshake" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Mutualism</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>An interaction between two living species where BOTH organisms benefit (+/+).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-bug" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Parasitism</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>One organism (parasite) gains food by living on/in a host while causing harm (+/-).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-anchor" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Fulcrum</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>The fixed pivot point around which a lever turns or rotates.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-slope-upward" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Mechanical Advantage</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>The factor by which a simple machine multiplies the input effort force.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-dharmachakra" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Fixed Pulley</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>A pulley anchored to a structure. Changes force direction but does NOT reduce effort force.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-sun" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Photosynthesis</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>Process where plants use sunlight, carbon dioxide, and water to create sugar and oxygen.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 7: 30-ITEM MOCK TEST -->
-        <div id="quiz" class="tab-content">
-            <div class="quiz-container">
-                <div class="quiz-header">
-                    <div>
-                        <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);"><i class="fa-solid fa-pen-to-square"></i> Comprehensive 30-Item Mock Test</h2>
-                        <p style="font-size:0.9rem; color:#666;">10 Items per Competency | Instant Grading & Explanations</p>
-                    </div>
-                    <div style="text-align:right;">
-                        <span style="font-size:1.2rem; font-weight:700; color:var(--primary-green);" id="quiz-timer">Time: 00:00</span>
-                    </div>
-                </div>
-
-                <div class="quiz-progress-bar">
-                    <div class="quiz-progress-fill" id="quiz-progress"></div>
-                </div>
-
-                <div class="nav-grid" id="nav-grid" style="margin-top:15px;"></div>
-                <div id="questions-wrapper"></div>
-
-                <div class="quiz-controls">
-                    <button class="btn btn-secondary" onclick="prevQuestion()" id="btn-prev"><i class="fa-solid fa-arrow-left"></i> Previous</button>
-                    <button class="btn btn-primary" onclick="nextQuestion()" id="btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
-                    <button class="btn btn-primary" style="background:var(--coral-orange); display:none;" onclick="submitQuiz()" id="btn-submit"><i class="fa-solid fa-paper-plane"></i> Submit Test</button>
-                </div>
-            </div>
-
-            <!-- RESULT SUMMARY -->
-            <div class="result-box" id="result-box">
-                <div class="score-circle">
-                    <span class="score-num" id="res-score">0</span>
-                    <span class="score-denom">out of 30</span>
-                </div>
-                <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);" id="res-rating">Great Effort!</h2>
-                <p id="res-percentage" style="font-weight:700; font-size:1.1rem; margin-bottom:20px;">0% Mastery</p>
-
-                <table class="breakdown-table">
-                    <thead>
-                        <tr>
-                            <th>Competency Coverage</th>
-                            <th>Items</th>
-                            <th>Your Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1. Ecosystem Interactions (Good & Harm)</td>
-                            <td>Items 1 - 10</td>
-                            <td id="comp1-score">0 / 10</td>
-                        </tr>
-                        <tr>
-                            <td>2. Simple Machines at Home, School, Community</td>
-                            <td>Items 11 - 20</td>
-                            <td id="comp2-score">0 / 10</td>
-                        </tr>
-                        <tr>
-                            <td>3. Advantages & Limitations of Simple Machines</td>
-                            <td>Items 21 - 30</td>
-                            <td id="comp3-score">0 / 10</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div style="margin-top:20px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
-                    <button class="btn btn-primary" onclick="switchTab('certificate-tab')"><i class="fa-solid fa-award"></i> View & Print Certificate</button>
-                    <button class="btn btn-secondary" onclick="location.reload()"><i class="fa-solid fa-rotate-right"></i> Retake Test</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB 8: PRINTABLE CERTIFICATE TAB -->
-        <div id="certificate-tab" class="tab-content">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-award"></i> Official Certificate of Achievement</h2>
-                <span class="badge-competency">Printable Achievement Record</span>
-            </div>
-
-            <div class="cert-controls-card">
-                <div class="cert-input-group">
-                    <label for="student-name-input" style="font-weight:700; color:var(--primary-green); flex-shrink:0;"><i class="fa-solid fa-user-graduate"></i> Student Name:</label>
-                    <input type="text" id="student-name-input" placeholder="Type full student name here..." value="Grade 6 Scholar" oninput="updateCertName()">
-                </div>
-                <button class="btn btn-primary" onclick="printCertificate()"><i class="fa-solid fa-print"></i> Print Certificate</button>
-            </div>
-
-            <div id="printable-cert-area" class="printable-cert-frame">
-                <div class="cert-header-icon"><i class="fa-solid fa-award"></i></div>
-                <h1 class="cert-title">Certificate of Achievement</h1>
-                <p class="cert-subtitle">Grade 6 Elementary Science • Master Reviewer Module</p>
-                <p style="font-size:1.1rem; color:#666;">This certificate is proudly awarded to</p>
-
-                <div class="cert-name" id="cert-student-name">Grade 6 Scholar</div>
-
-                <p class="cert-body-text">
-                    for demonstrating excellence, completing the interactive reviewer, and mastering competencies in 
-                    <strong>Ecosystem Interactions (Good & Harm)</strong>, <strong>Simple Machines Identification</strong>, and 
-                    <strong>Simple Machines Investigation (Advantages & Limitations)</strong>.
-                </p>
-
-                <div class="cert-info-grid">
-                    <div>Assessment Score: <span id="cert-score-val">-- / 30</span></div>
-                    <div>Mastery Rating: <span id="cert-mastery-val">--%</span></div>
-                    <div>School Year: 2026-2027</div>
-                    <div>Date Issued: <span id="cert-issue-date">October 26, 2026</span></div>
-                </div>
-
-                <div class="cert-footer-row">
-                    <div class="cert-seal">
-                        <i class="fa-solid fa-shield-halved" style="font-size:1.8rem; margin-bottom:4px;"></i>
-                        <span>VERIFIED</span>
-                    </div>
-                    <div class="cert-signature-box">
-                        <div class="cert-signature-line"></div>
-                        <p style="font-size:0.9rem; font-weight:700; color:#333;">Science Teacher / Facilitator</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <!-- Navigation Tabs -->
+      <nav class="flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
+        <button onclick="switchTab('lessons')" id="nav-lessons" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 bg-white/20 text-white shadow">
+          <i class="fa-solid fa-book-open text-emerald-200"></i> Lessons
+        </button>
+        <button onclick="switchTab('labs')" id="nav-labs" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 hover:bg-white/10 text-emerald-100">
+          <i class="fa-solid fa-flask text-sky-200"></i> Mechanics Lab
+        </button>
+        <button onclick="switchTab('games')" id="nav-games" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 hover:bg-white/10 text-emerald-100">
+          <i class="fa-solid fa-gamepad text-amber-200"></i> Practice Games
+        </button>
+        <button onclick="switchTab('flashcards')" id="nav-flashcards" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 hover:bg-white/10 text-emerald-100">
+          <i class="fa-solid fa-layer-group text-purple-200"></i> Flashcards
+        </button>
+        <button onclick="switchTab('quiz')" id="nav-quiz" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 hover:bg-white/10 text-emerald-100 bg-amber-400/30 text-amber-100 border border-amber-300/40">
+          <i class="fa-solid fa-pen-to-square text-amber-300"></i> 30-Q Mock Test
+        </button>
+        <button onclick="switchTab('certificate')" id="nav-certificate" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 hover:bg-white/10 text-emerald-100">
+          <i class="fa-solid fa-award text-yellow-300"></i> Certificate
+        </button>
+      </nav>
 
     </div>
+  </header>
 
-    <!-- JAVASCRIPT CODE -->
-    <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: LESSONS & COMPETENCY REVIEW CONTENT -->
+    <!-- ========================================== -->
+    <section id="tab-lessons" class="tab-content space-y-8">
+      
+      <!-- Welcome Banner -->
+      <div class="bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 text-white/10 text-9xl font-bold select-none pointer-events-none">
+          ⚙️🌿
+        </div>
+        <div class="relative z-10 max-w-3xl">
+          <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-xs font-bold rounded-full uppercase tracking-wider text-emerald-100 mb-3 border border-white/20">
+            Grade 6 Quiz Reviewer
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-bold mb-3">Master Science Competencies Easily!</h2>
+          <p class="text-sm sm:text-base text-emerald-50 leading-relaxed font-medium">
+            Explore interactive lessons, real-life examples at home, school, and community, test simple machine mechanics in our interactive lab, and test your knowledge with 30 practice test items!
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button onclick="switchTab('quiz')" class="bg-white text-emerald-700 font-bold px-5 py-2.5 rounded-2xl shadow hover:bg-emerald-50 transition flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-play text-emerald-600"></i> Take 30-Item Mock Test
+            </button>
+            <button onclick="switchTab('labs')" class="bg-emerald-700/60 backdrop-blur-md text-white font-bold px-5 py-2.5 rounded-2xl border border-white/30 hover:bg-emerald-700/80 transition flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-sliders"></i> Open Mechanics Lab
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competency Sub-Navigation Buttons -->
+      <div class="flex flex-wrap gap-3 border-b border-slate-200 pb-4">
+        <button onclick="scrollToCompetency('comp1')" class="px-4 py-2 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 rounded-2xl font-bold text-xs sm:text-sm transition flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">1</span> Ecosystem Interactions
+        </button>
+        <button onclick="scrollToCompetency('comp2')" class="px-4 py-2 bg-sky-100 text-sky-800 hover:bg-sky-200 rounded-2xl font-bold text-xs sm:text-sm transition flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center text-xs">2</span> Everyday Simple Machines
+        </button>
+        <button onclick="scrollToCompetency('comp3')" class="px-4 py-2 bg-indigo-100 text-indigo-800 hover:bg-indigo-200 rounded-2xl font-bold text-xs sm:text-sm transition flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs">3</span> Machine Advantages &amp; Limits
+        </button>
+      </div>
+
+      <!-- COMPETENCY 1 MODULE -->
+      <article id="comp1" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div>
+            <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider mb-1">
+              <i class="fa-solid fa-leaf"></i> Competency 1
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800">Ecosystem Interactions: Helpful vs. Harmful Effects</h3>
+            <p class="text-sm text-slate-500 mt-1">Explain how interactions between living things (biotic) and non-living things (abiotic) bring good or harm.</p>
+          </div>
+          <span class="text-3xl">🐝🌱</span>
+        </div>
+
+        <!-- Biotic Interactions Section -->
+        <div class="space-y-4">
+          <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-bug text-emerald-500"></i> A. Living-to-Living Interactions (Biotic vs. Biotic)
+          </h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
-            const targetTab = document.getElementById(tabId);
-            if(targetTab) targetTab.classList.add('active');
+            <!-- Helpful Biotic Card -->
+            <div class="bg-emerald-50/60 border border-emerald-200 rounded-2xl p-5 space-y-3">
+              <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-xs">👍</span>
+                Helpful Interactions (Good)
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                <li class="bg-white p-3 rounded-xl border border-emerald-100 shadow-sm">
+                  <strong class="text-emerald-700 block text-sm mb-1">1. Mutualism (+/+)</strong>
+                  Both organisms benefit! Example: <strong>Honeybees and Sunflowers</strong>. Bees gather sweet nectar for food, while carrying pollen on their fuzzy bodies to help flowers reproduce.
+                </li>
+                <li class="bg-white p-3 rounded-xl border border-emerald-100 shadow-sm">
+                  <strong class="text-emerald-700 block text-sm mb-1">2. Commensalism (+/0)</strong>
+                  One organism benefits while the other is unharmed. Example: <strong>Orchids growing on high tree trunks</strong>. The orchid gets closer to sunlight without absorbing food or water from the tree.
+                </li>
+                <li class="bg-white p-3 rounded-xl border border-emerald-100 shadow-sm">
+                  <strong class="text-emerald-700 block text-sm mb-1">3. Balanced Predation (Biological Control)</strong>
+                  Predators control pest populations. Example: <strong>Frogs preying on locusts/grasshoppers</strong> in rice fields prevents swarms from consuming human food crops.
+                </li>
+              </ul>
+            </div>
 
-            const navBtns = document.querySelectorAll('.nav-btn');
-            navBtns.forEach(btn => {
-                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(tabId)) {
-                    btn.classList.add('active');
-                }
-            });
+            <!-- Harmful Biotic Card -->
+            <div class="bg-rose-50/60 border border-rose-200 rounded-2xl p-5 space-y-3">
+              <div class="flex items-center gap-2 text-rose-800 font-bold text-sm">
+                <span class="w-7 h-7 rounded-lg bg-rose-500 text-white flex items-center justify-center text-xs">👎</span>
+                Harmful Interactions (Harm)
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                <li class="bg-white p-3 rounded-xl border border-rose-100 shadow-sm">
+                  <strong class="text-rose-700 block text-sm mb-1">1. Parasitism (+/-)</strong>
+                  The parasite benefits while the host is harmed. Example: <strong>Mosquitoes biting humans</strong> for blood, causing itching and transmitting dengue/malaria viruses. Also lice in scalp hair.
+                </li>
+                <li class="bg-white p-3 rounded-xl border border-rose-100 shadow-sm">
+                  <strong class="text-rose-700 block text-sm mb-1">2. Resource Competition (-/-)</strong>
+                  Organisms struggle for limited food, water, or territory. Example: <strong>Weeds competing with corn crops</strong> for soil nitrogen and sunlight, causing crop yield to drop.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Abiotic Interactions Section -->
+        <div class="space-y-4 pt-2">
+          <h4 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-sun text-amber-500"></i> B. Living-to-Non-Living Interactions (Biotic vs. Abiotic)
+          </h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-sky-50/60 border border-sky-200 rounded-2xl p-5 space-y-3">
+              <h5 class="font-bold text-sky-900 text-sm flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-sky-600"></i> Helpful Abiotic Conditions
+              </h5>
+              <div class="space-y-2 text-xs sm:text-sm text-slate-700">
+                <p><strong>Sunlight &amp; Air (CO₂):</strong> Essential for green plants to undergo photosynthesis and manufacture food (glucose) and produce oxygen for animals.</p>
+                <p><strong>Water:</strong> Dissolves minerals in soil so plant roots can absorb them and transport fluid inside living tissues.</p>
+                <p><strong>Loam Soil &amp; Worms:</strong> Rich dark soil containing decomposed organic matter (humus) gives sturdy physical support and nutrients for root growth.</p>
+              </div>
+            </div>
+
+            <div class="bg-amber-50/60 border border-amber-200 rounded-2xl p-5 space-y-3">
+              <h5 class="font-bold text-amber-900 text-sm flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> Harmful Extreme Abiotic Conditions
+              </h5>
+              <div class="space-y-2 text-xs sm:text-sm text-slate-700">
+                <p><strong>Severe Drought &amp; Excessive Heat:</strong> Causes soil water to evaporate completely, causing plant wilting, leaf scorching, and root dehydration.</p>
+                <p><strong>Flooding &amp; Soil Waterlogging:</strong> Fills all soil air spaces with water, depriving plant roots of vital oxygen gas, leading to root rot and fungal decay.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- COMPETENCY 2 MODULE -->
+      <article id="comp2" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div>
+            <div class="flex items-center gap-2 text-sky-600 font-bold text-xs uppercase tracking-wider mb-1">
+              <i class="fa-solid fa-gear"></i> Competency 2
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800">Everyday Simple Machines at Home, School &amp; Community</h3>
+            <p class="text-sm text-slate-500 mt-1">Observe and describe real-life examples and practical uses of the 6 simple machines around us.</p>
+          </div>
+          <span class="text-3xl">🛠️🏡</span>
+        </div>
+
+        <!-- 6 Simple Machines Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- 1. Inclined Plane -->
+          <div class="bg-slate-50 hover:bg-sky-50/50 transition border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">📐</span>
+              <span class="text-xs font-bold px-2.5 py-1 bg-sky-100 text-sky-800 rounded-full">Slanted Surface</span>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">1. Inclined Plane</h4>
+            <p class="text-xs text-slate-600">A flat, sloping surface connecting a lower elevation to a higher elevation.</p>
+            <div class="bg-white p-3 rounded-xl text-xs space-y-1.5 border border-slate-200">
+              <p><strong>🏡 Home:</strong> Staircase, doorstep ramp.</p>
+              <p><strong>🏫 School:</strong> Playground slide, wheelchair access ramp.</p>
+              <p><strong>🏙️ Community:</strong> Delivery truck loading ramp, highway off-ramp.</p>
+            </div>
+          </div>
+
+          <!-- 2. Wedge -->
+          <div class="bg-slate-50 hover:bg-sky-50/50 transition border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🪓</span>
+              <span class="text-xs font-bold px-2.5 py-1 bg-indigo-100 text-indigo-800 rounded-full">Cutting &amp; Splitting</span>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">2. Wedge</h4>
+            <p class="text-xs text-slate-600">Two inclined planes joined back-to-back ending in a sharp edge; cuts or splits objects.</p>
+            <div class="bg-white p-3 rounded-xl text-xs space-y-1.5 border border-slate-200">
+              <p><strong>🏡 Home:</strong> Kitchen knife, vegetable peeler, doorstop.</p>
+              <p><strong>🏫 School:</strong> Push pins, paper cutter blade, pencil sharpener blade.</p>
+              <p><strong>🏙️ Community:</strong> Firefighter axe, chisel, nail, snowplow blade.</p>
+            </div>
+          </div>
+
+          <!-- 3. Lever -->
+          <div class="bg-slate-50 hover:bg-sky-50/50 transition border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">⚖️</span>
+              <span class="text-xs font-bold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full">Pivoting Bar</span>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">3. Lever</h4>
+            <p class="text-xs text-slate-600">A rigid bar or rod that rests and pivots on a fixed point called a <em>fulcrum</em>.</p>
+            <div class="bg-white p-3 rounded-xl text-xs space-y-1.5 border border-slate-200">
+              <p><strong>🏡 Home:</strong> Bottle opener, broom, tweezers, claw hammer.</p>
+              <p><strong>🏫 School:</strong> Seesaw, stapler, paper hole puncher, scissors.</p>
+              <p><strong>🏙️ Community:</strong> Crowbar at construction sites, wheelbarrow.</p>
+            </div>
+          </div>
+
+          <!-- 4. Pulley -->
+          <div class="bg-slate-50 hover:bg-sky-50/50 transition border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🏗️</span>
+              <span class="text-xs font-bold px-2.5 py-1 bg-amber-100 text-amber-800 rounded-full">Grooved Wheel &amp; Rope</span>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">4. Pulley</h4>
+            <p class="text-xs text-slate-600">A wheel with a grooved rim and a rope/cable wrapped around it to lift heavy loads.</p>
+            <div class="bg-white p-3 rounded-xl text-xs space-y-1.5 border border-slate-200">
+              <p><strong>🏡 Home:</strong> Window blinds pull cord, clothesline pulley.</p>
+              <p><strong>🏫 School:</strong> School flagpole mechanism, stage curtain pull.</p>
+              <p><strong>🏙️ Community:</strong> Construction tower crane, deep water well bucket.</p>
+            </div>
+          </div>
+
+          <!-- 5. Wheel and Axle -->
+          <div class="bg-slate-50 hover:bg-sky-50/50 transition border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🎡</span>
+              <span class="text-xs font-bold px-2.5 py-1 bg-teal-100 text-teal-800 rounded-full">Rotating Shaft</span>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">5. Wheel and Axle</h4>
+            <p class="text-xs text-slate-600">A large circular wheel secured to a smaller central shaft; turning one turns the other.</p>
+            <div class="bg-white p-3 rounded-xl text-xs space-y-1.5 border border-slate-200">
+              <p><strong>🏡 Home:</strong> Doorknob, rolling pin, water faucet handle.</p>
+              <p><strong>🏫 School:</strong> Pencil sharpener crank handle, office chair wheels.</p>
+              <p><strong>🏙️ Community:</strong> Car steering wheel, bicycle wheels, Ferris wheel.</p>
+            </div>
+          </div>
+
+          <!-- 6. Screw -->
+          <div class="bg-slate-50 hover:bg-sky-50/50 transition border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🔩</span>
+              <span class="text-xs font-bold px-2.5 py-1 bg-purple-100 text-purple-800 rounded-full">Spiral Threads</span>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">6. Screw</h4>
+            <p class="text-xs text-slate-600">An inclined plane wrapped spirally around a central cylinder or shaft.</p>
+            <div class="bg-white p-3 rounded-xl text-xs space-y-1.5 border border-slate-200">
+              <p><strong>🏡 Home:</strong> Threaded jar lids, wood screws, light bulb base.</p>
+              <p><strong>🏫 School:</strong> Height-adjustable desk chairs, globe stand screw.</p>
+              <p><strong>🏙️ Community:</strong> Car jack screw, water well auger drill.</p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- COMPETENCY 3 MODULE -->
+      <article id="comp3" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+          <div>
+            <div class="flex items-center gap-2 text-indigo-600 font-bold text-xs uppercase tracking-wider mb-1">
+              <i class="fa-solid fa-microscope"></i> Competency 3
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800">Guided Investigation: Advantages &amp; Limitations</h3>
+            <p class="text-sm text-slate-500 mt-1">Demonstrate how simple machines trade distance for effort force and explore their trade-offs.</p>
+          </div>
+          <span class="text-3xl">🧪🔬</span>
+        </div>
+
+        <!-- Golden Rule Box -->
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-5 shadow-sm space-y-2">
+          <h4 class="font-bold text-base flex items-center gap-2">
+            <i class="fa-solid fa-key"></i> Golden Rule of Simple Machines (Work Conservation)
+          </h4>
+          <p class="text-xs sm:text-sm text-amber-50 leading-relaxed">
+            Simple machines <strong>DO NOT reduce the total amount of Work required</strong> ($\text{Work} = \text{Force} \times \text{Distance}$). They make work easier by multiplying your <strong>effort force</strong> in exchange for pushing/pulling over a <strong>longer distance</strong>!
+          </p>
+        </div>
+
+        <!-- Detailed Machine Investigations Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Inclined Planes Investigation -->
+          <div class="border border-slate-200 rounded-2xl p-5 space-y-3 bg-slate-50/50">
+            <h4 class="font-bold text-slate-800 text-base text-sky-700 flex items-center gap-2">
+              <i class="fa-solid fa-ruler-combined"></i> Inclined Plane Investigation
+            </h4>
+            <div class="space-y-2 text-xs sm:text-sm text-slate-700">
+              <p><strong class="text-emerald-600"> Advantage:</strong> Requires much <strong>LESS effort force</strong> to push a heavy box up a ramp than lifting it straight up vertically!</p>
+              <p><strong class="text-rose-600"> Limitation / Trade-off:</strong> You must move the box over a much <strong>LONGER distance</strong> along the slanted ramp surface.</p>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 text-xs font-mono text-slate-800">
+                Mechanical Advantage (MA) = Length of Ramp ÷ Height of Ramp
+              </div>
+            </div>
+          </div>
+
+          <!-- Wedges Investigation -->
+          <div class="border border-slate-200 rounded-2xl p-5 space-y-3 bg-slate-50/50">
+            <h4 class="font-bold text-slate-800 text-base text-indigo-700 flex items-center gap-2">
+              <i class="fa-solid fa-scissors"></i> Wedge Investigation
+            </h4>
+            <div class="space-y-2 text-xs sm:text-sm text-slate-700">
+              <p><strong class="text-emerald-600"> Advantage:</strong> Concentrates applied downward pushing force into powerful sideways splitting force to cut tough materials easily.</p>
+              <p><strong class="text-rose-600"> Limitation / Trade-off:</strong> High surface friction causes edges to become dull over time, requiring sharpening and strong initial push.</p>
+            </div>
+          </div>
+
+          <!-- Levers 3 Classes Investigation -->
+          <div class="md:col-span-2 border border-slate-200 rounded-2xl p-5 space-y-4 bg-slate-50/50">
+            <h4 class="font-bold text-slate-800 text-base text-emerald-700 flex items-center gap-2">
+              <i class="fa-solid fa-scale-balanced"></i> Investigation of the 3 Classes of Levers
+            </h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- Class 1 -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
+                <span class="px-2 py-0.5 bg-blue-100 text-blue-800 rounded font-bold text-xs">Class 1 Lever</span>
+                <h5 class="font-bold text-slate-800 text-sm">Fulcrum in MIDDLE</h5>
+                <p class="text-xs text-slate-600"><strong>Examples:</strong> Seesaw, crowbar, scissors.</p>
+                <p class="text-xs text-slate-700"><strong>Advantage:</strong> Changes force direction (push down to lift load up) and multiplies force if fulcrum is close to load.</p>
+              </div>
+
+              <!-- Class 2 -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold text-xs">Class 2 Lever</span>
+                <h5 class="font-bold text-slate-800 text-sm">Load in MIDDLE</h5>
+                <p class="text-xs text-slate-600"><strong>Examples:</strong> Wheelbarrow, nutcracker, bottle opener.</p>
+                <p class="text-xs text-slate-700"><strong>Advantage:</strong> Always multiplies effort force ($MA &gt; 1$). You exert less force than the weight of the heavy load!</p>
+              </div>
+
+              <!-- Class 3 -->
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
+                <span class="px-2 py-0.5 bg-purple-100 text-purple-800 rounded font-bold text-xs">Class 3 Lever</span>
+                <h5 class="font-bold text-slate-800 text-sm">Effort in MIDDLE</h5>
+                <p class="text-xs text-slate-600"><strong>Examples:</strong> Broom, tweezers, fishing rod, human forearm.</p>
+                <p class="text-xs text-slate-700"><strong>Advantage:</strong> Increases speed and distance moved by the load! Gives reach and precision (even though $MA &lt; 1$).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pulleys Investigation -->
+          <div class="md:col-span-2 border border-slate-200 rounded-2xl p-5 space-y-4 bg-slate-50/50">
+            <h4 class="font-bold text-slate-800 text-base text-amber-700 flex items-center gap-2">
+              <i class="fa-solid fa-dharmachakra"></i> Investigation of Pulley Systems
+            </h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
+                <h5 class="font-bold text-slate-800 text-sm text-sky-700">1. Fixed Pulley</h5>
+                <p class="text-xs text-slate-600"><strong>MA = 1</strong> (Flagpole, window blinds)</p>
+                <p class="text-xs text-slate-700"><strong>Advantage:</strong> Changes force direction. Allows you to pull downward with your body weight to lift objects upward.</p>
+              </div>
+
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
+                <h5 class="font-bold text-slate-800 text-sm text-teal-700">2. Movable Pulley</h5>
+                <p class="text-xs text-slate-600"><strong>MA = 2</strong> (Attaches directly to load)</p>
+                <p class="text-xs text-slate-700"><strong>Advantage:</strong> Halves the required effort force ($100\text{ N load} = 50\text{ N effort}$ force needed)!</p>
+              </div>
+
+              <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-2">
+                <h5 class="font-bold text-slate-800 text-sm text-indigo-700">3. Block and Tackle</h5>
+                <p class="text-xs text-slate-600"><strong>MA = Number of ropes</strong> (Crane pulley)</p>
+                <p class="text-xs text-slate-700"><strong>Advantage:</strong> Multiplies effort force significantly to lift heavy machinery easily, but requires pulling a very long rope length.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: INTERACTIVE MECHANICS LAB           -->
+    <!-- ========================================== -->
+    <section id="tab-labs" class="tab-content hidden space-y-8">
+      
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-bold px-3 py-1 bg-sky-100 text-sky-800 rounded-full uppercase tracking-wider">
+              Virtual Science Simulator
+            </span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-2">Interactive Simple Machine Mechanics Lab</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Adjust sliders to calculate required effort force, mechanical advantage, and work trade-off in real time.</p>
+          </div>
+          <span class="text-4xl">🥼⚙️</span>
+        </div>
+
+        <!-- LAB MODE SELECTOR -->
+        <div class="flex gap-3 border-b border-slate-200 pb-3">
+          <button onclick="setLabMode('ramp')" id="lab-tab-ramp" class="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-sky-600 text-white shadow">
+            📐 Inclined Plane (Ramp) Lab
+          </button>
+          <button onclick="setLabMode('lever')" id="lab-tab-lever" class="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-slate-200">
+            ⚖️ Lever Balance Lab
+          </button>
+        </div>
+
+        <!-- RAMP SIMULATOR -->
+        <div id="sim-ramp" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Controls Panel -->
+          <div class="lg:col-span-5 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
+            <h3 class="font-bold text-slate-800 text-lg flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-sky-600"></i> Ramp Parameters
+            </h3>
+
+            <!-- Slider 1: Box Weight -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs sm:text-sm font-bold">
+                <label for="ramp-weight" class="text-slate-700">📦 Box Weight (Load Force):</label>
+                <span id="val-ramp-weight" class="text-sky-700">100 N</span>
+              </div>
+              <input type="range" id="ramp-weight" min="20" max="500" step="10" value="100" oninput="updateRampSim()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600">
+            </div>
+
+            <!-- Slider 2: Ramp Length -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs sm:text-sm font-bold">
+                <label for="ramp-length" class="text-slate-700">📏 Ramp Slope Length ($L$):</label>
+                <span id="val-ramp-length" class="text-sky-700">5.0 m</span>
+              </div>
+              <input type="range" id="ramp-length" min="2" max="10" step="0.5" value="5" oninput="updateRampSim()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600">
+            </div>
+
+            <!-- Slider 3: Ramp Height -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs sm:text-sm font-bold">
+                <label for="ramp-height" class="text-slate-700">📐 Ramp Vertical Height ($H$):</label>
+                <span id="val-ramp-height" class="text-sky-700">1.0 m</span>
+              </div>
+              <input type="range" id="ramp-height" min="1" max="4" step="0.5" value="1" oninput="updateRampSim()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600">
+            </div>
+
+            <!-- Outputs Summary Cards -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <div class="bg-white p-3 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs text-slate-500 font-bold block">Effort Force Needed</span>
+                <span id="out-ramp-effort" class="text-lg font-bold text-emerald-600">20.0 N</span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs text-slate-500 font-bold block">Mechanical Advantage</span>
+                <span id="out-ramp-ma" class="text-lg font-bold text-sky-600">5.0x</span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 text-center col-span-2">
+                <span class="text-xs text-slate-500 font-bold block">Total Work Done ($\text{Force} \times \text{Distance}$)</span>
+                <span id="out-ramp-work" class="text-lg font-bold text-purple-600">100 Joules</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas / SVG Graphic -->
+          <div class="lg:col-span-7 bg-slate-900 rounded-2xl p-6 text-white space-y-4 shadow-inner flex flex-col items-center justify-center min-h-[340px]">
+            <svg id="svg-ramp-canvas" viewBox="0 0 500 260" class="w-full h-auto max-h-[280px]">
+              <!-- Dynamic Ramp SVG drawn by JS -->
+            </svg>
+
+            <div class="bg-slate-800/80 backdrop-blur-md p-4 rounded-xl border border-slate-700 w-full text-xs text-slate-300 space-y-1">
+              <p id="ramp-lab-explanation" class="leading-relaxed">
+                <!-- Live JS Explanation -->
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- LEVER SIMULATOR -->
+        <div id="sim-lever" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-5 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
+            <h3 class="font-bold text-slate-800 text-lg flex items-center gap-2">
+              <i class="fa-solid fa-scale-balanced text-emerald-600"></i> Lever Balance Controls
+            </h3>
+
+            <!-- Class selector -->
+            <div class="space-y-2">
+              <label class="text-xs sm:text-sm font-bold text-slate-700">Select Lever Class:</label>
+              <select id="lever-class-select" onchange="updateLeverSim()" class="w-full p-2.5 rounded-xl border border-slate-300 text-sm font-bold text-slate-800 bg-white">
+                <option value="1">Class 1 Lever (Fulcrum in Middle - e.g. Seesaw)</option>
+                <option value="2">Class 2 Lever (Load in Middle - e.g. Wheelbarrow)</option>
+                <option value="3">Class 3 Lever (Effort in Middle - e.g. Broom / Tweezers)</option>
+              </select>
+            </div>
+
+            <!-- Slider: Load Weight -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs sm:text-sm font-bold">
+                <label for="lever-load" class="text-slate-700">📦 Load Weight ($F_L$):</label>
+                <span id="val-lever-load" class="text-emerald-700">120 N</span>
+              </div>
+              <input type="range" id="lever-load" min="20" max="300" step="10" value="120" oninput="updateLeverSim()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+            </div>
+
+            <!-- Slider: Load Arm Distance -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs sm:text-sm font-bold">
+                <label for="lever-load-dist" class="text-slate-700">📏 Load Distance to Fulcrum ($d_L$):</label>
+                <span id="val-lever-load-dist" class="text-emerald-700">1.0 m</span>
+              </div>
+              <input type="range" id="lever-load-dist" min="0.5" max="4.0" step="0.5" value="1.0" oninput="updateLeverSim()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+            </div>
+
+            <!-- Slider: Effort Arm Distance -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs sm:text-sm font-bold">
+                <label for="lever-effort-dist" class="text-slate-700">📏 Effort Distance to Fulcrum ($d_E$):</label>
+                <span id="val-lever-effort-dist" class="text-emerald-700">2.0 m</span>
+              </div>
+              <input type="range" id="lever-effort-dist" min="0.5" max="4.0" step="0.5" value="2.0" oninput="updateLeverSim()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <div class="bg-white p-3 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs text-slate-500 font-bold block">Effort Required ($F_E$)</span>
+                <span id="out-lever-effort" class="text-lg font-bold text-emerald-600">60.0 N</span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs text-slate-500 font-bold block">Mechanical Advantage</span>
+                <span id="out-lever-ma" class="text-lg font-bold text-sky-600">2.0x</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 bg-slate-900 rounded-2xl p-6 text-white space-y-4 shadow-inner flex flex-col items-center justify-center min-h-[340px]">
+            <svg id="svg-lever-canvas" viewBox="0 0 500 240" class="w-full h-auto max-h-[280px]">
+              <!-- Dynamic Lever SVG drawn by JS -->
+            </svg>
+
+            <div class="bg-slate-800/80 backdrop-blur-md p-4 rounded-xl border border-slate-700 w-full text-xs text-slate-300 space-y-1">
+              <p id="lever-lab-explanation" class="leading-relaxed"></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: PRACTICE GAMES ARENA               -->
+    <!-- ========================================== -->
+    <section id="tab-games" class="tab-content hidden space-y-8">
+      
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-800 rounded-full uppercase tracking-wider">
+              Interactive Science Arcade
+            </span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-2">Practice Games Arena</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Reinforce your learning with interactive sorting games and speed challenges!</p>
+          </div>
+          <span class="text-4xl">🎮🏆</span>
+        </div>
+
+        <!-- Game Selector Tabs -->
+        <div class="flex flex-wrap gap-3 border-b border-slate-200 pb-3">
+          <button onclick="setGameMode('classifier')" id="game-btn-classifier" class="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 text-white shadow">
+            🧩 Game 1: Simple Machine Classifier
+          </button>
+          <button onclick="setGameMode('blitz')" id="game-btn-blitz" class="px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-slate-200">
+            ⚡ Game 2: Ecosystem Interaction Blitz
+          </button>
+        </div>
+
+        <!-- GAME 1: MACHINE CLASSIFIER -->
+        <div id="game-area-classifier" class="space-y-6">
+          <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm">
+            <div>
+              <span class="font-bold text-amber-900 block">Game Goal:</span>
+              <span class="text-amber-800">Classify the everyday item into the correct Simple Machine category!</span>
+            </div>
+            <div class="flex items-center gap-4 font-bold">
+              <span class="text-slate-700">Score: <span id="game1-score" class="text-amber-600 text-lg">0</span></span>
+              <span class="text-slate-700">Streak: <span id="game1-streak" class="text-emerald-600 text-lg">0 🔥</span></span>
+            </div>
+          </div>
+
+          <!-- Prompt Card -->
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 text-center space-y-4 shadow-lg max-w-2xl mx-auto">
+            <div id="g1-icon" class="text-6xl animate-bounce">
+              🛹
+            </div>
+            <h3 id="g1-item-title" class="text-2xl font-bold tracking-wide">
+              Playground Slide
+            </h3>
+            <p id="g1-item-desc" class="text-xs sm:text-sm text-slate-300">
+              Where does this everyday object belong?
+            </p>
+
+            <div id="g1-feedback" class="min-h-[28px] text-sm font-bold transition"></div>
+
+            <!-- Categories Buttons Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <button onclick="checkGame1Answer('Inclined Plane')" class="p-3 bg-slate-700 hover:bg-sky-600 text-white font-bold rounded-2xl border border-slate-600 text-xs sm:text-sm transition">
+                📐 Inclined Plane
+              </button>
+              <button onclick="checkGame1Answer('Wedge')" class="p-3 bg-slate-700 hover:bg-indigo-600 text-white font-bold rounded-2xl border border-slate-600 text-xs sm:text-sm transition">
+                🪓 Wedge
+              </button>
+              <button onclick="checkGame1Answer('Lever')" class="p-3 bg-slate-700 hover:bg-emerald-600 text-white font-bold rounded-2xl border border-slate-600 text-xs sm:text-sm transition">
+                ⚖️ Lever
+              </button>
+              <button onclick="checkGame1Answer('Pulley')" class="p-3 bg-slate-700 hover:bg-amber-600 text-white font-bold rounded-2xl border border-slate-600 text-xs sm:text-sm transition">
+                🏗️ Pulley
+              </button>
+              <button onclick="checkGame1Answer('Wheel and Axle')" class="p-3 bg-slate-700 hover:bg-teal-600 text-white font-bold rounded-2xl border border-slate-600 text-xs sm:text-sm transition">
+                🎡 Wheel &amp; Axle
+              </button>
+              <button onclick="checkGame1Answer('Screw')" class="p-3 bg-slate-700 hover:bg-purple-600 text-white font-bold rounded-2xl border border-slate-600 text-xs sm:text-sm transition">
+                🔩 Screw
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAME 2: ECOSYSTEM BLITZ -->
+        <div id="game-area-blitz" class="hidden space-y-6">
+          <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm">
+            <div>
+              <span class="font-bold text-emerald-900 block">Game Goal:</span>
+              <span class="text-emerald-800">Identify whether the scenario describes a Helpful (+ / Good) or Harmful (- / Harm) ecosystem interaction!</span>
+            </div>
+            <div class="flex items-center gap-4 font-bold">
+              <span class="text-slate-700">Timer: <span id="g2-timer" class="text-rose-600 text-lg">60s</span></span>
+              <span class="text-slate-700">Score: <span id="g2-score" class="text-emerald-600 text-lg">0</span></span>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 text-white rounded-3xl p-8 text-center space-y-6 shadow-lg max-w-2xl mx-auto">
+            <div id="g2-icon" class="text-6xl">🌺🐝</div>
+            <p id="g2-scenario" class="text-lg font-bold leading-snug">
+              Honeybees transfer pollen between sunflowers while sipping nectar.
+            </p>
+            <div id="g2-feedback" class="min-h-[28px] text-sm font-bold"></div>
+
+            <div class="flex justify-center gap-4 pt-2">
+              <button onclick="checkGame2Answer('Helpful')" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl text-base shadow-lg transition flex items-center gap-2">
+                👍 Helpful Interaction
+              </button>
+              <button onclick="checkGame2Answer('Harmful')" class="px-8 py-3 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-2xl text-base shadow-lg transition flex items-center gap-2">
+                👎 Harmful Interaction
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: VOCABULARY FLASHCARDS DECK          -->
+    <!-- ========================================== -->
+    <section id="tab-flashcards" class="tab-content hidden space-y-8">
+      
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full uppercase tracking-wider">
+              3D Interactive Cards
+            </span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-2">Science Vocabulary Flashcards</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Click or tap any card to flip and reveal definitions and real-world examples.</p>
+          </div>
+          <span class="text-4xl">🎴💡</span>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="flex justify-between items-center text-xs sm:text-sm">
+          <span class="font-bold text-slate-600">Card <span id="card-counter" class="text-purple-700">1</span> of <span id="card-total">12</span></span>
+          <div class="flex gap-2">
+            <button onclick="shuffleFlashcards()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-xl font-bold text-slate-700 transition">
+              🔀 Shuffle
+            </button>
+          </div>
+        </div>
+
+        <!-- 3D Card Container -->
+        <div class="max-w-xl mx-auto perspective-1000 my-8">
+          <div id="flashcard" onclick="flipFlashcard()" class="w-full h-80 relative transform-style-3d cursor-pointer rounded-3xl shadow-xl border border-slate-200 bg-white">
+            
+            <!-- FRONT SIDE -->
+            <div class="absolute inset-0 backface-hidden rounded-3xl p-8 flex flex-col justify-between bg-gradient-to-br from-purple-600 to-indigo-700 text-white">
+              <div class="flex justify-between items-center">
+                <span id="fc-category" class="text-xs font-bold px-3 py-1 bg-white/20 rounded-full uppercase tracking-wider">
+                  Ecosystems
+                </span>
+                <span class="text-xs text-purple-200">Click to Flip 🔄</span>
+              </div>
+              <div class="text-center space-y-2">
+                <span id="fc-icon" class="text-5xl block mb-2">🤝</span>
+                <h3 id="fc-term" class="text-3xl font-bold">Mutualism</h3>
+              </div>
+              <p class="text-xs text-center text-purple-200 font-medium">Tap card to see definition &amp; examples</p>
+            </div>
+
+            <!-- BACK SIDE -->
+            <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-3xl p-8 flex flex-col justify-between bg-white text-slate-800 border-2 border-purple-500">
+              <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+                <span class="text-xs font-bold text-purple-700 uppercase">Definition &amp; Example</span>
+                <span class="text-xs text-slate-400">Click to Flip 🔄</span>
+              </div>
+              <div class="space-y-3">
+                <p id="fc-definition" class="text-sm text-slate-700 leading-relaxed font-semibold">
+                  An interaction between two different living species where BOTH organisms benefit (+/+).
+                </p>
+                <div class="bg-purple-50 p-3 rounded-xl border border-purple-100 text-xs">
+                  <strong class="text-purple-800 block mb-1">Real-World Example:</strong>
+                  <span id="fc-example" class="text-slate-700">Honeybees sipping flower nectar while carrying pollen to help plant reproduction.</span>
+                </div>
+              </div>
+              <div class="text-xs text-center text-slate-400 font-bold">Click to flip back</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-center items-center gap-4">
+          <button onclick="prevFlashcard()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-2xl transition flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-arrow-left"></i> Previous
+          </button>
+          <button onclick="nextFlashcard()" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-2xl shadow transition flex items-center gap-2 text-sm">
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: COMPREHENSIVE 30-ITEM MOCK TEST     -->
+    <!-- ========================================== -->
+    <section id="tab-quiz" class="tab-content hidden space-y-8">
+      
+      <!-- QUIZ START LANDING -->
+      <div id="quiz-start-screen" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6">
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+          <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-3xl mx-auto flex items-center justify-center text-3xl font-bold shadow-inner">
+            📝
+          </div>
+          <h2 class="text-3xl font-bold text-slate-800">Grade 6 Science 30-Item Mock Test</h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            This test covers all 3 competencies (10 items each). Test your mastery before your official quiz!
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left pt-2">
+            <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200">
+              <span class="text-xs font-bold text-emerald-800 block">Competency 1</span>
+              <span class="text-sm font-bold text-slate-800">10 Questions</span>
+              <p class="text-xs text-slate-500 mt-1">Ecosystem Interactions (Helpful &amp; Harmful)</p>
+            </div>
+            <div class="bg-sky-50 p-4 rounded-2xl border border-sky-200">
+              <span class="text-xs font-bold text-sky-800 block">Competency 2</span>
+              <span class="text-sm font-bold text-slate-800">10 Questions</span>
+              <p class="text-xs text-slate-500 mt-1">Simple Machines at Home, School, Community</p>
+            </div>
+            <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-200">
+              <span class="text-xs font-bold text-indigo-800 block">Competency 3</span>
+              <span class="text-sm font-bold text-slate-800">10 Questions</span>
+              <p class="text-xs text-slate-500 mt-1">Machine Advantages &amp; Limitations</p>
+            </div>
+          </div>
+
+          <button onclick="startQuiz()" class="mt-4 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-emerald-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:opacity-95 transition flex items-center gap-2 mx-auto">
+            <i class="fa-solid fa-play"></i> Start 30-Item Quiz Now
+          </button>
+        </div>
+      </div>
+
+      <!-- ACTIVE QUIZ ENGINE CONTAINER -->
+      <div id="quiz-active-screen" class="hidden space-y-6">
+        
+        <!-- Header Bar with Timer & Progress -->
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-wrap justify-between items-center gap-4 text-xs sm:text-sm">
+          <div class="flex items-center gap-3">
+            <span id="quiz-timer-display" class="font-bold text-slate-800 px-3 py-1 bg-slate-100 rounded-xl flex items-center gap-2">
+              <i class="fa-solid fa-clock text-amber-500"></i> Time: 00:00
+            </span>
+            <span class="text-slate-500 font-bold">Progress: <span id="quiz-progress-text" class="text-emerald-600">0/30</span></span>
+          </div>
+
+          <div class="w-full sm:w-48 bg-slate-200 h-2.5 rounded-full overflow-hidden">
+            <div id="quiz-progress-bar" class="bg-emerald-500 h-full w-0 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- Question Display Area -->
+          <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+              <span id="quiz-q-competency-badge" class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full">
+                Competency 1: Ecosystems
+              </span>
+              <span id="quiz-q-counter" class="text-xs font-bold text-slate-400">Question 1 of 30</span>
+            </div>
+
+            <!-- Question Text -->
+            <h3 id="quiz-q-text" class="text-lg sm:text-xl font-bold text-slate-800 leading-snug">
+              Loading Question...
+            </h3>
+
+            <!-- Options Radio List -->
+            <div id="quiz-options-container" class="space-y-3">
+              <!-- Options injected by JS -->
+            </div>
+
+            <!-- Navigation Bar -->
+            <div class="flex justify-between items-center pt-4 border-t border-slate-100">
+              <button onclick="prevQuizQuestion()" id="btn-quiz-prev" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl transition text-xs sm:text-sm">
+                <i class="fa-solid fa-chevron-left"></i> Previous
+              </button>
+              <button onclick="nextQuizQuestion()" id="btn-quiz-next" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow transition text-xs sm:text-sm">
+                Next <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Question Grid Navigator -->
+          <div class="lg:col-span-4 bg-white rounded-3xl p-6 shadow-sm border border-slate-200 space-y-4">
+            <h4 class="font-bold text-slate-800 text-sm flex items-center justify-between">
+              <span>Question Navigator</span>
+              <span class="text-xs text-slate-400 font-normal">Click to Jump</span>
+            </h4>
+
+            <div id="quiz-grid-nav" class="grid grid-cols-6 gap-2">
+              <!-- 30 Buttons injected by JS -->
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 space-y-2">
+              <button onclick="submitQuiz()" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold rounded-2xl shadow-md hover:opacity-95 transition text-sm">
+                <i class="fa-solid fa-check-circle"></i> Submit Test
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- QUIZ RESULTS & BREAKDOWN SCREEN -->
+      <div id="quiz-results-screen" class="hidden space-y-8">
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6 text-center">
+          
+          <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full mx-auto flex items-center justify-center text-4xl shadow-inner">
+            🏆
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-bold text-slate-800">Test Completed!</h2>
+            <p class="text-sm text-slate-500 mt-1">Here is your performance breakdown across all Grade 6 Science competencies.</p>
+          </div>
+
+          <!-- Total Score Card -->
+          <div class="max-w-md mx-auto bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-6 rounded-3xl shadow-lg space-y-1">
+            <span class="text-xs uppercase font-bold tracking-wider text-emerald-100">Overall Mastery Score</span>
+            <div class="text-4xl font-bold" id="res-total-score">0 / 30</div>
+            <div class="text-sm font-semibold text-emerald-100" id="res-percentage">0% Mastery</div>
+          </div>
+
+          <!-- Competency Breakdown Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left max-w-3xl mx-auto pt-2">
+            <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl">
+              <span class="text-xs font-bold text-emerald-800 block">Competency 1</span>
+              <span class="text-xs text-slate-600 block mb-1">Ecosystem Interactions</span>
+              <span id="res-comp1-score" class="text-lg font-bold text-emerald-700">0/10</span>
+            </div>
+            <div class="bg-sky-50 border border-sky-200 p-4 rounded-2xl">
+              <span class="text-xs font-bold text-sky-800 block">Competency 2</span>
+              <span class="text-xs text-slate-600 block mb-1">Everyday Simple Machines</span>
+              <span id="res-comp2-score" class="text-lg font-bold text-sky-700">0/10</span>
+            </div>
+            <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-2xl">
+              <span class="text-xs font-bold text-indigo-800 block">Competency 3</span>
+              <span class="text-xs text-slate-600 block mb-1">Advantages &amp; Limitations</span>
+              <span id="res-comp3-score" class="text-lg font-bold text-indigo-700">0/10</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-4 pt-4">
+            <button onclick="startQuiz()" class="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-2xl transition text-sm">
+              <i class="fa-solid fa-rotate-right"></i> Retake Test
+            </button>
+            <button onclick="switchTab('certificate')" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-2xl shadow transition text-sm flex items-center gap-2">
+              <i class="fa-solid fa-award"></i> Claim Certificate
+            </button>
+          </div>
+
+        </div>
+
+        <!-- DETAILED ITEM-BY-ITEM EXPLANATION BREAKDOWN -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+          <h3 class="text-xl font-bold text-slate-800 border-b border-slate-100 pb-3 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-emerald-600"></i> Detailed Answer Review &amp; Explanations
+          </h3>
+
+          <div id="quiz-review-container" class="space-y-4">
+            <!-- 30 Items with detailed explanations injected by JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 6: PRINTABLE CERTIFICATE OF MASTERY   -->
+    <!-- ========================================== -->
+    <section id="tab-certificate" class="tab-content hidden space-y-8">
+      
+      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-6 no-print">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-bold px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full uppercase tracking-wider">
+              Official Achievement Award
+            </span>
+            <h2 class="text-2xl font-bold text-slate-800 mt-2">Printable Science Certificate</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Fill in your information below to generate your printable certificate of mastery!</p>
+          </div>
+          <span class="text-4xl">🏅📜</span>
+        </div>
+
+        <!-- Student Info Input Form -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50 p-5 rounded-2xl border border-slate-200">
+          <div>
+            <label for="cert-student-name" class="block text-xs font-bold text-slate-700 mb-1">Student Full Name:</label>
+            <input type="text" id="cert-student-name" value="Maria Santos" oninput="updateCertificate()" class="w-full p-2.5 rounded-xl border border-slate-300 text-sm font-bold text-slate-800">
+          </div>
+          <div>
+            <label for="cert-grade-section" class="block text-xs font-bold text-slate-700 mb-1">Grade &amp; Section:</label>
+            <input type="text" id="cert-grade-section" value="Grade 6 - Eagle" oninput="updateCertificate()" class="w-full p-2.5 rounded-xl border border-slate-300 text-sm font-bold text-slate-800">
+          </div>
+          <div>
+            <label for="cert-school-name" class="block text-xs font-bold text-slate-700 mb-1">School Name:</label>
+            <input type="text" id="cert-school-name" value="Central Elementary School" oninput="updateCertificate()" class="w-full p-2.5 rounded-xl border border-slate-300 text-sm font-bold text-slate-800">
+          </div>
+        </div>
+
+        <div class="flex justify-end">
+          <button onclick="window.print()" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-2xl shadow-lg transition flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-print"></i> Print Certificate
+          </button>
+        </div>
+      </div>
+
+      <!-- CERTIFICATE CANVAS / DISPLAY CARD -->
+      <div id="printable-certificate-area" class="bg-white p-4 sm:p-10 rounded-3xl border-8 border-double border-yellow-500 shadow-2xl max-w-4xl mx-auto my-4 relative overflow-hidden text-slate-900">
+        
+        <!-- Inner Decorative Border Frame -->
+        <div class="border-2 border-yellow-600 p-8 sm:p-12 text-center space-y-6 relative z-10 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/40">
+          
+          <div class="flex justify-between items-center border-b border-yellow-300 pb-4">
+            <div class="text-left">
+              <span class="text-xs font-bold text-yellow-800 tracking-widest uppercase block">Republic of the Philippines</span>
+              <span id="cert-out-school" class="text-sm font-bold text-slate-700 block">Central Elementary School</span>
+            </div>
+            <div class="text-4xl">🔬</div>
+            <div class="text-right">
+              <span class="text-xs font-bold text-yellow-800 tracking-widest uppercase block">Elementary Science Division</span>
+              <span class="text-sm font-bold text-slate-700 block">School Year 2026-2027</span>
+            </div>
+          </div>
+
+          <div class="space-y-2 py-4">
+            <span class="text-xs sm:text-sm font-bold tracking-widest text-yellow-700 uppercase">Certificate of Academic Mastery</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading tracking-wide text-amber-800">
+              GRADE 6 SCIENCE MASTER
+            </h1>
+            <p class="text-xs text-slate-500 italic">This official award is proudly presented to</p>
+          </div>
+
+          <div class="py-2 border-b-2 border-slate-800 max-w-md mx-auto">
+            <span id="cert-out-name" class="text-2xl sm:text-4xl font-bold text-indigo-900 font-heading">
+              Maria Santos
+            </span>
+          </div>
+          <span id="cert-out-section" class="text-sm font-bold text-slate-600 block">Grade 6 - Eagle</span>
+
+          <p class="text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto leading-relaxed">
+            For demonstrating outstanding scientific competence, critical thinking, and mastery in 
+            <strong>Ecosystem Interactions (Helpful &amp; Harmful Effects)</strong> and 
+            <strong>Simple Machine Mechanics (Uses, Mechanical Advantage &amp; Trade-offs)</strong>.
+          </p>
+
+          <!-- Score Seal Badge -->
+          <div class="flex justify-around items-center pt-6">
+            <div class="text-center">
+              <span id="cert-out-date" class="text-xs font-bold text-slate-700 border-b border-slate-400 block px-4 py-1">October 26, 2026</span>
+              <span class="text-xs text-slate-400 mt-1 block">Date Awarded</span>
+            </div>
+
+            <!-- Verified Seal -->
+            <div class="w-24 h-24 bg-gradient-to-br from-yellow-400 to-amber-600 text-white rounded-full flex flex-col items-center justify-center shadow-lg border-4 border-yellow-200">
+              <i class="fa-solid fa-award text-2xl mb-0.5"></i>
+              <span id="cert-out-score" class="text-xs font-bold">28/30</span>
+              <span class="text-[9px] font-semibold text-yellow-100 uppercase">Mastery</span>
+            </div>
+
+            <div class="text-center">
+              <span class="text-xs font-bold text-slate-700 border-b border-slate-400 block px-4 py-1">Science Department Head</span>
+              <span class="text-xs text-slate-400 mt-1 block">Authorized Signature</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 no-print mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+      <p class="font-semibold text-slate-300">Grade 6 Science Master Reviewer &bull; Ecosystem Interactions &amp; Simple Machines</p>
+      <p>Aligned with K-12 Elementary Science Learning Competencies</p>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT APPLICATION LOGIC              -->
+  <!-- ========================================== -->
+  <script>
+    // AUDIO SYNTHESIZER (Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playSound(type) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      const now = audioCtx.currentTime;
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, now); // C5
+        osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.15); // G5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+        osc.start(now);
+        osc.stop(now + 0.25);
+      } else if (type === 'incorrect') {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, now); // A3
+        osc.frequency.exponentialRampToValueAtTime(150, now + 0.2);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+        osc.start(now);
+        osc.stop(now + 0.25);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, now);
+        gain.gain.setValueAtTime(0.05, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      }
+    }
+
+    // NAVIGATION SYSTEM
+    function switchTab(tabId) {
+      playSound('click');
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+      // Update Nav Buttons Styling
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('bg-white/20', 'text-white', 'shadow');
+        btn.classList.add('text-emerald-100', 'hover:bg-white/10');
+      });
+      const activeBtn = document.getElementById('nav-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-white/20', 'text-white', 'shadow');
+        activeBtn.classList.remove('text-emerald-100');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function scrollToCompetency(compNum) {
+      const el = document.getElementById(compNum);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // ==========================================
+    // INTERACTIVE MECHANICS LAB LOGIC
+    // ==========================================
+    function setLabMode(mode) {
+      playSound('click');
+      if (mode === 'ramp') {
+        document.getElementById('sim-ramp').classList.remove('hidden');
+        document.getElementById('sim-lever').classList.add('hidden');
+        document.getElementById('lab-tab-ramp').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-sky-600 text-white shadow";
+        document.getElementById('lab-tab-lever').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-slate-200";
+        updateRampSim();
+      } else {
+        document.getElementById('sim-ramp').classList.add('hidden');
+        document.getElementById('sim-lever').classList.remove('hidden');
+        document.getElementById('lab-tab-ramp').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-slate-200";
+        document.getElementById('lab-tab-lever').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-emerald-600 text-white shadow";
+        updateLeverSim();
+      }
+    }
+
+    function updateRampSim() {
+      const weight = parseFloat(document.getElementById('ramp-weight').value);
+      const length = parseFloat(document.getElementById('ramp-length').value);
+      let height = parseFloat(document.getElementById('ramp-height').value);
+
+      // Height cannot exceed length
+      if (height >= length) {
+        height = length - 0.5;
+        document.getElementById('ramp-height').value = height;
+      }
+
+      document.getElementById('val-ramp-weight').innerText = weight + " N";
+      document.getElementById('val-ramp-length').innerText = length.toFixed(1) + " m";
+      document.getElementById('val-ramp-height').innerText = height.toFixed(1) + " m";
+
+      const ma = length / height;
+      const effort = weight / ma;
+      const work = weight * height; // Work = Weight * Height (or Effort * Length)
+
+      document.getElementById('out-ramp-effort').innerText = effort.toFixed(1) + " N";
+      document.getElementById('out-ramp-ma').innerText = ma.toFixed(1) + "x";
+      document.getElementById('out-ramp-work').innerText = work.toFixed(0) + " Joules";
+
+      // Dynamic SVG Drawing
+      const svg = document.getElementById('svg-ramp-canvas');
+      const startX = 60;
+      const startY = 210;
+      const rampW = 320;
+      const rampH = (height / 4) * 120; // scale height
+      const endX = startX + rampW;
+      const endY = startY - rampH;
+
+      svg.innerHTML = `
+        <!-- Ground line -->
+        <line x1="20" y1="${startY}" x2="480" y2="${startY}" stroke="#475569" stroke-width="3" />
+        <!-- Vertical height line -->
+        <line x1="${endX}" y1="${startY}" x2="${endX}" y2="${endY}" stroke="#ef4444" stroke-width="3" stroke-dasharray="4" />
+        <!-- Ramp Slope triangle -->
+        <polygon points="${startX},${startY} ${endX},${startY} ${endX},${endY}" fill="url(#rampGrad)" stroke="#0284c7" stroke-width="3" />
+        
+        <!-- Ramp Gradient -->
+        <defs>
+          <linearGradient id="rampGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#0284c7" stop-opacity="0.6"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Box on Ramp -->
+        <g transform="translate(${(startX + endX)/2 - 20}, ${(startY + endY)/2 - 25}) rotate(${-Math.atan2(rampH, rampW) * 180 / Math.PI})">
+          <rect x="0" y="0" width="40" height="30" fill="#f59e0b" rx="4" stroke="#b45309" stroke-width="2"/>
+          <text x="20" y="20" font-size="12" fill="#ffffff" font-weight="bold" text-anchor="middle">${weight}N</text>
+        </g>
+
+        <!-- Effort Arrow -->
+        <line x1="${(startX + endX)/2}" y1="${(startY + endY)/2 - 10}" x2="${(startX + endX)/2 + 40}" y2="${(startY + endY)/2 - 10 - rampH/8}" stroke="#10b981" stroke-width="4" marker-end="url(#arrow)" />
+
+        <!-- Labels -->
+        <text x="${endX + 10}" y="${startY - rampH/2}" fill="#ef4444" font-size="12" font-weight="bold">Height = ${height.toFixed(1)}m</text>
+        <text x="${(startX + endX)/2 - 20}" y="${(startY + endY)/2 - 35}" fill="#38bdf8" font-size="12" font-weight="bold">Length = ${length.toFixed(1)}m</text>
+      `;
+
+      document.getElementById('ramp-lab-explanation').innerHTML = `
+        <strong>Scientific Insight:</strong> Without a ramp, lifting this ${weight}N box vertically requires <strong>${weight}N of direct effort</strong>. By using a ${length.toFixed(1)}m ramp with a height of ${height.toFixed(1)}m, the effort force is reduced to just <strong>${effort.toFixed(1)}N</strong>! You gain a Mechanical Advantage of <strong>${ma.toFixed(1)}x</strong> by pushing over a longer distance.
+      `;
+    }
+
+    function updateLeverSim() {
+      const leverClass = parseInt(document.getElementById('lever-class-select').value);
+      const load = parseFloat(document.getElementById('lever-load').value);
+      const loadDist = parseFloat(document.getElementById('lever-load-dist').value);
+      const effortDist = parseFloat(document.getElementById('lever-effort-dist').value);
+
+      document.getElementById('val-lever-load').innerText = load + " N";
+      document.getElementById('val-lever-load-dist').innerText = loadDist.toFixed(1) + " m";
+      document.getElementById('val-lever-effort-dist').innerText = effortDist.toFixed(1) + " m";
+
+      let effort = 0;
+      let ma = 0;
+
+      if (leverClass === 1 || leverClass === 2) {
+        effort = (load * loadDist) / effortDist;
+        ma = effortDist / loadDist;
+      } else { // Class 3
+        effort = (load * loadDist) / effortDist;
+        ma = effortDist / loadDist;
+      }
+
+      document.getElementById('out-lever-effort').innerText = effort.toFixed(1) + " N";
+      document.getElementById('out-lever-ma').innerText = ma.toFixed(2) + "x";
+
+      // Draw Lever SVG
+      const svg = document.getElementById('svg-lever-canvas');
+      svg.innerHTML = `
+        <!-- Base line -->
+        <line x1="20" y1="200" x2="480" y2="200" stroke="#475569" stroke-width="2" />
+        
+        <!-- Lever Beam -->
+        <rect x="50" y="110" width="400" height="12" fill="#cbd5e1" rx="4" stroke="#475569" stroke-width="2" />
+
+        <!-- Fulcrum Triangle -->
+        <polygon points="250,122 235,160 265,160" fill="#10b981" stroke="#047857" stroke-width="2" />
+        <text x="250" y="180" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">Fulcrum</text>
+
+        <!-- Load Box -->
+        <rect x="${250 - loadDist*40 - 20}" y="80" width="40" height="30" fill="#f59e0b" rx="4" />
+        <text x="${250 - loadDist*40}" y="100" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Load: ${load}N</text>
+
+        <!-- Effort Force Arrow -->
+        <line x1="${250 + effortDist*40}" y1="60" x2="${250 + effortDist*40}" y2="105" stroke="#0284c7" stroke-width="4" />
+        <polygon points="${250 + effortDist*40},110 ${250 + effortDist*40 - 6},100 ${250 + effortDist*40 + 6},100" fill="#0284c7" />
+        <text x="${250 + effortDist*40}" y="50" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">Effort: ${effort.toFixed(1)}N</text>
+      `;
+
+      let exp = "";
+      if (leverClass === 1) {
+        exp = `Class 1 Lever: Fulcrum is in the middle. Changing distances allows you to multiply effort force or speed.`;
+      } else if (leverClass === 2) {
+        exp = `Class 2 Lever: Load is in the middle (e.g., wheelbarrow). Mechanical advantage is always greater than 1, so effort required (${effort.toFixed(1)}N) is LESS than load (${load}N)!`;
+      } else {
+        exp = `Class 3 Lever: Effort is in the middle (e.g., broom). Mechanical advantage is less than 1, requiring MORE effort force (${effort.toFixed(1)}N), but gaining speed and movement distance for the load!`;
+      }
+      document.getElementById('lever-lab-explanation').innerHTML = `<strong>Scientific Insight:</strong> ${exp}`;
+    }
+
+    // ==========================================
+    // PRACTICE GAMES LOGIC
+    // ==========================================
+    const game1Database = [
+      { name: "Playground Slide", icon: "🛝", category: "Inclined Plane", desc: "Slanted surface connecting high to low." },
+      { name: "Kitchen Knife", icon: "🔪", category: "Wedge", desc: "Two inclined planes joining to form a sharp edge." },
+      { name: "Seesaw", icon: "⚖️", category: "Lever", desc: "Rigid board balancing on a middle fulcrum." },
+      { name: "Flagpole Rope Wheel", icon: "🚩", category: "Pulley", desc: "Grooved wheel pulling rope to raise the flag." },
+      { name: "Doorknob", icon: "🚪", category: "Wheel and Axle", desc: "Large circular knob rotating a smaller central rod." },
+      { name: "Threaded Jar Lid", icon: "🫙", category: "Screw", desc: "Spiral threads wrapped around a cylinder." },
+      { name: "Wheelbarrow", icon: "🛒", category: "Lever", desc: "Second-class lever with load between wheel fulcrum and handles." },
+      { name: "Firefighter Axe", icon: "🪓", category: "Wedge", desc: "Splits wood with concentrated sharp edge." },
+      { name: "Broom", icon: "🧹", category: "Lever", desc: "Third-class lever increasing reach and sweeping speed." },
+      { name: "Construction Crane", icon: "🏗️", category: "Pulley", desc: "Pulley system lifting heavy construction beams." }
+    ];
+
+    let g1Index = 0;
+    let g1Score = 0;
+    let g1Streak = 0;
+
+    function setGameMode(mode) {
+      playSound('click');
+      if (mode === 'classifier') {
+        document.getElementById('game-area-classifier').classList.remove('hidden');
+        document.getElementById('game-area-blitz').classList.add('hidden');
+        document.getElementById('game-btn-classifier').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-amber-500 text-white shadow";
+        document.getElementById('game-btn-blitz').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-slate-200";
+        loadGame1Prompt();
+      } else {
+        document.getElementById('game-area-classifier').classList.add('hidden');
+        document.getElementById('game-area-blitz').classList.remove('hidden');
+        document.getElementById('game-btn-classifier').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 text-slate-700 hover:bg-slate-200";
+        document.getElementById('game-btn-blitz').className = "px-4 py-2 rounded-xl font-bold text-xs sm:text-sm bg-emerald-600 text-white shadow";
+        initGame2();
+      }
+    }
+
+    function loadGame1Prompt() {
+      const item = game1Database[g1Index];
+      document.getElementById('g1-icon').innerText = item.icon;
+      document.getElementById('g1-item-title').innerText = item.name;
+      document.getElementById('g1-item-desc').innerText = item.desc;
+      document.getElementById('g1-feedback').innerText = "";
+    }
+
+    function checkGame1Answer(selectedCat) {
+      const item = game1Database[g1Index];
+      const feedback = document.getElementById('g1-feedback');
+
+      if (selectedCat === item.category) {
+        playSound('correct');
+        g1Score += 10;
+        g1Streak++;
+        feedback.className = "min-h-[28px] text-sm font-bold text-emerald-400";
+        feedback.innerText = `✨ Correct! ${item.name} is a ${item.category}!`;
+      } else {
+        playSound('incorrect');
+        g1Streak = 0;
+        feedback.className = "min-h-[28px] text-sm font-bold text-rose-400";
+        feedback.innerText = `❌ Oops! ${item.name} is actually a ${item.category}.`;
+      }
+
+      document.getElementById('game1-score').innerText = g1Score;
+      document.getElementById('game1-streak').innerText = g1Streak + " 🔥";
+
+      setTimeout(() => {
+        g1Index = (g1Index + 1) % game1Database.length;
+        loadGame1Prompt();
+      }, 1500);
+    }
+
+    // GAME 2: ECOSYSTEM BLITZ LOGIC
+    const game2Database = [
+      { text: "Honeybees sip flower nectar while carrying pollen to help flowers reproduce.", type: "Helpful", icon: "🌺🐝" },
+      { text: "Mosquitoes suck human blood and transmit dengue virus.", type: "Harmful", icon: "🦟🩸" },
+      { text: "Orchids cling high on tree trunks to get sunlight without absorbing tree nutrients.", type: "Helpful", icon: "🪴🌳" },
+      { text: "Severe drought leaves garden soil baking under extreme heat, drying plant roots.", type: "Harmful", icon: "☀️🥀" },
+      { text: "Frogs eat grasshopper pests in rice fields, protecting crops from devastation.", type: "Helpful", icon: "🐸🌾" },
+      { text: "Weeds grow rapidly around corn crops, competing for soil nutrients and water.", type: "Harmful", icon: "🌱🌽" },
+      { text: "Rainfall soaks into loam soil, dissolving minerals for plant root absorption.", type: "Helpful", icon: "🌧️🌻" }
+    ];
+
+    let g2Index = 0;
+    let g2Score = 0;
+    let g2Timer = 60;
+    let g2Interval = null;
+
+    function initGame2() {
+      g2Score = 0;
+      g2Timer = 60;
+      g2Index = 0;
+      document.getElementById('g2-score').innerText = g2Score;
+      document.getElementById('g2-timer').innerText = g2Timer + "s";
+      loadGame2Prompt();
+
+      if (g2Interval) clearInterval(g2Interval);
+      g2Interval = setInterval(() => {
+        g2Timer--;
+        document.getElementById('g2-timer').innerText = g2Timer + "s";
+        if (g2Timer <= 0) {
+          clearInterval(g2Interval);
+          alert(`⏱️ Game Over! You scored ${g2Score} points in Ecosystem Blitz!`);
         }
+      }, 1000);
+    }
 
-        function switchGame(gameId) {
-            document.getElementById('game-sorter').style.display = 'none';
-            document.getElementById('game-blitz').style.display = 'none';
-            document.querySelectorAll('.game-tab-btn').forEach(b => b.classList.remove('active'));
+    function loadGame2Prompt() {
+      const item = game2Database[g2Index];
+      document.getElementById('g2-icon').innerText = item.icon;
+      document.getElementById('g2-scenario').innerText = item.text;
+      document.getElementById('g2-feedback').innerText = "";
+    }
 
-            document.getElementById(gameId).style.display = 'block';
-            event.currentTarget.classList.add('active');
+    function checkGame2Answer(choice) {
+      const item = game2Database[g2Index];
+      const feedback = document.getElementById('g2-feedback');
+
+      if (choice === item.type) {
+        playSound('correct');
+        g2Score += 15;
+        feedback.className = "min-h-[28px] text-sm font-bold text-emerald-400";
+        feedback.innerText = `✨ Correct! That is a ${item.type} interaction.`;
+      } else {
+        playSound('incorrect');
+        feedback.className = "min-h-[28px] text-sm font-bold text-rose-400";
+        feedback.innerText = `❌ Incorrect! That is actually a ${item.type} interaction.`;
+      }
+
+      document.getElementById('g2-score').innerText = g2Score;
+      setTimeout(() => {
+        g2Index = (g2Index + 1) % game2Database.length;
+        loadGame2Prompt();
+      }, 1200);
+    }
+
+    // ==========================================
+    // VOCABULARY FLASHCARDS LOGIC
+    // ==========================================
+    const flashcardDeck = [
+      { term: "Mutualism", category: "Ecosystems", icon: "🤝", def: "An interaction between two living species where BOTH organisms benefit (+/+).", ex: "Honeybees sipping flower nectar while pollinating sunflowers." },
+      { term: "Commensalism", category: "Ecosystems", icon: "🪴", def: "An interaction where one organism benefits while the other is unaffected (+/0).", ex: "Orchids growing on high tree trunks to reach sunlight." },
+      { term: "Parasitism", category: "Ecosystems", icon: "🦟", def: "An interaction where one organism (parasite) benefits by harming its host (+/-).", ex: "Mosquitoes biting humans for blood." },
+      { term: "Loam Soil", category: "Abiotic Ecosystem", icon: "🪴", def: "A rich soil mixture of sand, silt, and clay containing dark organic humus.", ex: "Provides ideal water retention and nutrient absorption for crops." },
+      { term: "Inclined Plane", category: "Simple Machines", icon: "📐", def: "A slanted flat surface connecting a lower elevation to a higher elevation.", ex: "Wheelchair ramps, stairs, and playground slides." },
+      { term: "Wedge", category: "Simple Machines", icon: "🪓", def: "Two inclined planes joined back-to-back ending in a sharp cutting edge.", ex: "Kitchen knives, firefighter axes, and doorstops." },
+      { term: "Fulcrum", category: "Simple Machines", icon: "⚖️", def: "The fixed pivot point around which a lever rod turns.", ex: "The center pin of a seesaw or pair of scissors." },
+      { term: "Mechanical Advantage", category: "Machine Physics", icon: "⚙️", def: "The factor by which a machine multiplies your applied effort force.", ex: "MA = Output Force ÷ Input Force." },
+      { term: "Class 1 Lever", category: "Simple Machines", icon: "⚖️", def: "A lever where the Fulcrum sits in the middle between Effort and Load.", ex: "Seesaws, crowbars, and scissors." },
+      { term: "Class 2 Lever", category: "Simple Machines", icon: "🛒", def: "A lever where the Load sits in the middle between Fulcrum and Effort.", ex: "Wheelbarrows, nutcrackers, and bottle openers." },
+      { term: "Class 3 Lever", category: "Simple Machines", icon: "🧹", def: "A lever where Effort is applied in the middle between Fulcrum and Load.", ex: "Brooms, tweezers, and human forearms." },
+      { term: "Fixed Pulley", category: "Simple Machines", icon: "🚩", def: "A stationary pulley with MA = 1 that changes the direction of force.", ex: "School flagpole top wheel." }
+    ];
+
+    let fcIndex = 0;
+    let fcFlipped = false;
+
+    function renderFlashcard() {
+      const card = flashcardDeck[fcIndex];
+      document.getElementById('fc-category').innerText = card.category;
+      document.getElementById('fc-icon').innerText = card.icon;
+      document.getElementById('fc-term').innerText = card.term;
+      document.getElementById('fc-definition').innerText = card.def;
+      document.getElementById('fc-example').innerText = card.ex;
+
+      document.getElementById('card-counter').innerText = fcIndex + 1;
+      document.getElementById('card-total').innerText = flashcardDeck.length;
+
+      // Reset flip
+      fcFlipped = false;
+      document.getElementById('flashcard').classList.remove('rotate-y-180');
+    }
+
+    function flipFlashcard() {
+      playSound('click');
+      fcFlipped = !fcFlipped;
+      const el = document.getElementById('flashcard');
+      if (fcFlipped) el.classList.add('rotate-y-180');
+      else el.classList.remove('rotate-y-180');
+    }
+
+    function nextFlashcard() {
+      playSound('click');
+      fcIndex = (fcIndex + 1) % flashcardDeck.length;
+      renderFlashcard();
+    }
+
+    function prevFlashcard() {
+      playSound('click');
+      fcIndex = (fcIndex - 1 + flashcardDeck.length) % flashcardDeck.length;
+      renderFlashcard();
+    }
+
+    function shuffleFlashcards() {
+      playSound('click');
+      flashcardDeck.sort(() => Math.random() - 0.5);
+      fcIndex = 0;
+      renderFlashcard();
+    }
+
+    // ==========================================
+    // 30-ITEM MOCK TEST QUIZ ENGINE
+    // ==========================================
+    const quizQuestions = [
+      // Competency 1: Ecosystem Interactions (1-10)
+      { comp: 1, q: "A honeybee visits a sunflower to sip sweet nectar and transfers pollen to another flower. How does this interaction affect both organisms?", opts: ["Both the bee and sunflower benefit (+/+)", "The bee benefits while the sunflower is harmed (+/-)", "The sunflower benefits while the bee is unaffected (+/0)", "Both organisms are harmed (-/-)"], answer: 0, exp: "Mutualism (+/+) benefits both species. The bee gets food (nectar) while the sunflower achieves cross-pollination." },
+      { comp: 1, q: "Orchids attach high up on dipterocarp tree trunks to catch sunlight without taking food or water from the tree. What relationship is this?", opts: ["Parasitism", "Commensalism (+/0)", "Mutualism", "Predation"], answer: 1, exp: "Commensalism (+/0) occurs when one organism benefits (orchid gets sunlight) while the host tree is unharmed." },
+      { comp: 1, q: "A stray dog is infested with ticks that feed on its blood, causing skin irritation and weakness. What interaction is taking place?", opts: ["Mutualism", "Commensalism", "Parasitism (+/-)", "Competition"], answer: 2, exp: "Parasitism (+/-) benefits the parasite (tick) while harming the host organism (dog)." },
+      { comp: 1, q: "Farmers keep frogs in rice paddies because frogs eat grasshopper pests that ruin crops. How does this predatory interaction help?", opts: ["It replaces the need for sunlight", "It controls pest populations to protect crops", "It causes weeds to grow faster", "It harms the rice plants"], answer: 1, exp: "Biological control through natural predation keeps herbivorous pest populations balanced, protecting food crops." },
+      { comp: 1, q: "Weeds and corn plants grow closely together in a field, competing for soil nitrogen, water, and sunlight. What is the effect on the corn?", opts: ["Corn grows faster with larger ears", "Corn suffers reduced growth due to limited resources", "Weeds share nutrients with corn roots", "Neither plant is affected"], answer: 1, exp: "Resource competition limits essential water and nutrients, reducing the growth and yield of cultivated crops." },
+      { comp: 1, q: "Green plants absorb sunlight, water, and carbon dioxide gas to create glucose and oxygen during photosynthesis. This is an example of:", opts: ["A harmful interaction between plants and soil", "A beneficial interaction between living things and abiotic factors", "A parasitic interaction between light and water", "A competitive interaction among non-living elements"], answer: 1, exp: "Living green plants rely on non-living (abiotic) factors like sunlight, CO2, and water for survival through photosynthesis." },
+      { comp: 1, q: "A severe drought occurs in a farmland, leaving the soil completely dry under intense solar heat. How does this abiotic factor affect crops?", opts: ["It helps plants absorb more minerals", "It causes plants to wilt and die from dehydration", "It encourages earthworms to multiply", "It speeds up flower pollination"], answer: 1, exp: "Lack of soil moisture during extreme heat prevents water uptake, causing cellular wilting and plant death." },
+      { comp: 1, q: "Heavy continuous rains flood a vegetable garden, filling all soil air spaces with water. Why is this waterlogging harmful to plants?", opts: ["Plant roots cannot get oxygen gas and rot", "Leaves stop absorbing sunlight completely", "Stems turn into wood immediately", "Seeds germinate too quickly"], answer: 0, exp: "Waterlogged soil deprives roots of oxygen (hypoxia), leading to root rot and fungal decay." },
+      { comp: 1, q: "Earthworms burrow through rich loam soil, creating air tunnels and leaving nutrient-rich castings. How does this benefit garden plants?", opts: ["It compacts the soil tightly", "It improves soil aeration, drainage, and nutrient availability", "It blocks rainwater from reaching roots", "It increases harmful bacteria"], answer: 1, exp: "Earthworm burrowing aerates the soil and decomposes organic matter, enriching soil fertility for plant roots." },
+      { comp: 1, q: "Mosquitoes bite humans to consume blood required for egg production, while transmitting harmful virus pathogens. Which classification fits this best?", opts: ["Helpful living-to-living interaction", "Harmful living-to-living interaction (Parasitism)", "Beneficial non-living interaction", "Neutral commensal interaction"], answer: 1, exp: "Mosquito bites represent harmful parasitism (+/-), causing physical irritation and vector-borne disease transmission." },
+
+      // Competency 2: Everyday Simple Machines (11-20)
+      { comp: 2, q: "A delivery worker needs to push heavy boxes into a high truck bed. Which simple machine is a slanted ramp built for this purpose?", opts: ["Lever", "Inclined Plane", "Screw", "Wheel and Axle"], answer: 1, exp: "An inclined plane is a flat, slanted surface connecting a lower elevation to a higher elevation." },
+      { comp: 2, q: "A carpenter uses the claw end of a hammer to pry a stubborn nail out of a wooden plank. What simple machine is the hammer acting as?", opts: ["Wedge", "Pulley", "Lever", "Inclined Plane"], answer: 2, exp: "A claw hammer acts as a lever where the handle applies effort force pivoting on the hammer head fulcrum." },
+      { comp: 2, q: "When raising the school flag during morning assembly, rope passes over a grooved wheel at the top of the pole. Which machine is this?", opts: ["Fixed Pulley", "Third-class lever", "Wedge", "Screw"], answer: 0, exp: "A fixed pulley at the top of a flagpole changes the direction of force, allowing you to pull down to raise the flag up." },
+      { comp: 2, q: "In the kitchen, a chef uses a sharp steel knife to slice vegetables easily. Which simple machine consists of two inclined planes back-to-back?", opts: ["Wheel and Axle", "Wedge", "Lever", "Screw"], answer: 1, exp: "A wedge consists of two back-to-back inclined planes ending in a sharp point or cutting edge." },
+      { comp: 2, q: "A student turns a circular doorknob to retract the internal latch of a classroom door. What simple machine is a doorknob?", opts: ["Pulley", "Wheel and Axle", "Inclined Plane", "Wedge"], answer: 1, exp: "A doorknob is a classic wheel and axle, where turning the larger outer knob rotates the smaller inner shaft." },
+      { comp: 2, q: "A threaded jar lid twists tightly onto a glass jar to seal food tightly. What simple machine is a thread on a jar lid?", opts: ["Screw", "Lever", "Wedge", "Pulley"], answer: 0, exp: "A screw is an inclined plane wrapped spirally around a central cylinder or post." },
+      { comp: 2, q: "A school janitor uses a long broom to sweep dust off the hallway floor. What type of simple machine is a broom?", opts: ["Inclined Plane", "Lever", "Pulley", "Screw"], answer: 1, exp: "A broom is a lever (specifically Class 3) where the top hand acts as fulcrum and middle hand applies effort." },
+      { comp: 2, q: "At a construction site, a worker uses a wheelbarrow to transport heavy cement bags. Which simple machines are combined in a wheelbarrow?", opts: ["Wedge and Screw", "Lever and Wheel & Axle", "Pulley and Inclined Plane", "Screw and Wedge"], answer: 1, exp: "A wheelbarrow combines a Class 2 lever (handles to wheel fulcrum) and a wheel and axle." },
+      { comp: 2, q: "A playground seesaw features a long wooden plank balanced on a middle metal post. What simple machine is a seesaw?", opts: ["First-class Lever", "Inclined Plane", "Pulley", "Screw"], answer: 0, exp: "A seesaw is a Class 1 lever with the pivot fulcrum positioned in the middle between two seats." },
+      { comp: 2, q: "Firefighters use an axe head to chop through wooden doors during emergency rescues. What simple machine is the sharp head of an axe?", opts: ["Lever", "Wedge", "Screw", "Wheel and Axle"], answer: 1, exp: "An axe head is a heavy wedge designed to concentrate force and split tough wood fibers apart." },
+
+      // Competency 3: Machine Advantages & Limitations (21-30)
+      { comp: 3, q: "A student pushes a heavy box up a long ramp instead of a short steep ramp. What is the main advantage of using a longer ramp slope?", opts: ["It increases the weight of the box", "It reduces the effort force required to push the box", "It eliminates friction completely", "It shortens the travel distance"], answer: 1, exp: "A longer ramp slope decreases the incline steepness, requiring significantly less pushing effort force." },
+      { comp: 3, q: "What is the primary trade-off or limitation when using an inclined plane to raise heavy loads?", opts: ["You must exert force over a longer distance", "It multiplies movement speed ten times", "It increases the mass of the load", "It reverses gravity"], answer: 0, exp: "Due to work conservation (Work = Force x Distance), reducing input force requires moving over a longer distance." },
+      { comp: 3, q: "In a First-Class lever (like a crowbar or seesaw), the fulcrum is placed in the middle. What is the primary advantage of this arrangement?", opts: ["It always multiplies distance and speed", "It changes the direction of the input force (push down to lift up)", "It reduces work to zero", "It eliminates the need for effort"], answer: 1, exp: "Class 1 levers allow you to change force direction—pushing down on one end lifts the load up on the opposite end." },
+      { comp: 3, q: "In a Second-Class lever (like a wheelbarrow), the load sits between the fulcrum and effort. What is true about all Class 2 levers?", opts: ["Mechanical advantage is always less than 1", "Mechanical advantage is always greater than 1 (effort is less than load)", "Mechanical advantage is always zero", "Requires twice as much effort force"], answer: 1, exp: "Since the effort arm is always longer than the load arm in Class 2 levers, effort force is always less than load weight ($MA > 1$)." },
+      { comp: 3, q: "Brooms, tweezers, and fishing rods are Third-Class levers (effort in middle). What is their main advantage despite requiring more effort force?", opts: ["They reduce effort force by half", "They increase speed and movement distance for precision and reach", "They eliminate friction", "They keep loads stationary"], answer: 1, exp: "Class 3 levers ($MA < 1$) trade force for speed and distance, giving extended reach and delicate control." },
+      { comp: 3, q: "A single fixed pulley is mounted on a ceiling. If a bucket weighs 20 Newtons, how much effort force is needed to lift it (ignoring friction)?", opts: ["5 Newtons", "10 Newtons", "20 Newtons", "40 Newtons"], answer: 2, exp: "A single fixed pulley has a Mechanical Advantage of 1, meaning input effort force equals load weight ($20\text{ N}$). " },
+      { comp: 3, q: "What is the key advantage of using a single FIXED pulley when raising a bucket from a water well?", opts: ["It cuts required effort force in half", "It changes force direction so you pull down using your body weight", "It eliminates rope weight", "It quadruples distance"], answer: 1, exp: "Fixed pulleys do not multiply force ($MA=1$), but changing direction allows pulling downward conveniently with gravity." },
+      { comp: 3, q: "A MOVABLE pulley system supports a load with 2 rope segments (MA = 2). To lift a 100 N box, how much effort force is required?", opts: ["100 N", "50 N", "25 N", "200 N"], answer: 1, exp: "With $MA = 2$, effort force is halved: $100\text{ N} \div 2 = 50\text{ N}$." },
+      { comp: 3, q: "A crane uses a Block and Tackle pulley system with 4 supporting rope segments. What is the limitation or trade-off of this system?", opts: ["You must pull 4 times as much length of rope", "The load becomes four times heavier", "The rope moves backward automatically", "It cannot lift higher than 1 meter"], answer: 0, exp: "To gain a $4\times$ force multiplication, you must pull $4\times$ more rope length ($Distance_{effort} = 4 \times Distance_{load}$)." },
+      { comp: 3, q: "Why does a thinner, longer wedge require less pushing effort force to split wood than a thick, short wedge?", opts: ["A longer wedge spreads force over a longer distance, providing greater Mechanical Advantage", "A thinner wedge increases wood weight", "A short wedge creates zero friction", "A long wedge changes into a lever"], answer: 0, exp: "Like inclined planes, a thinner/longer wedge slope increases mechanical advantage by spreading force over a longer cutting distance." }
+    ];
+
+    let userAnswers = new Array(30).fill(null);
+    let currentQ = 0;
+    let quizSeconds = 0;
+    let quizTimerInterval = null;
+
+    function startQuiz() {
+      playSound('click');
+      userAnswers.fill(null);
+      currentQ = 0;
+      quizSeconds = 0;
+
+      document.getElementById('quiz-start-screen').classList.add('hidden');
+      document.getElementById('quiz-results-screen').classList.add('hidden');
+      document.getElementById('quiz-active-screen').classList.remove('hidden');
+
+      renderQuizNavGrid();
+      loadQuizQuestion(0);
+
+      if (quizTimerInterval) clearInterval(quizTimerInterval);
+      quizTimerInterval = setInterval(() => {
+        quizSeconds++;
+        const mins = String(Math.floor(quizSeconds / 60)).padStart(2, '0');
+        const secs = String(quizSeconds % 60).padStart(2, '0');
+        document.getElementById('quiz-timer-display').innerHTML = `<i class="fa-solid fa-clock text-amber-500"></i> Time: ${mins}:${secs}`;
+      }, 1000);
+    }
+
+    function renderQuizNavGrid() {
+      const grid = document.getElementById('quiz-grid-nav');
+      grid.innerHTML = '';
+      for (let i = 0; i < 30; i++) {
+        const btn = document.createElement('button');
+        btn.id = `qgrid-btn-${i}`;
+        btn.onclick = () => loadQuizQuestion(i);
+        btn.className = `p-2 font-bold rounded-xl text-xs transition border ${
+          userAnswers[i] !== null ? 'bg-emerald-500 text-white border-emerald-600' : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'
+        }`;
+        btn.innerText = i + 1;
+        grid.appendChild(btn);
+      }
+    }
+
+    function loadQuizQuestion(idx) {
+      currentQ = idx;
+      const qData = quizQuestions[idx];
+
+      // Update Competency Badge
+      const badge = document.getElementById('quiz-q-competency-badge');
+      if (qData.comp === 1) {
+        badge.className = "text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full";
+        badge.innerText = "Competency 1: Ecosystem Interactions";
+      } else if (qData.comp === 2) {
+        badge.className = "text-xs font-bold px-3 py-1 bg-sky-100 text-sky-800 rounded-full";
+        badge.innerText = "Competency 2: Everyday Simple Machines";
+      } else {
+        badge.className = "text-xs font-bold px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full";
+        badge.innerText = "Competency 3: Advantages & Limitations";
+      }
+
+      document.getElementById('quiz-q-counter').innerText = `Question ${idx + 1} of 30`;
+      document.getElementById('quiz-q-text').innerText = qData.q;
+
+      // Options
+      const container = document.getElementById('quiz-options-container');
+      container.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D'];
+
+      qData.opts.forEach((optText, oIdx) => {
+        const optBtn = document.createElement('button');
+        optBtn.onclick = () => selectQuizOption(oIdx);
+        const isSelected = userAnswers[idx] === oIdx;
+
+        optBtn.className = `w-full text-left p-4 rounded-2xl font-semibold text-xs sm:text-sm border transition flex items-center gap-3 ${
+          isSelected ? 'bg-emerald-50 border-emerald-500 text-emerald-900 shadow-sm' : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+        }`;
+
+        optBtn.innerHTML = `
+          <span class="w-7 h-7 rounded-xl flex items-center justify-center font-bold text-xs ${
+            isSelected ? 'bg-emerald-600 text-white' : 'bg-slate-200 text-slate-600'
+          }">${letters[oIdx]}</span>
+          <span class="flex-grow">${optText}</span>
+        `;
+        container.appendChild(optBtn);
+      });
+
+      // Highlight active grid button ring
+      for (let i = 0; i < 30; i++) {
+        const gBtn = document.getElementById(`qgrid-btn-${i}`);
+        if (gBtn) {
+          if (i === idx) gBtn.classList.add('ring-2', 'ring-amber-400');
+          else gBtn.classList.remove('ring-2', 'ring-amber-400');
         }
+      }
 
-        /* MACHINE SIMULATOR LOGIC */
-        function updateMachineSim() {
-            const weight = parseFloat(document.getElementById('sim-weight').value);
-            const ramp = parseFloat(document.getElementById('sim-ramp').value);
+      // Progress bar
+      const answeredCount = userAnswers.filter(a => a !== null).length;
+      document.getElementById('quiz-progress-text').innerText = `${answeredCount}/30`;
+      document.getElementById('quiz-progress-bar').style.width = `${(answeredCount / 30) * 100}%`;
 
-            document.getElementById('val-weight').innerText = weight;
-            document.getElementById('val-ramp').innerText = ramp;
+      // Enable/Disable Prev Next
+      document.getElementById('btn-quiz-prev').disabled = idx === 0;
+    }
 
-            const height = 1.0; // 1 meter elevation
-            const requiredForce = Math.round((weight * height) / ramp);
+    function selectQuizOption(optIdx) {
+      playSound('click');
+      userAnswers[currentQ] = optIdx;
+      loadQuizQuestion(currentQ);
+      renderQuizNavGrid();
+    }
 
-            document.getElementById('sim-explanation').innerText = `Lifting a ${weight} N load to 1 meter elevation using a ${ramp} meter inclined ramp.`;
-            document.getElementById('sim-force-badge').innerText = `Required Pushing Effort: ${requiredForce} N`;
-            document.getElementById('sim-tradeoff').innerText = `Mechanical Advantage: ${ramp.toFixed(1)}x effort reduction! You push over ${ramp} meters instead of 1 meter.`;
+    function nextQuizQuestion() {
+      if (currentQ < 29) {
+        loadQuizQuestion(currentQ + 1);
+      }
+    }
+
+    function prevQuizQuestion() {
+      if (currentQ > 0) {
+        loadQuizQuestion(currentQ - 1);
+      }
+    }
+
+    function submitQuiz() {
+      playSound('click');
+      const answeredCount = userAnswers.filter(a => a !== null).length;
+      if (answeredCount < 30) {
+        if (!confirm(`You have answered ${answeredCount} of 30 questions. Are you sure you want to submit?`)) {
+          return;
         }
+      }
 
-        /* GAME 1: MACHINE SORTER LOGIC */
-        const sorterData = [
-            { id: 'm1', name: '♿ Wheelchair Ramp', type: 'inclined' },
-            { id: 'm2', name: '✂️ Scissors Blade', type: 'wedge' },
-            { id: 'm3', name: '🚩 Flagpole Rope Wheel', type: 'pulley' },
-            { id: 'm4', name: '🎢 Playground See-Saw', type: 'lever' },
-            { id: 'm5', name: '🛷 Loading Dock Ramp', type: 'inclined' },
-            { id: 'm6', name: '🔪 Kitchen Knife', type: 'wedge' },
-            { id: 'm7', name: '🪵 Construction Crowbar', type: 'lever' },
-            { id: 'm8', name: '🏗️ Crane Lifting Hook', type: 'pulley' }
-        ];
+      if (quizTimerInterval) clearInterval(quizTimerInterval);
 
-        let selectedSorterItem = null;
-        let sorterScore = 0;
+      // Grade calculation
+      let scoreComp1 = 0;
+      let scoreComp2 = 0;
+      let scoreComp3 = 0;
 
-        function initSorterGame() {
-            const pool = document.getElementById('sorter-pool');
-            ['inclined', 'lever', 'wedge', 'pulley'].forEach(type => {
-                document.getElementById(`bucket-${type}`).innerHTML = '';
-            });
-
-            pool.innerHTML = '';
-            sorterScore = 0;
-            selectedSorterItem = null;
-            document.getElementById('sorter-score').innerText = 'Score: 0 / 8';
-
-            sorterData.forEach(item => {
-                const el = document.createElement('div');
-                el.className = 'draggable-item';
-                el.innerText = item.name;
-                el.id = item.id;
-                el.onclick = () => selectSorterItem(item, el);
-                pool.appendChild(el);
-            });
+      userAnswers.forEach((ans, idx) => {
+        const q = quizQuestions[idx];
+        if (ans === q.answer) {
+          if (q.comp === 1) scoreComp1++;
+          else if (q.comp === 2) scoreComp2++;
+          else scoreComp3++;
         }
+      });
 
-        function selectSorterItem(item, element) {
-            document.querySelectorAll('.draggable-item').forEach(e => e.style.border = '2px solid var(--light-green)');
-            selectedSorterItem = item;
-            element.style.border = '3px solid var(--coral-orange)';
-        }
+      const totalScore = scoreComp1 + scoreComp2 + scoreComp3;
+      const percentage = Math.round((totalScore / 30) * 100);
 
-        function placeSelectedItem(targetType) {
-            if (!selectedSorterItem) return;
+      document.getElementById('res-total-score').innerText = `${totalScore} / 30`;
+      document.getElementById('res-percentage').innerText = `${percentage}% Mastery Level`;
+      document.getElementById('res-comp1-score').innerText = `${scoreComp1} / 10`;
+      document.getElementById('res-comp2-score').innerText = `${scoreComp2} / 10`;
+      document.getElementById('res-comp3-score').innerText = `${scoreComp3} / 10`;
 
-            const elem = document.getElementById(selectedSorterItem.id);
-            if (!elem) return;
+      // Auto update certificate score
+      document.getElementById('cert-out-score').innerText = `${totalScore}/30`;
 
-            if (selectedSorterItem.type === targetType) {
-                const bucket = document.getElementById(`bucket-${targetType}`);
-                bucket.appendChild(elem);
-                elem.onclick = null;
-                elem.style.border = '2px solid #4caf50';
-                elem.style.background = '#e8f5e9';
-                sorterScore++;
-                document.getElementById('sorter-score').innerText = `Score: ${sorterScore} / 8`;
-                selectedSorterItem = null;
-            } else {
-                alert("Oops! Think about how that device functions.");
-            }
-        }
+      // Render Review
+      renderQuizReview();
 
-        /* GAME 2: ECOSYSTEM BLITZ LOGIC */
-        const blitzData = [
-            { text: '"Mosquito sucking human blood"', answer: 'Harmful' },
-            { text: '"Honeybee gathering nectar and pollinating flowers"', answer: 'Helpful' },
-            { text: '"Weeds competing with rice crops for soil minerals"', answer: 'Harmful' },
-            { text: '"Green corn plant absorbing sunlight to make food"', answer: 'Helpful' },
-            { text: '"Prolonged drought with severe lack of rainfall causing wilting"', answer: 'Harmful' }
-        ];
-        let blitzIndex = 0;
-        let blitzStreak = 0;
+      document.getElementById('quiz-active-screen').classList.add('hidden');
+      document.getElementById('quiz-results-screen').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-        function checkBlitzAnswer(ans) {
-            if (blitzData[blitzIndex].answer === ans) {
-                blitzStreak++;
-                document.getElementById('blitz-feedback').innerText = "Correct! +1 Streak";
-                document.getElementById('blitz-feedback').style.color = "green";
-            } else {
-                blitzStreak = 0;
-                document.getElementById('blitz-feedback').innerText = `Incorrect! This scenario is ${blitzData[blitzIndex].answer}.`;
-                document.getElementById('blitz-feedback').style.color = "red";
-            }
-            document.getElementById('blitz-streak').innerText = `Streak: ${blitzStreak} 🔥`;
-            blitzIndex = (blitzIndex + 1) % blitzData.length;
-            document.getElementById('blitz-target-name').innerText = blitzData[blitzIndex].text;
-        }
+    function renderQuizReview() {
+      const reviewBox = document.getElementById('quiz-review-container');
+      reviewBox.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D'];
 
-        /* 30-ITEM MOCK TEST DATA (10 items per competency) */
-        const questionsData = [
-            // COMPETENCY 1: ECOSYSTEM INTERACTIONS (Items 1 - 10)
-            { id: 1, comp: 1, badge: "badge-easy", q: "How do green plants benefit from their interaction with sunlight?", options: ["Sunlight provides water for root growth.", "Sunlight supplies light energy for photosynthesis.", "Sunlight removes soil minerals.", "Sunlight acts as a consumer."], answer: 1, exp: "Green plants use sunlight to power photosynthesis and make sugar." },
-            { id: 2, comp: 1, badge: "badge-easy", q: "A mosquito drinks blood from a human, causing an itchy red bite and risk of illness. What describes this interaction?", options: ["Helpful interaction (Mutualism)", "Harmful interaction (Parasitism)", "Neutral interaction (Commensalism)", "Non-living interaction"], answer: 1, exp: "Parasitism (+/-) harms the host while feeding the parasite." },
-            { id: 3, comp: 1, badge: "badge-easy", q: "During a prolonged drought, a farm receives no rain for months. How does this affect garden crops?", options: ["Crops produce double yield.", "Lack of water causes plants to wilt and die.", "Crops convert soil directly into water.", "Sunlight replaces water in stems."], answer: 1, exp: "Water scarcity prevents vital transport and photosynthesis, wilting crops." },
-            { id: 4, comp: 1, badge: "badge-avg", q: "Honeybees collect sweet nectar from garden flowers and transfer pollen in the process. How does this interaction affect both organisms?", options: ["It harms both species.", "It benefits both the bee and the flower.", "It benefits only the bee while harming flowers.", "It has no effect on either."], answer: 1, exp: "Mutualism (+/+) provides food for bees and pollination for flowers." },
-            { id: 5, comp: 1, badge: "badge-avg", q: "An orchid grows on a high branch of a hardwood tree to reach sunlight without extracting nutrients from the tree. What type of interaction is this?", options: ["Harmful parasitism", "Beneficial commensalism", "Competitive predation", "Destructive flooding"], answer: 1, exp: "Commensalism (+/0) benefits the orchid while leaving the tree unharmed." },
-            { id: 6, comp: 1, badge: "badge-avg", q: "When weeds grow densely around vegetable crops, crop yields decrease significantly. Why does this harm occur?", options: ["Weeds supply excessive solar energy.", "Weeds compete with crops for limited soil nutrients, water, and sunlight.", "Weeds act as primary decomposers.", "Weeds absorb atmospheric oxygen."], answer: 1, exp: "Interspecific competition starves crops of essential growth resources." },
-            { id: 7, comp: 1, badge: "badge-avg", q: "Nitrogen-fixing bacteria live in root nodules of bean plants, supplying nitrogen to the plant while receiving shelter. This is an example of a:", options: ["Harmful parasitic relationship", "Helpful mutualistic relationship", "Destructive predator-prey relationship", "Competitive abiotic relationship"], answer: 1, exp: "Both bean plant and bacteria benefit from nutrient-shelter exchange." },
-            { id: 8, comp: 1, badge: "badge-avg", q: "How does clean freshwater in a pond support living tilapia fish?", options: ["Water provides hydration and dissolved oxygen habitat.", "Water acts as a primary predator.", "Water consumes green algae.", "Water replaces solar energy."], answer: 0, exp: "Freshwater is an abiotic component providing oxygen and fluid habitat." },
-            { id: 9, comp: 1, badge: "badge-avg", q: "Heavy typhoon flooding submerges farm fields for weeks. What harm does this cause to plant root systems?", options: ["Roots gain excess nitrogen gas.", "Waterlogged soil starves roots of oxygen, causing root decay.", "Sunlight increases inside the mud.", "Flooding turns plants into carnivores."], answer: 1, exp: "Excessive standing water deprives soil spaces of oxygen gas." },
-            { id: 10, comp: 1, badge: "badge-avg", q: "Field frogs prey on locust insects that destroy corn crops. How does this interaction impact the ecosystem?", options: ["It harms farmers by multiplying locusts.", "It brings good by controlling agricultural pest populations.", "It causes corn crops to wilt.", "It eliminates all abiotic soil minerals."], answer: 1, exp: "Predators keep herbivore pest populations in ecological balance." },
+      quizQuestions.forEach((q, idx) => {
+        const uAns = userAnswers[idx];
+        const isCorrect = uAns === q.answer;
 
-            // COMPETENCY 2: SIMPLE MACHINES IDENTIFICATION (Items 11 - 20)
-            { id: 11, comp: 2, badge: "badge-easy", q: "Which simple machine is installed at school building entrances to help students in wheelchairs ascend easily?", options: ["Screw", "Inclined Plane (Ramp)", "Wedge", "Pulley"], answer: 1, exp: "Inclined planes connect lower and higher ground via a slanted surface." },
-            { id: 12, comp: 2, badge: "badge-easy", q: "When you use a pair of classroom scissors to cut paper, what simple machine edge performs the cutting action?", options: ["Wedge", "Screw", "Pulley", "Wheel and Axle"], answer: 0, exp: "Scissors blades act as sharp wedges that split paper fibers." },
-            { id: 13, comp: 2, badge: "badge-easy", q: "Which simple machine mechanism is located at the top of a school flagpole to raise the flag during morning assembly?", options: ["Wheelbarrow", "Pulley", "Inclined Plane", "Chisel"], answer: 1, exp: "A grooved pulley wheel and rope change the direction of force to lift the flag." },
-            { id: 14, comp: 2, badge: "badge-avg", q: "Turning a round classroom doorknob to open a door demonstrates which simple machine?", options: ["Wheel and Axle", "Wedge", "Inclined Plane", "Fixed Lever"], answer: 0, exp: "The large knob (wheel) turns a smaller internal shaft (axle) to retract the latch." },
-            { id: 15, comp: 2, badge: "badge-avg", q: "A chef at home uses a sharp knife to chop vegetables. The knife blade is an example of a:", options: ["Wedge", "Pulley", "Screw", "Class 3 Lever"], answer: 0, exp: "Knives consist of two back-to-back inclined planes forming a wedge." },
-            { id: 16, comp: 2, badge: "badge-avg", q: "Twisting a threaded jar lid tightly onto a glass jam jar at home utilizes which simple machine?", options:
+        const card = document.createElement('div');
+        card.className = `p-5 rounded-2xl border ${
+          isCorrect ? 'bg-emerald-50/50 border-emerald-200' : 'bg-rose-50/50 border-rose-200'
+        } space-y-3`;
+
+        card.innerHTML = `
+          <div class="flex justify-between items-center text-xs font-bold">
+            <span class="${isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
+              Question ${idx + 1} &bull; ${isCorrect ? '✓ Correct (+1)' : '✗ Incorrect (0)'}
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full bg-white border text-slate-600">
+              Comp ${q.comp}
+            </span>
+          </div>
+
+          <h4 class="font-bold text-slate-800 text-sm leading-snug">${q.q}</h4>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium">
+            <div class="p-2.5 rounded-xl ${isCorrect ? 'bg-emerald-200/60 text-emerald-900' : 'bg-rose-200/60 text-rose-900'}">
+              <strong>Your Answer:</strong> ${uAns !== null ? letters[uAns] + ') ' + q.opts[uAns] : 'Not Answered'}
+            </div>
+            <div class="p-2.5 rounded-xl bg-emerald-100 text-emerald-900">
+              <strong>Correct Answer:</strong> ${letters[q.answer]}) ${q.opts[q.answer]}
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl border border-slate-200 text-xs text-slate-700">
+            <strong class="text-slate-900 block mb-1">💡 Scientific Explanation:</strong>
+            ${q.exp}
+          </div>
+        `;
+        reviewBox.appendChild(card);
+      });
+    }
+
+    // ==========================================
+    // CERTIFICATE GENERATOR LOGIC
+    // ==========================================
+    function updateCertificate() {
+      const name = document.getElementById('cert-student-name').value || "Maria Santos";
+      const section = document.getElementById('cert-grade-section').value || "Grade 6 - Eagle";
+      const school = document.getElementById('cert-school-name').value || "Central Elementary School";
+
+      document.getElementById('cert-out-name').innerText = name;
+      document.getElementById('cert-out-section').innerText = section;
+      document.getElementById('cert-out-school').innerText = school;
+    }
+
+    // INITIALIZATION ON LOAD
+    window.onload = function() {
+      updateRampSim();
+      updateLeverSim();
+      renderFlashcard();
+      updateCertificate();
+    };
+  </script>
+</body>
+</html>
