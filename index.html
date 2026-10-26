@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade 6 Science Master Reviewer - EcoSquad Summative 1 Explorer</title>
+    <title>Grade 6 Science Master Reviewer - Ecosystems & Simple Machines</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -17,8 +17,8 @@
             --card-bg: #ffffff;
             --text-dark: #1b5e20;
             --text-body: #2c3e50;
-            --sky-blue: #e0f7fa;
-            --ocean-blue: #0288d1;
+            --sky-blue: #0288d1;
+            --light-blue: #e0f7fa;
             --sun-yellow: #fbc02d;
             --coral-orange: #ff7043;
             --purple-accent: #8e24aa;
@@ -44,7 +44,7 @@
 
         /* --- HEADER & NAVIGATION --- */
         header {
-            background: linear-gradient(135deg, #1b5e20, #388e3c, #66bb6a);
+            background: linear-gradient(135deg, #1b5e20, #2e7d32, #0288d1);
             color: white;
             padding: 22px 20px 14px;
             text-align: center;
@@ -56,7 +56,7 @@
 
         .header-content h1 {
             font-family: 'Fredoka', cursive;
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             letter-spacing: 0.8px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             display: flex;
@@ -87,7 +87,7 @@
             padding: 8px 16px;
             border-radius: 30px;
             font-family: 'Fredoka', cursive;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -104,7 +104,7 @@
 
         /* --- CONTAINER & SECTIONS --- */
         .container {
-            max-width: 1120px;
+            max-width: 1140px;
             margin: 28px auto;
             padding: 0 20px;
         }
@@ -141,7 +141,7 @@
         .section-header h2 {
             font-family: 'Fredoka', cursive;
             color: var(--primary-green);
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -159,7 +159,7 @@
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 22px;
             margin-bottom: 25px;
         }
@@ -189,22 +189,20 @@
         }
 
         .card-icon {
-            width: 60px;
-            height: 60px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             margin-bottom: 15px;
         }
 
-        .icon-producer { background: #e8f5e9; color: #2e7d32; }
-        .icon-consumer { background: #fff3e0; color: #e65100; }
-        .icon-scavenger { background: #efebe9; color: #4e342e; }
-        .icon-decomposer { background: #f3e5f5; color: #7b1fa2; }
-        .icon-biotic { background: #e0f2f1; color: #00695c; }
-        .icon-abiotic { background: #e1f5fe; color: #0277bd; }
+        .icon-good { background: #e8f5e9; color: #2e7d32; }
+        .icon-harm { background: #ffebee; color: #c62828; }
+        .icon-machine { background: #e0f7fa; color: #0288d1; }
+        .icon-investigate { background: #fff3e0; color: #e65100; }
 
         .info-card h3 {
             font-family: 'Fredoka', cursive;
@@ -229,32 +227,42 @@
             margin-top: 10px;
         }
 
-        /* --- ECOSYSTEM SIMULATOR INTERACTIVE --- */
+        .example-box-harm {
+            background: #fff5f5;
+            border-left: 4px solid #ef5350;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #444;
+            margin-top: 10px;
+        }
+
+        /* --- INTERACTIVE LAB & SIMULATOR --- */
         .simulator-box {
             background: white;
             border-radius: var(--radius-lg);
             padding: 25px;
             box-shadow: var(--shadow-soft);
             margin-bottom: 30px;
-            border: 2px dashed var(--light-green);
+            border: 2px dashed var(--sky-blue);
         }
 
         .sim-controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             margin: 20px 0;
         }
 
         .control-group {
-            background: #f1f8e9;
+            background: #e0f7fa;
             padding: 12px 16px;
             border-radius: var(--radius-md);
         }
 
         .control-group label {
             font-weight: 700;
-            color: var(--primary-green);
+            color: #0277bd;
             display: block;
             margin-bottom: 6px;
             font-size: 0.95rem;
@@ -262,72 +270,58 @@
 
         .control-group input[type="range"], .control-group select {
             width: 100%;
-            accent-color: var(--primary-green);
-            padding: 4px;
+            accent-color: #0288d1;
+            padding: 6px;
             border-radius: 6px;
             border: 1px solid #ccc;
         }
 
-        .sim-stage {
-            height: 240px;
-            background: linear-gradient(180deg, #81d4fa 0%, #e8f5e9 65%, #8d6e63 100%);
+        .machine-demo-stage {
+            height: 220px;
+            background: #f1f8e9;
             border-radius: var(--radius-md);
             position: relative;
-            overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
             padding: 20px;
-            transition: all 0.5s ease;
-        }
-
-        .sim-organism {
             text-align: center;
-            transition: all 0.5s ease;
         }
 
-        .sim-organism svg {
-            width: 80px;
-            height: 80px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
-        }
-
-        .status-badge {
+        .force-display-badge {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-top: 6px;
+            margin-top: 12px;
             color: white;
+            background: #0288d1;
         }
-
-        .status-healthy { background: #4caf50; }
-        .status-stressed { background: #ff9800; }
-        .status-dying { background: #f44336; }
 
         /* --- PRACTICE GAMES ZONE --- */
         .game-nav-bar {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             margin-bottom: 22px;
             flex-wrap: wrap;
         }
 
         .game-tab-btn {
             background: white;
-            border: 2px solid var(--light-green);
-            color: var(--primary-green);
-            padding: 10px 20px;
+            border: 2px solid var(--sky-blue);
+            color: #0288d1;
+            padding: 10px 18px;
             border-radius: 25px;
             font-family: 'Fredoka', cursive;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .game-tab-btn.active, .game-tab-btn:hover {
-            background: var(--primary-green);
+            background: #0288d1;
             color: white;
         }
 
@@ -337,34 +331,6 @@
             padding: 25px;
             box-shadow: var(--shadow-soft);
             margin-bottom: 25px;
-        }
-
-        .sorter-arena {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .drop-bucket {
-            border: 3px dashed #bbb;
-            border-radius: var(--radius-md);
-            padding: 18px;
-            min-height: 180px;
-            background: #fafafa;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .drop-bucket:hover {
-            background: #e8f5e9;
-            border-color: var(--primary-green);
-        }
-
-        .drop-bucket h3 {
-            font-family: 'Fredoka', cursive;
-            margin-bottom: 12px;
         }
 
         .sort-items-pool {
@@ -396,6 +362,34 @@
             transform: scale(1.05);
         }
 
+        .sorter-arena {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .drop-bucket {
+            border: 3px dashed #bbb;
+            border-radius: var(--radius-md);
+            padding: 18px;
+            min-height: 180px;
+            background: #fafafa;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .drop-bucket:hover {
+            background: #e0f7fa;
+            border-color: #0288d1;
+        }
+
+        .drop-bucket h3 {
+            font-family: 'Fredoka', cursive;
+            margin-bottom: 12px;
+        }
+
         .blitz-card {
             text-align: center;
             padding: 20px;
@@ -407,7 +401,7 @@
 
         .blitz-organism-name {
             font-family: 'Fredoka', cursive;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-green);
             margin: 10px 0;
         }
@@ -419,10 +413,10 @@
             flex-wrap: wrap;
         }
 
-        /* --- FLASHCARDS --- */
+        /* --- FLASHCARDS DECK --- */
         .game-card-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 18px;
             margin-top: 20px;
         }
@@ -506,7 +500,7 @@
 
         .quiz-progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--light-green), var(--accent-lime));
+            background: linear-gradient(90deg, var(--light-green), var(--sky-blue));
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -525,7 +519,7 @@
             border-radius: 8px;
             text-align: center;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -567,12 +561,8 @@
             text-transform: uppercase;
         }
 
-        .badge-easy { background: #e8f5e9; color: #2e7d32; }
-        .badge-avg { background: #fff3e0; color: #e65100; }
-        .badge-diff { background: #ffebee; color: #c62828; }
-
         .question-text {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 18px;
@@ -590,7 +580,7 @@
             border-radius: var(--radius-md);
             padding: 14px 18px;
             text-align: left;
-            font-size: 1rem;
+            font-size: 0.98rem;
             cursor: pointer;
             transition: all 0.2s ease;
             display: flex;
@@ -667,7 +657,7 @@
             background: #d6d6d6;
         }
 
-        /* --- RESULT SUMMARY --- */
+        /* --- RESULT SUMMARY & CERTIFICATE --- */
         .result-box {
             display: none;
             text-align: center;
@@ -720,7 +710,6 @@
             color: var(--primary-green);
         }
 
-        /* --- PRINTABLE CERTIFICATE TAB STYLING --- */
         .cert-controls-card {
             background: white;
             padding: 20px;
@@ -771,14 +760,14 @@
 
         .cert-title {
             font-family: 'Fredoka', cursive;
-            font-size: 2.4rem;
+            font-size: 2.3rem;
             color: var(--primary-green);
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .cert-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #555;
             font-weight: 600;
             margin-bottom: 25px;
@@ -848,7 +837,6 @@
             margin-bottom: 6px;
         }
 
-        /* --- PRINT MEDIA RULES --- */
         @media print {
             body * {
                 visibility: hidden;
@@ -873,7 +861,7 @@
         }
 
         @media (max-width: 768px) {
-            .header-content h1 { font-size: 1.6rem; }
+            .header-content h1 { font-size: 1.5rem; }
             .nav-grid { grid-template-columns: repeat(5, 1fr); }
             .quiz-controls { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
@@ -886,16 +874,16 @@
     <!-- HEADER SECTION -->
     <header>
         <div class="header-content">
-            <h1><i class="fa-solid fa-leaf"></i> EcoSquad Science 6 Master Reviewer</h1>
-            <p>Summative 1 Test Hub | Term 2 • School Year 2026-2027</p>
+            <h1><i class="fa-solid fa-graduation-cap"></i> Grade 6 Science Master Reviewer</h1>
+            <p>Ecosystem Interactions & Simple Machines Hub | School Year 2026-2027</p>
             <nav>
-                <button class="nav-btn active" onclick="switchTab('roles')"><i class="fa-solid fa-sitemap"></i> Food Web Roles</button>
-                <button class="nav-btn" onclick="switchTab('interactions')"><i class="fa-solid fa-handshake"></i> Species Interactions</button>
-                <button class="nav-btn" onclick="switchTab('factors')"><i class="fa-solid fa-sun"></i> Biotic & Abiotic</button>
-                <button class="nav-btn" onclick="switchTab('simulator')"><i class="fa-solid fa-flask"></i> Eco-Simulator</button>
-                <button class="nav-btn" onclick="switchTab('practice-games')"><i class="fa-solid fa-gamepad"></i> Practice Games</button>
-                <button class="nav-btn" onclick="switchTab('flashcards')"><i class="fa-solid fa-layer-group"></i> Concept Deck</button>
-                <button class="nav-btn" style="background: var(--sun-yellow); color: #333;" onclick="switchTab('quiz')"><i class="fa-solid fa-pen-to-square"></i> 20-Item Mock Test</button>
+                <button class="nav-btn active" onclick="switchTab('interactions-tab')"><i class="fa-solid fa-tree"></i> Ecosystem Interactions</button>
+                <button class="nav-btn" onclick="switchTab('machines-tab')"><i class="fa-solid fa-gears"></i> Simple Machines</button>
+                <button class="nav-btn" onclick="switchTab('investigation-tab')"><i class="fa-solid fa-flask"></i> Machine Investigations</button>
+                <button class="nav-btn" onclick="switchTab('simulator-tab')"><i class="fa-solid fa-sliders"></i> Machine Lab</button>
+                <button class="nav-btn" onclick="switchTab('practice-games')"><i class="fa-solid fa-gamepad"></i> Practice Arena</button>
+                <button class="nav-btn" onclick="switchTab('flashcards')"><i class="fa-solid fa-layer-group"></i> Flashcard Deck</button>
+                <button class="nav-btn" style="background: var(--sun-yellow); color: #333;" onclick="switchTab('quiz')"><i class="fa-solid fa-pen-to-square"></i> 30-Item Mock Test</button>
                 <button class="nav-btn" style="background: var(--coral-orange); color: white;" onclick="switchTab('certificate-tab')"><i class="fa-solid fa-award"></i> Certificate</button>
             </nav>
         </div>
@@ -903,217 +891,272 @@
 
     <div class="container">
 
-        <!-- TAB 1: FOOD WEB ROLES -->
-        <div id="roles" class="tab-content active">
+        <!-- TAB 1: ECOSYSTEM INTERACTIONS (GOOD & HARM) -->
+        <div id="interactions-tab" class="tab-content active">
             <div class="section-header">
-                <h2><i class="fa-solid fa-sitemap"></i> Competency 1: Roles of Organisms in Food Webs</h2>
-                <span class="badge-competency">TOS Weight: 33% | Items 1–6</span>
+                <h2><i class="fa-solid fa-tree"></i> Competency 1: Ecosystem Interactions (Good & Harm)</h2>
+                <span class="badge-competency">Items 1–10 in Mock Test</span>
             </div>
 
             <div class="grid-2">
+                <!-- Beneficial Biotic Interactions -->
                 <div class="info-card">
-                    <div class="card-icon icon-producer"><i class="fa-solid fa-seedling"></i></div>
-                    <h3>1. Producers (Autotrophs)</h3>
-                    <p>Organisms that create their own food using sunlight, water, and carbon dioxide through <strong>Photosynthesis</strong>. They serve as the base of all ecological food webs.</p>
+                    <div class="card-icon icon-good"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>1. Helpful Living-to-Living Interactions</h3>
+                    <p>Organisms interact in nature to gain food, shelter, or reproduction support.</p>
+
                     <div class="example-box">
-                        <strong>Examples:</strong> Rice Plants, Corn, Mango Trees, Green Algae, Grass.
+                        <strong>Mutualism (+/+):</strong> Honeybees gather nectar from flowers while helping flowers pollinate. Both benefit!
+                    </div>
+                    <div class="example-box">
+                        <strong>Commensalism (+/0):</strong> Orchids grow on high hardwood tree branches to reach sunlight. The orchid gets light while the tree is unharmed.
+                    </div>
+                    <div class="example-box">
+                        <strong>Balanced Predation:</strong> Frogs prey on grasshoppers, keeping insect pest populations under control so crops are protected.
                     </div>
                 </div>
 
+                <!-- Harmful Biotic Interactions -->
                 <div class="info-card">
-                    <div class="card-icon icon-consumer"><i class="fa-solid fa-cow"></i></div>
-                    <h3>2. Consumers (Heterotrophs)</h3>
-                    <p>Organisms that cannot make their own food and must feed on other living organisms for energy.</p>
-                    <ul style="margin-left: 20px; font-size: 0.95rem; color: #555;">
-                        <li><strong>Herbivores (Primary):</strong> Eat producers directly (e.g., Caterpillars, Grasshoppers, Carabaos).</li>
-                        <li><strong>Carnivores (Secondary/Tertiary):</strong> Eat other animals (e.g., Frogs, Snakes, Philippine Eagles).</li>
-                        <li><strong>Omnivores:</strong> Eat both plants and animals (e.g., Chickens, Humans, Monkeys).</li>
-                    </ul>
-                </div>
+                    <div class="card-icon icon-harm"><i class="fa-solid fa-bug"></i></div>
+                    <h3>2. Harmful Living-to-Living Interactions</h3>
+                    <p>Some biological relationships cause disease, structural injury, or growth stuntedness.</p>
 
-                <div class="info-card">
-                    <div class="card-icon icon-scavenger"><i class="fa-solid fa-crow"></i></div>
-                    <h3>3. Scavengers</h3>
-                    <p>Animals that feed on dead bodies and decaying animal remains that <strong>they did not kill themselves</strong>. They keep natural habitats clean.</p>
-                    <div class="example-box">
-                        <strong>Examples:</strong> Vultures, Crows feeding on farm carcasses, Hyenas, Crows.
+                    <div class="example-box-harm">
+                        <strong>Parasitism (+/-):</strong> Mosquitoes suck blood from humans, causing skin itching and transmitting illnesses like dengue fever.
+                    </div>
+                    <div class="example-box-harm">
+                        <strong>Resource Competition:</strong> Weeds growing in a cornfield compete with corn crops for limited soil minerals, water, and sunlight.
                     </div>
                 </div>
 
+                <!-- Beneficial Living-to-Nonliving -->
                 <div class="info-card">
-                    <div class="card-icon icon-decomposer"><i class="fa-solid fa-bacteria"></i></div>
-                    <h3>4. Decomposers</h3>
-                    <p>Microorganisms and fungi that chemically break down dead organic matter, returning vital minerals and nutrients back into the soil for producers.</p>
+                    <div class="card-icon icon-good"><i class="fa-solid fa-sun"></i></div>
+                    <h3>3. Helpful Living-to-Nonliving Interactions</h3>
+                    <p>Living organisms depend completely on non-living physical components for survival.</p>
+
                     <div class="example-box">
-                        <strong>Examples:</strong> Mushrooms (Fungi), Soil Bacteria, Earthworms.
+                        <strong>Sunlight & Plants:</strong> Green plants use light energy, water, and carbon dioxide to make food through <em>Photosynthesis</em>.
+                    </div>
+                    <div class="example-box">
+                        <strong>Soil & Nutrients:</strong> Rich loam soil provides physical root support and minerals for growing trees.
+                    </div>
+                </div>
+
+                <!-- Harmful Living-to-Nonliving -->
+                <div class="info-card">
+                    <div class="card-icon icon-harm"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+                    <h3>4. Harmful Living-to-Nonliving Conditions</h3>
+                    <p>Extreme environmental non-living conditions can harm or destroy living organisms.</p>
+
+                    <div class="example-box-harm">
+                        <strong>Drought & Heat:</strong> Prolonged lack of rain (water scarcity) and high temperatures cause garden plants to wilt and die.
+                    </div>
+                    <div class="example-box-harm">
+                        <strong>Flooding:</strong> Waterlogged soil starves plant roots of air oxygen, causing root rot.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 2: SPECIES INTERACTIONS -->
-        <div id="interactions" class="tab-content">
+        <!-- TAB 2: SIMPLE MACHINES AT HOME, SCHOOL & COMMUNITY -->
+        <div id="machines-tab" class="tab-content">
             <div class="section-header">
-                <h2><i class="fa-solid fa-handshake"></i> Competency 2: Ecological Relationships in Nature</h2>
-                <span class="badge-competency">TOS Weight: 33% | Items 7–13</span>
+                <h2><i class="fa-solid fa-gears"></i> Competency 2: Simple Machines Everywhere</h2>
+                <span class="badge-competency">Items 11–20 in Mock Test</span>
             </div>
 
             <div class="grid-3">
                 <div class="info-card">
-                    <div class="card-icon" style="background:#e8f5e9; color:#2e7d32;"><i class="fa-solid fa-heart"></i></div>
-                    <h3>Mutualism (+ / +)</h3>
-                    <p>A symbiotic interaction where <strong>both species benefit</strong> from each other.</p>
-                    <div class="example-box">🐝 <strong>Bee & Flower:</strong> Bee gets sweet nectar; flower gets pollinated!</div>
+                    <div class="card-icon icon-machine"><i class="fa-solid fa-person-wheelchair"></i></div>
+                    <h3>1. Inclined Plane</h3>
+                    <p>A slanted flat surface that connects a lower elevation to a higher elevation.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Wheelchair ramps at school, playground slides, loading ramps on trucks, stairs.
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <div class="card-icon" style="background:#e0f7fa; color:#0288d1;"><i class="fa-solid fa-smile"></i></div>
-                    <h3>Commensalism (+ / 0)</h3>
-                    <p>One species <strong>benefits</strong>, while the host is <strong>neither helped nor harmed</strong>.</p>
-                    <div class="example-box">🌿 <strong>Orchid on Tree:</strong> Orchid gets high sunlight; tree suffers zero harm!</div>
+                    <div class="card-icon icon-machine"><i class="fa-solid fa-scissors"></i></div>
+                    <h3>2. Wedge</h3>
+                    <p>Two inclined planes placed back-to-back, ending in a sharp thin edge used to split or cut objects.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Kitchen knives, axes, scissors blades, doorstops, push pins, nails.
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <div class="card-icon" style="background:#ffebee; color:#c62828;"><i class="fa-solid fa-bug"></i></div>
-                    <h3>Parasitism (+ / -)</h3>
-                    <p>One organism (parasite) <strong>benefits</strong> by living in/on a host and causing harm.</p>
-                    <div class="example-box">🦟 <strong>Mosquito & Human:</strong> Mosquito gains blood; human suffers itch and risk of illness.</div>
+                    <div class="card-icon icon-machine"><i class="fa-solid fa-scale-unbalanced"></i></div>
+                    <h3>3. Lever</h3>
+                    <p>A rigid bar or board that pivots around a fixed point called a <strong>Fulcrum</strong>.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Playground see-saws, bottle openers, crowbars, wheelbarrows, tweezers, brooms.
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <div class="card-icon" style="background:#fff3e0; color:#e65100;"><i class="fa-solid fa-skull-crossbones"></i></div>
-                    <h3>Predation</h3>
-                    <p>One organism (predator) actively hunts, kills, and eats another organism (prey).</p>
-                    <div class="example-box">🦅 <strong>Eagle & Flying Fox:</strong> Philippine Eagle hunts flying foxes for sustenance.</div>
+                    <div class="card-icon icon-machine"><i class="fa-solid fa-dharmachakra"></i></div>
+                    <h3>4. Pulley</h3>
+                    <p>A grooved wheel holding a rope, chain, or cable used to lift heavy loads upward.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Flagpole pulleys at school, window blinds, water well buckets, construction cranes.
+                    </div>
                 </div>
 
                 <div class="info-card">
-                    <div class="card-icon" style="background:#f3e5f5; color:#7b1fa2;"><i class="fa-solid fa-trophy"></i></div>
-                    <h3>Competition</h3>
-                    <p>Organisms compete with one another for limited resources like water, light, nutrients, or space.</p>
-                    <div class="example-box">🌾 <strong>Weeds & Rice:</strong> Weeds compete with rice crops for soil minerals and sunlight.</div>
+                    <div class="card-icon icon-machine"><i class="fa-solid fa-circle-notch"></i></div>
+                    <h3>5. Wheel & Axle</h3>
+                    <p>A larger round wheel attached to a smaller central shaft or rod (axle) that rotate together.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Classroom doorknobs, bicycle wheels, car steering wheels, rolling pins.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon icon-machine"><i class="fa-solid fa-screw"></i></div>
+                    <h3>6. Screw</h3>
+                    <p>An inclined plane wrapped spirally around a central shaft or cylinder (threads).</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Wood screws, jar lids, light bulb bases, swivel chairs, bottle caps.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 3: BIOTIC & ABIOTIC FACTORS -->
-        <div id="factors" class="tab-content">
+        <!-- TAB 3: MACHINE INVESTIGATIONS (ADVANTAGES & LIMITATIONS) -->
+        <div id="investigation-tab" class="tab-content">
             <div class="section-header">
-                <h2><i class="fa-solid fa-sun"></i> Competency 3: Biotic & Abiotic Ecosystem Components</h2>
-                <span class="badge-competency">TOS Weight: 33% | Items 14–20</span>
+                <h2><i class="fa-solid fa-flask"></i> Competency 3: Advantages & Limitations of Simple Machines</h2>
+                <span class="badge-competency">Items 21–30 in Mock Test</span>
             </div>
 
             <div class="grid-2">
+                <!-- Inclined Plane Investigation -->
                 <div class="info-card">
-                    <div class="card-icon icon-biotic"><i class="fa-solid fa-frog"></i></div>
-                    <h3>Biotic Factors</h3>
-                    <p>All the <strong>living or once-living organisms</strong> in an environment.</p>
-                    <ul style="margin-left: 20px; color: #555;">
-                        <li>🌱 Green Plants, Mangroves, Rice Crops, Ferns</li>
-                        <li>🐸 Frogs, Caterpillars, Snakes, Carabao, Mudskippers</li>
-                        <li>🍄 Mushrooms, Soil Bacteria, Earthworms</li>
-                    </ul>
+                    <div class="card-icon icon-investigate"><i class="fa-solid fa-slope-upward"></i></div>
+                    <h3>1. Inclined Plane Investigation</h3>
+                    <p><strong>Golden Rule:</strong> Work = Force × Distance ($W = F \times d$).</p>
+                    <div class="example-box">
+                        <strong><i class="fa-solid fa-circle-check" style="color:green;"></i> Advantage:</strong> Reduces the required pushing/pulling effort force to raise a heavy load. A longer, gentler slope makes lifting easier!
+                    </div>
+                    <div class="example-box-harm">
+                        <strong><i class="fa-solid fa-circle-xmark" style="color:red;"></i> Limitation:</strong> You must move the load over a significantly longer distance compared to lifting it straight up.
+                    </div>
                 </div>
 
+                <!-- Wedge Investigation -->
                 <div class="info-card">
-                    <div class="card-icon icon-abiotic"><i class="fa-solid fa-cloud-sun"></i></div>
-                    <h3>Abiotic Factors</h3>
-                    <p>All the <strong>non-living physical and chemical elements</strong> that influence organism survival.</p>
-                    <ul style="margin-left: 20px; color: #555;">
-                        <li>☀️ <strong>Light:</strong> Drives photosynthesis energy production.</li>
-                        <li>💧 <strong>Water:</strong> Vital for cellular processes & transport.</li>
-                        <li>🌡️ <strong>Temperature:</strong> Governs biological metabolic rates.</li>
-                        <li>🪴 <strong>Soil Type:</strong> Loam, Clay, or Sand supplying essential minerals.</li>
-                    </ul>
+                    <div class="card-icon icon-investigate"><i class="fa-solid fa-ruler-combined"></i></div>
+                    <h3>2. Wedge Investigation</h3>
+                    <p>Converts a single forward pushing force into two perpendicular outward forces.</p>
+                    <div class="example-box">
+                        <strong><i class="fa-solid fa-circle-check" style="color:green;"></i> Advantage:</strong> Concentrates force to split logs, cut food, or hold doors tightly in place.
+                    </div>
+                    <div class="example-box-harm">
+                        <strong><i class="fa-solid fa-circle-xmark" style="color:red;"></i> Limitation:</strong> Requires high friction to stay wedged; cutting edges become dull over time and require re-sharpening.
+                    </div>
+                </div>
+
+                <!-- Lever Investigation -->
+                <div class="info-card">
+                    <div class="card-icon icon-investigate"><i class="fa-solid fa-anchor"></i></div>
+                    <h3>3. Lever Classes Investigation</h3>
+                    <p>Performance depends on the relative positions of Fulcrum, Load, and Effort.</p>
+                    <div class="example-box">
+                        <strong>Class 1 (Fulcrum in Middle - Crowbar, Scissors):</strong> Changes direction of force and multiplies force.
+                    </div>
+                    <div class="example-box">
+                        <strong>Class 2 (Load in Middle - Wheelbarrow):</strong> Always multiplies force (effort force is less than load force).
+                    </div>
+                    <div class="example-box-harm">
+                        <strong>Class 3 (Effort in Middle - Sweeping Broom, Tweezers):</strong> Requires MORE effort force, but increases speed and reach!
+                    </div>
+                </div>
+
+                <!-- Pulley Investigation -->
+                <div class="info-card">
+                    <div class="card-icon icon-investigate"><i class="fa-solid fa-weight-hanging"></i></div>
+                    <h3>4. Pulley Systems Investigation</h3>
+                    <p>Compares Fixed Pulleys vs Movable Pulleys vs Block & Tackle.</p>
+                    <div class="example-box">
+                        <strong>Fixed Pulley (Flagpole):</strong> MA = 1. Changes direction (pull down to lift up), but requires effort equal to load weight.
+                    </div>
+                    <div class="example-box">
+                        <strong>Movable Pulley:</strong> MA = 2. Cuts required effort force in half!
+                    </div>
+                    <div class="example-box-harm">
+                        <strong>Block & Tackle Limitation:</strong> Multiple pulleys require pulling a huge length of rope, and friction reduces efficiency.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 4: ECOSYSTEM SIMULATOR -->
-        <div id="simulator" class="tab-content">
+        <!-- TAB 4: INTERACTIVE MACHINE LAB / SIMULATOR -->
+        <div id="simulator-tab" class="tab-content">
             <div class="section-header">
-                <h2><i class="fa-solid fa-flask"></i> Interactive Ecosystem Simulator Lab</h2>
-                <span class="badge-competency">Abiotic Factor Experiment Sandbox</span>
+                <h2><i class="fa-solid fa-sliders"></i> Interactive Machine Mechanics Lab</h2>
+                <span class="badge-competency">Test Ramp Slopes & Mechanical Advantage</span>
             </div>
 
             <div class="simulator-box">
-                <p>Adjust the abiotic factor controls below to observe real-time health responses in our biotic organisms!</p>
+                <p>Adjust the ramp length slider to observe how the required pushing force decreases as the slope distance increases!</p>
 
                 <div class="sim-controls">
                     <div class="control-group">
-                        <label><i class="fa-solid fa-sun"></i> Sunlight: <span id="val-sun">50</span>%</label>
-                        <input type="range" id="sim-sun" min="0" max="100" value="50" oninput="updateSim()">
+                        <label><i class="fa-solid fa-weight-hanging"></i> Heavy Box Weight: <span id="val-weight">100</span> N</label>
+                        <input type="range" id="sim-weight" min="50" max="200" value="100" oninput="updateMachineSim()">
                     </div>
                     <div class="control-group">
-                        <label><i class="fa-solid fa-droplet"></i> Water Level: <span id="val-water">50</span>%</label>
-                        <input type="range" id="sim-water" min="0" max="100" value="50" oninput="updateSim()">
-                    </div>
-                    <div class="control-group">
-                        <label><i class="fa-solid fa-temperature-high"></i> Temperature: <span id="val-temp">28</span>°C</label>
-                        <input type="range" id="sim-temp" min="10" max="45" value="28" oninput="updateSim()">
-                    </div>
-                    <div class="control-group">
-                        <label><i class="fa-solid fa-mountain"></i> Soil Type:</label>
-                        <select id="sim-soil" onchange="updateSim()">
-                            <option value="loam">Rich Loam Soil</option>
-                            <option value="clay">Dense Clay Soil</option>
-                            <option value="sand">Dry Sandy Soil</option>
-                        </select>
+                        <label><i class="fa-solid fa-ruler-horizontal"></i> Ramp Length (Distance): <span id="val-ramp">2</span> meters</label>
+                        <input type="range" id="sim-ramp" min="1" max="10" value="2" oninput="updateMachineSim()">
                     </div>
                 </div>
 
-                <div class="sim-stage" id="sim-stage">
-                    <div class="sim-organism" id="org-plant">
-                        <svg viewBox="0 0 100 100">
-                            <path d="M50 90 L50 40 M50 60 C30 50, 20 30, 50 30 C80 30, 70 50, 50 60" stroke="#2e7d32" stroke-width="6" fill="#4caf50"/>
-                        </svg>
-                        <div style="font-weight:700;">Corn Crop</div>
-                        <span class="status-badge status-healthy" id="status-plant">Thriving</span>
-                    </div>
-
-                    <div class="sim-organism" id="org-frog">
-                        <svg viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="30" fill="#66bb6a"/>
-                            <circle cx="40" cy="40" r="5" fill="#fff"/><circle cx="40" cy="40" r="2" fill="#000"/>
-                            <circle cx="60" cy="40" r="5" fill="#fff"/><circle cx="60" cy="40" r="2" fill="#000"/>
-                        </svg>
-                        <div style="font-weight:700;">Field Frog</div>
-                        <span class="status-badge status-healthy" id="status-frog">Active</span>
-                    </div>
+                <div class="machine-demo-stage">
+                    <h3 style="color:#0288d1; font-family:'Fredoka',cursive; margin-bottom:10px;">Simulation Results:</h3>
+                    <p id="sim-explanation" style="font-size:1.05rem; font-weight:600; color:#333;">Lifting 100 N box straight up 1 meter height.</p>
+                    <div class="force-display-badge" id="sim-force-badge">Required Pushing Effort: 50 N</div>
+                    <p style="font-size:0.85rem; color:#666; margin-top:10px;" id="sim-tradeoff">Trade-off: You push with half the force, but must travel twice the distance!</p>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 5: PRACTICE GAMES -->
+        <!-- TAB 5: PRACTICE GAMES ARENA -->
         <div id="practice-games" class="tab-content">
             <div class="section-header">
                 <h2><i class="fa-solid fa-gamepad"></i> Interactive Practice Arena</h2>
-                <span class="badge-competency">Mastery Through Play</span>
+                <span class="badge-competency">Build Concept Mastery</span>
             </div>
 
             <div class="game-nav-bar">
-                <button class="game-tab-btn active" onclick="switchGame('game-sorter')"><i class="fa-solid fa-boxes-stacked"></i> Game 1: Biotic vs Abiotic Sorter</button>
-                <button class="game-tab-btn" onclick="switchGame('game-blitz')"><i class="fa-solid fa-bolt"></i> Game 2: Food Web Role Blitz</button>
-                <button class="game-tab-btn" onclick="switchGame('game-symbiosis')"><i class="fa-solid fa-puzzle-piece"></i> Game 3: Symbiosis Detective</button>
+                <button class="game-tab-btn active" onclick="switchGame('game-sorter')"><i class="fa-solid fa-boxes-stacked"></i> Game 1: Machine Type Classifier</button>
+                <button class="game-tab-btn" onclick="switchGame('game-blitz')"><i class="fa-solid fa-bolt"></i> Game 2: Ecosystem Interactions Blitz</button>
             </div>
 
-            <!-- GAME 1: SORTER -->
+            <!-- GAME 1: MACHINE CLASSIFIER -->
             <div id="game-sorter" class="game-container-card">
-                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Biotic & Abiotic Factor Sorting Challenge</h3>
-                <p style="font-size:0.95rem; color:#666;">Click an item from the pool, then click the correct category bucket to place it!</p>
+                <h3 style="font-family:'Fredoka',cursive; color:#0288d1; margin-bottom:8px;">Simple Machines Sorting Challenge</h3>
+                <p style="font-size:0.95rem; color:#666;">Click an item from the pool, then click the correct machine type bucket to categorize it!</p>
 
                 <div class="sort-items-pool" id="sorter-pool"></div>
 
                 <div class="sorter-arena">
-                    <div class="drop-bucket" onclick="placeSelectedItem('biotic')">
-                        <h3 style="color:#00695c;"><i class="fa-solid fa-frog"></i> BIOTIC FACTORS</h3>
-                        <p style="font-size:0.85rem; color:#777; margin-bottom:10px;">Living or once-living organisms</p>
-                        <div id="biotic-bucket" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+                    <div class="drop-bucket" onclick="placeSelectedItem('inclined')">
+                        <h3 style="color:#2e7d32;"><i class="fa-solid fa-person-wheelchair"></i> INCLINED PLANE</h3>
+                        <div id="bucket-inclined" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
                     </div>
-                    <div class="drop-bucket" onclick="placeSelectedItem('abiotic')">
-                        <h3 style="color:#0277bd;"><i class="fa-solid fa-sun"></i> ABIOTIC FACTORS</h3>
-                        <p style="font-size:0.85rem; color:#777; margin-bottom:10px;">Non-living physical elements</p>
-                        <div id="abiotic-bucket" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+                    <div class="drop-bucket" onclick="placeSelectedItem('lever')">
+                        <h3 style="color:#0288d1;"><i class="fa-solid fa-scale-unbalanced"></i> LEVER</h3>
+                        <div id="bucket-lever" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+                    </div>
+                    <div class="drop-bucket" onclick="placeSelectedItem('wedge')">
+                        <h3 style="color:#e65100;"><i class="fa-solid fa-scissors"></i> WEDGE</h3>
+                        <div id="bucket-wedge" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+                    </div>
+                    <div class="drop-bucket" onclick="placeSelectedItem('pulley')">
+                        <h3 style="color:#7b1fa2;"><i class="fa-solid fa-dharmachakra"></i> PULLEY</h3>
+                        <div id="bucket-pulley" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
                     </div>
                 </div>
 
@@ -1123,19 +1166,17 @@
                 </div>
             </div>
 
-            <!-- GAME 2: FOOD WEB BLITZ -->
+            <!-- GAME 2: ECOSYSTEM BLITZ -->
             <div id="game-blitz" class="game-container-card" style="display:none;">
-                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Food Web Role Speed Blitz</h3>
-                <p style="font-size:0.95rem; color:#666; margin-bottom:15px;">Identify the ecological role of the highlighted organism as fast as you can!</p>
+                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Ecosystem Interactions Speed Blitz</h3>
+                <p style="font-size:0.95rem; color:#666; margin-bottom:15px;">Read the scenario and identify whether the interaction is Beneficial or Harmful!</p>
 
                 <div class="blitz-card">
-                    <span style="font-size:0.9rem; font-weight:700; color:#888;">Organism Target:</span>
-                    <div class="blitz-organism-name" id="blitz-target-name">Mango Tree</div>
+                    <span style="font-size:0.9rem; font-weight:700; color:#888;">Scenario Target:</span>
+                    <div class="blitz-organism-name" id="blitz-target-name">"Mosquito sucking human blood"</div>
                     <div style="margin-top:15px;" class="blitz-buttons">
-                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Producer')">Producer</button>
-                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Consumer')">Consumer</button>
-                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Scavenger')">Scavenger</button>
-                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Decomposer')">Decomposer</button>
+                        <button class="btn btn-primary" onclick="checkBlitzAnswer('Harmful')">Harmful Interaction</button>
+                        <button class="btn btn-primary" style="background:#0288d1;" onclick="checkBlitzAnswer('Helpful')">Helpful / Beneficial Interaction</button>
                     </div>
                 </div>
 
@@ -1144,74 +1185,16 @@
                     <span id="blitz-feedback" style="font-weight:700;"></span>
                 </div>
             </div>
-
-            <!-- GAME 3: SYMBIOSIS DETECTIVE -->
-            <div id="game-symbiosis" class="game-container-card" style="display:none;">
-                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Symbiosis Relationship Detective</h3>
-                <p style="font-size:0.95rem; color:#666; margin-bottom:15px;">Read the ecological scenario and select the correct relationship type!</p>
-
-                <div class="blitz-card" style="background:#f1f8e9; border-color:#c8e6c9;">
-                    <div id="sym-scenario" style="font-size:1.15rem; font-weight:700; color:#2c3e50;">"An orchid grows on the tall branch of a tree to access light. The tree receives zero benefit and zero harm."</div>
-                </div>
-
-                <div class="blitz-buttons">
-                    <button class="btn btn-primary" onclick="checkSymAnswer('Mutualism')">Mutualism (+/+)</button>
-                    <button class="btn btn-primary" onclick="checkSymAnswer('Commensalism')">Commensalism (+/0)</button>
-                    <button class="btn btn-primary" onclick="checkSymAnswer('Parasitism')">Parasitism (+/-)</button>
-                    <button class="btn btn-primary" onclick="checkSymAnswer('Predation')">Predation</button>
-                    <button class="btn btn-primary" onclick="checkSymAnswer('Competition')">Competition</button>
-                </div>
-
-                <div style="margin-top:20px; text-align:center;">
-                    <p id="sym-feedback" style="font-weight:700; font-size:1.05rem;"></p>
-                </div>
-            </div>
         </div>
 
-        <!-- TAB 6: FLASHCARD DECK -->
+        <!-- TAB 6: FLASHCARDS DECK -->
         <div id="flashcards" class="tab-content">
             <div class="section-header">
                 <h2><i class="fa-solid fa-layer-group"></i> Master Flashcard Deck</h2>
-                <span class="badge-competency">Tap Cards to Reveal Definitions</span>
+                <span class="badge-competency">Tap Cards to Reveal Key Definitions</span>
             </div>
 
             <div class="game-card-container">
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-seedling" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Producer</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>An autotroph that manufactures food using sunlight via photosynthesis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-bacteria" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Decomposer</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>Organism that chemically recycles organic nutrients back into the soil.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">
-                            <i class="fa-solid fa-crow" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Scavenger</h3>
-                        </div>
-                        <div class="flashcard-back">
-                            <p>Feeds on dead organisms that it did not kill itself (e.g. Vulture).</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="flashcard" onclick="this.classList.toggle('flipped')">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
@@ -1219,7 +1202,7 @@
                             <h3>Mutualism</h3>
                         </div>
                         <div class="flashcard-back">
-                            <p>A symbiotic interaction where BOTH participating species benefit (+/+).</p>
+                            <p>An interaction between two living species where BOTH organisms benefit (+/+).</p>
                         </div>
                     </div>
                 </div>
@@ -1231,7 +1214,43 @@
                             <h3>Parasitism</h3>
                         </div>
                         <div class="flashcard-back">
-                            <p>One organism derives nourishment from a host while causing harm (+/-).</p>
+                            <p>One organism (parasite) gains food by living on/in a host while causing harm (+/-).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-anchor" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Fulcrum</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>The fixed pivot point around which a lever turns or rotates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-slope-upward" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Mechanical Advantage</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>The factor by which a simple machine multiplies the input effort force.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-dharmachakra" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Fixed Pulley</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>A pulley anchored to a structure. Changes force direction but does NOT reduce effort force.</p>
                         </div>
                     </div>
                 </div>
@@ -1240,23 +1259,23 @@
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
                             <i class="fa-solid fa-sun" style="font-size:2rem; margin-bottom:10px;"></i>
-                            <h3>Abiotic Factor</h3>
+                            <h3>Photosynthesis</h3>
                         </div>
                         <div class="flashcard-back">
-                            <p>Non-living physical factors: Light, Water, Temperature, Soil Type.</p>
+                            <p>Process where plants use sunlight, carbon dioxide, and water to create sugar and oxygen.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 7: 20-ITEM MOCK TEST -->
+        <!-- TAB 7: 30-ITEM MOCK TEST -->
         <div id="quiz" class="tab-content">
             <div class="quiz-container">
                 <div class="quiz-header">
                     <div>
-                        <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);"><i class="fa-solid fa-pen-to-square"></i> Summative 1 Mock Test</h2>
-                        <p style="font-size:0.9rem; color:#666;">20 Items | Aligned with Term 2 TOS Specifications</p>
+                        <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);"><i class="fa-solid fa-pen-to-square"></i> Comprehensive 30-Item Mock Test</h2>
+                        <p style="font-size:0.9rem; color:#666;">10 Items per Competency | Instant Grading & Explanations</p>
                     </div>
                     <div style="text-align:right;">
                         <span style="font-size:1.2rem; font-weight:700; color:var(--primary-green);" id="quiz-timer">Time: 00:00</span>
@@ -1277,11 +1296,11 @@
                 </div>
             </div>
 
-            <!-- RESULT DISPLAY -->
+            <!-- RESULT SUMMARY -->
             <div class="result-box" id="result-box">
                 <div class="score-circle">
                     <span class="score-num" id="res-score">0</span>
-                    <span class="score-denom">out of 20</span>
+                    <span class="score-denom">out of 30</span>
                 </div>
                 <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);" id="res-rating">Great Effort!</h2>
                 <p id="res-percentage" style="font-weight:700; font-size:1.1rem; margin-bottom:20px;">0% Mastery</p>
@@ -1289,26 +1308,26 @@
                 <table class="breakdown-table">
                     <thead>
                         <tr>
-                            <th>Competency</th>
+                            <th>Competency Coverage</th>
                             <th>Items</th>
                             <th>Your Score</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1. Roles in Food Webs</td>
-                            <td>Items 1 - 6</td>
-                            <td id="comp1-score">0 / 6</td>
+                            <td>1. Ecosystem Interactions (Good & Harm)</td>
+                            <td>Items 1 - 10</td>
+                            <td id="comp1-score">0 / 10</td>
                         </tr>
                         <tr>
-                            <td>2. Species Interactions</td>
-                            <td>Items 7 - 13</td>
-                            <td id="comp2-score">0 / 7</td>
+                            <td>2. Simple Machines at Home, School, Community</td>
+                            <td>Items 11 - 20</td>
+                            <td id="comp2-score">0 / 10</td>
                         </tr>
                         <tr>
-                            <td>3. Biotic & Abiotic Factors</td>
-                            <td>Items 14 - 20</td>
-                            <td id="comp3-score">0 / 7</td>
+                            <td>3. Advantages & Limitations of Simple Machines</td>
+                            <td>Items 21 - 30</td>
+                            <td id="comp3-score">0 / 10</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1324,7 +1343,7 @@
         <div id="certificate-tab" class="tab-content">
             <div class="section-header">
                 <h2><i class="fa-solid fa-award"></i> Official Certificate of Achievement</h2>
-                <span class="badge-competency">Printable Student Record</span>
+                <span class="badge-competency">Printable Achievement Record</span>
             </div>
 
             <div class="cert-controls-card">
@@ -1338,21 +1357,22 @@
             <div id="printable-cert-area" class="printable-cert-frame">
                 <div class="cert-header-icon"><i class="fa-solid fa-award"></i></div>
                 <h1 class="cert-title">Certificate of Achievement</h1>
-                <p class="cert-subtitle">Grade 6 Elementary Science • EcoSquad Summative Assessment 1</p>
-                <p style="font-size:1.1rem; color:#666;">This certificate is proudly presented to</p>
+                <p class="cert-subtitle">Grade 6 Elementary Science • Master Reviewer Module</p>
+                <p style="font-size:1.1rem; color:#666;">This certificate is proudly awarded to</p>
 
                 <div class="cert-name" id="cert-student-name">Grade 6 Scholar</div>
 
                 <p class="cert-body-text">
-                    for successfully reviewing, practicing, and completing the comprehensive review module in 
-                    <strong>Grade 6 Science (Term 2)</strong> covering <em>Food Web Roles, Species Interactions, and Biotic & Abiotic Ecosystem Components</em>.
+                    for demonstrating excellence, completing the interactive reviewer, and mastering competencies in 
+                    <strong>Ecosystem Interactions (Good & Harm)</strong>, <strong>Simple Machines Identification</strong>, and 
+                    <strong>Simple Machines Investigation (Advantages & Limitations)</strong>.
                 </p>
 
                 <div class="cert-info-grid">
-                    <div>Assessment Score: <span id="cert-score-val">-- / 20</span></div>
+                    <div>Assessment Score: <span id="cert-score-val">-- / 30</span></div>
                     <div>Mastery Rating: <span id="cert-mastery-val">--%</span></div>
                     <div>School Year: 2026-2027</div>
-                    <div>Date Issued: <span id="cert-issue-date">October 7, 2026</span></div>
+                    <div>Date Issued: <span id="cert-issue-date">October 26, 2026</span></div>
                 </div>
 
                 <div class="cert-footer-row">
@@ -1370,11 +1390,8 @@
 
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT CODE -->
     <script>
-        let testFinishedScore = null;
-        let testFinishedPct = null;
-
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -1393,54 +1410,38 @@
         function switchGame(gameId) {
             document.getElementById('game-sorter').style.display = 'none';
             document.getElementById('game-blitz').style.display = 'none';
-            document.getElementById('game-symbiosis').style.display = 'none';
             document.querySelectorAll('.game-tab-btn').forEach(b => b.classList.remove('active'));
 
             document.getElementById(gameId).style.display = 'block';
             event.currentTarget.classList.add('active');
         }
 
-        /* SIMULATOR LOGIC */
-        function updateSim() {
-            const sun = document.getElementById('sim-sun').value;
-            const water = document.getElementById('sim-water').value;
-            const temp = document.getElementById('sim-temp').value;
+        /* MACHINE SIMULATOR LOGIC */
+        function updateMachineSim() {
+            const weight = parseFloat(document.getElementById('sim-weight').value);
+            const ramp = parseFloat(document.getElementById('sim-ramp').value);
 
-            document.getElementById('val-sun').innerText = sun;
-            document.getElementById('val-water').innerText = water;
-            document.getElementById('val-temp').innerText = temp;
+            document.getElementById('val-weight').innerText = weight;
+            document.getElementById('val-ramp').innerText = ramp;
 
-            const plantStatus = document.getElementById('status-plant');
-            const frogStatus = document.getElementById('status-frog');
+            const height = 1.0; // 1 meter elevation
+            const requiredForce = Math.round((weight * height) / ramp);
 
-            if (sun > 30 && water > 30 && temp >= 20 && temp <= 35) {
-                plantStatus.className = "status-badge status-healthy";
-                plantStatus.innerText = "Thriving";
-                frogStatus.className = "status-badge status-healthy";
-                frogStatus.innerText = "Active";
-            } else if (water < 20 || sun < 20 || temp > 38) {
-                plantStatus.className = "status-badge status-dying";
-                plantStatus.innerText = "Wilting";
-                frogStatus.className = "status-badge status-stressed";
-                frogStatus.innerText = "Stressed";
-            } else {
-                plantStatus.className = "status-badge status-stressed";
-                plantStatus.innerText = "Moderate";
-                frogStatus.className = "status-badge status-healthy";
-                frogStatus.innerText = "Normal";
-            }
+            document.getElementById('sim-explanation').innerText = `Lifting a ${weight} N load to 1 meter elevation using a ${ramp} meter inclined ramp.`;
+            document.getElementById('sim-force-badge').innerText = `Required Pushing Effort: ${requiredForce} N`;
+            document.getElementById('sim-tradeoff').innerText = `Mechanical Advantage: ${ramp.toFixed(1)}x effort reduction! You push over ${ramp} meters instead of 1 meter.`;
         }
 
-        /* GAME 1: SORTER LOGIC */
+        /* GAME 1: MACHINE SORTER LOGIC */
         const sorterData = [
-            { id: 'item1', name: '☀️ Sunlight', type: 'abiotic' },
-            { id: 'item2', name: '🐛 Caterpillar', type: 'biotic' },
-            { id: 'item3', name: '💧 Fresh Water', type: 'abiotic' },
-            { id: 'item4', name: '🍄 Mushroom', type: 'biotic' },
-            { id: 'item5', name: '🌡️ Temperature', type: 'abiotic' },
-            { id: 'item6', name: '🌾 Rice Crop', type: 'biotic' },
-            { id: 'item7', name: '🪴 Loam Soil', type: 'abiotic' },
-            { id: 'item8', name: '🦅 Philippine Eagle', type: 'biotic' }
+            { id: 'm1', name: '♿ Wheelchair Ramp', type: 'inclined' },
+            { id: 'm2', name: '✂️ Scissors Blade', type: 'wedge' },
+            { id: 'm3', name: '🚩 Flagpole Rope Wheel', type: 'pulley' },
+            { id: 'm4', name: '🎢 Playground See-Saw', type: 'lever' },
+            { id: 'm5', name: '🛷 Loading Dock Ramp', type: 'inclined' },
+            { id: 'm6', name: '🔪 Kitchen Knife', type: 'wedge' },
+            { id: 'm7', name: '🪵 Construction Crowbar', type: 'lever' },
+            { id: 'm8', name: '🏗️ Crane Lifting Hook', type: 'pulley' }
         ];
 
         let selectedSorterItem = null;
@@ -1448,12 +1449,11 @@
 
         function initSorterGame() {
             const pool = document.getElementById('sorter-pool');
-            const bioBucket = document.getElementById('biotic-bucket');
-            const abioBucket = document.getElementById('abiotic-bucket');
+            ['inclined', 'lever', 'wedge', 'pulley'].forEach(type => {
+                document.getElementById(`bucket-${type}`).innerHTML = '';
+            });
 
             pool.innerHTML = '';
-            bioBucket.innerHTML = '';
-            abioBucket.innerHTML = '';
             sorterScore = 0;
             selectedSorterItem = null;
             document.getElementById('sorter-score').innerText = 'Score: 0 / 8';
@@ -1481,7 +1481,7 @@
             if (!elem) return;
 
             if (selectedSorterItem.type === targetType) {
-                const bucket = targetType === 'biotic' ? document.getElementById('biotic-bucket') : document.getElementById('abiotic-bucket');
+                const bucket = document.getElementById(`bucket-${targetType}`);
                 bucket.appendChild(elem);
                 elem.onclick = null;
                 elem.style.border = '2px solid #4caf50';
@@ -1490,249 +1490,54 @@
                 document.getElementById('sorter-score').innerText = `Score: ${sorterScore} / 8`;
                 selectedSorterItem = null;
             } else {
-                alert("Oops! Think again: Is it living (biotic) or physical non-living (abiotic)?");
+                alert("Oops! Think about how that device functions.");
             }
         }
 
-        /* GAME 2: FOOD WEB BLITZ LOGIC */
+        /* GAME 2: ECOSYSTEM BLITZ LOGIC */
         const blitzData = [
-            { name: "Mango Tree", role: "Producer" },
-            { name: "Grasshopper", role: "Consumer" },
-            { name: "Vulture", role: "Scavenger" },
-            { name: "Mushroom", role: "Decomposer" },
-            { name: "Green Algae", role: "Producer" },
-            { name: "Carabao", role: "Consumer" }
+            { text: '"Mosquito sucking human blood"', answer: 'Harmful' },
+            { text: '"Honeybee gathering nectar and pollinating flowers"', answer: 'Helpful' },
+            { text: '"Weeds competing with rice crops for soil minerals"', answer: 'Harmful' },
+            { text: '"Green corn plant absorbing sunlight to make food"', answer: 'Helpful' },
+            { text: '"Prolonged drought with severe lack of rainfall causing wilting"', answer: 'Harmful' }
         ];
         let blitzIndex = 0;
         let blitzStreak = 0;
 
-        function checkBlitzAnswer(role) {
-            if (blitzData[blitzIndex].role === role) {
+        function checkBlitzAnswer(ans) {
+            if (blitzData[blitzIndex].answer === ans) {
                 blitzStreak++;
                 document.getElementById('blitz-feedback').innerText = "Correct! +1 Streak";
                 document.getElementById('blitz-feedback').style.color = "green";
             } else {
                 blitzStreak = 0;
-                document.getElementById('blitz-feedback').innerText = `Incorrect! ${blitzData[blitzIndex].name} is a ${blitzData[blitzIndex].role}`;
+                document.getElementById('blitz-feedback').innerText = `Incorrect! This scenario is ${blitzData[blitzIndex].answer}.`;
                 document.getElementById('blitz-feedback').style.color = "red";
             }
             document.getElementById('blitz-streak').innerText = `Streak: ${blitzStreak} 🔥`;
             blitzIndex = (blitzIndex + 1) % blitzData.length;
-            document.getElementById('blitz-target-name').innerText = blitzData[blitzIndex].name;
+            document.getElementById('blitz-target-name').innerText = blitzData[blitzIndex].text;
         }
 
-        /* GAME 3: SYMBIOSIS DETECTIVE */
-        const symData = [
-            { text: '"An orchid grows on the tall branch of a tree to reach sunlight without harming the tree."', answer: 'Commensalism' },
-            { text: '"A honeybee gathers nectar from flowers and pollinates them in return."', answer: 'Mutualism' },
-            { text: '"A mosquito sucks blood from a human, leaving itchy red bites."', answer: 'Parasitism' },
-            { text: '"A Philippine Eagle hunts and catches a flying fox for dinner."', answer: 'Predation' },
-            { text: '"Weeds in a garden absorb soil minerals and shade out young vegetable sprouts."', answer: 'Competition' }
-        ];
-        let symIndex = 0;
-
-        function checkSymAnswer(type) {
-            const feedback = document.getElementById('sym-feedback');
-            if (symData[symIndex].answer === type) {
-                feedback.innerText = "Correct Detective Work! 🎉";
-                feedback.style.color = "green";
-            } else {
-                feedback.innerText = `Incorrect. Correct answer was ${symData[symIndex].answer}.`;
-                feedback.style.color = "red";
-            }
-            setTimeout(() => {
-                symIndex = (symIndex + 1) % symData.length;
-                document.getElementById('sym-scenario').innerText = symData[symIndex].text;
-                feedback.innerText = "";
-            }, 1500);
-        }
-
-        /* MOCK TEST DATA STRICTLY ALIGNED TO TOS */
+        /* 30-ITEM MOCK TEST DATA (10 items per competency) */
         const questionsData = [
-            { id: 1, comp: 1, level: "Remembering", badge: "badge-easy", q: "What is the primary source of energy that producers use to manufacture their own food?", options: ["Soil nutrients", "Sunlight", "Water vapour", "Organic waste"], answer: 1, exp: "Producers use sunlight as energy to drive photosynthesis." },
-            { id: 2, comp: 1, level: "Remembering", badge: "badge-easy", q: "Which organism functions as a decomposer in a farm ecosystem?", options: ["Vulture", "Grasshopper", "Mushroom (Fungus)", "Carabao"], answer: 2, exp: "Mushrooms chemically recycle dead tissue back into nutrients." },
-            { id: 3, comp: 1, level: "Understanding", badge: "badge-easy", q: "How does a scavenger differ from a predator in a food web?", options: ["Scavengers produce food using light.", "Scavengers eat dead animals they did not kill, while predators hunt living prey.", "Scavengers recycle soil nutrients, while predators make food.", "Scavengers live on hosts."], answer: 1, exp: "Scavengers consume existing dead remains; predators actively hunt live prey." },
-            { id: 4, comp: 1, level: "Understanding", badge: "badge-easy", q: "Why are herbivores classified as primary consumers in a food chain?", options: ["They decompose dead tissue.", "They directly consume autotrophs (producers) for energy.", "They capture light directly.", "They hunt secondary consumers."], answer: 1, exp: "Primary consumers eat plants/producers directly." },
-            { id: 5, comp: 1, level: "Applying", badge: "badge-avg", q: "In a cornfield food chain (Corn Plant → Caterpillar → Bird → Snake), what will immediately happen if a pesticide eliminates all caterpillars?", options: ["The corn plant population will increase rapidly.", "The bird population will double.", "The snake population will eat corn.", "Solar energy flow will stop."], answer: 0, exp: "Fewer herbivores mean less crop damage, allowing corn to grow unchecked." },
-            { id: 6, comp: 1, level: "Applying", badge: "badge-avg", q: "A farmer observes a crow feeding on a dead carabao in the field. How should this crow be classified based on its role?", options: ["Producer", "Decomposer", "Scavenger", "Primary Consumer"], answer: 2, exp: "Eating carcasses killed by other factors makes the crow a scavenger." },
-            { id: 7, comp: 2, level: "Understanding", badge: "badge-easy", q: "Honeybees collect nectar from flowers and pollinate them in return. What interaction is shown?", options: ["Parasitism", "Mutualism", "Commensalism", "Competition"], answer: 1, exp: "Mutualism (+/+) benefits both species." },
-            { id: 8, comp: 2, level: "Applying", badge: "badge-avg", q: "An orchid grows on a high branch of a mahogany tree to reach sunlight. The tree is not harmed nor helped. This is an example of:", options: ["Commensalism", "Parasitism", "Predation", "Mutualism"], answer: 0, exp: "Commensalism (+/0) benefits one organism without affecting the host." },
-            { id: 9, comp: 2, level: "Applying", badge: "badge-avg", q: "Weeds growing alongside rice plants absorb sunlight, water, and soil nutrients, reducing rice growth. What interaction exists?", options: ["Mutualism", "Competition", "Commensalism", "Predation"], answer: 1, exp: "Competition occurs when species struggle for shared limited resources." },
-            { id: 10, comp: 2, level: "Applying", badge: "badge-avg", q: "Ticks attach to a stray dog's skin to feed on blood, causing weakness and skin infections in the dog. What interaction is present?", options: ["Parasitism", "Commensalism", "Mutualism", "Predation"], answer: 0, exp: "Parasitism (+/-) harms the host while feeding the parasite." },
-            { id: 11, comp: 2, level: "Analyzing", badge: "badge-avg", q: "A wildlife report shows that when the Philippine Eagle population increases in a forest, the flying fox population decreases. How do these two species interact?", options: ["Eagles and flying foxes exist in mutualism.", "Eagles act as predators and flying foxes serve as prey.", "Flying foxes act as parasites.", "Eagles and flying foxes compete for soil."], answer: 1, exp: "Predators regulate prey numbers through hunting." },
-            { id: 12, comp: 2, level: "Analyzing", badge: "badge-avg", q: "Which statement correctly distinguishes Predation from Parasitism?", options: ["Predators kill prey quickly for food; parasites feed on hosts over time while usually keeping them alive.", "Predators benefit both species.", "Predators live inside host tissue.", "Predators recycle minerals."], answer: 0, exp: "Predation involves immediate killing, while parasitism sustains the host for prolonged feeding." },
-            { id: 13, comp: 2, level: "Evaluating", badge: "badge-diff", q: "A local village plans to remove all frogs from nearby ponds to stop croaking noise. How would you evaluate this plan?", options: ["Good plan, because frogs consume solar energy.", "Poor plan, because frogs control insect pest populations through predation.", "Good plan, because frogs are parasites.", "Poor plan, because frogs are producers."], answer: 1, exp: "Removing predatory frogs leads to pest insect outbreaks." },
-            { id: 14, comp: 3, level: "Remembering", badge: "badge-easy", q: "Which group contains ONLY abiotic factors in an ecosystem?", options: ["Sunlight, Water, Temperature, Soil Type", "Trees, Insects, Water, Bacteria", "Birds, Temperature, Soil, Fungi", "Earthworms, Light, Plants, Frogs"], answer: 0, exp: "Light, water, temp, and soil type are all non-living physical elements." },
-            { id: 15, comp: 3, level: "Applying", badge: "badge-avg", q: "In a coastal mangrove swamp, mangrove trees, mudskipper fish, and crabs exist alongside salty water, muddy soil, and warm sunlight. Which are the biotic factors?", options: ["Salty water, muddy soil, warm sunlight", "Mangrove trees, mudskipper fish, crabs", "Warm sunlight and mudskipper fish", "Salty water and mangrove trees"], answer: 1, exp: "Biotic factors comprise all living organisms." },
-            { id: 16, comp: 3, level: "Applying", badge: "badge-avg", q: "During a prolonged drought with no rainfall (water scarcity) and high temperature, garden plants begin to wilt. This demonstrates that:", options: ["Abiotic factors directly influence the survival of biotic factors.", "Biotic factors can survive without any abiotic factors.", "Temperature is a biotic component.", "Decomposers eliminate abiotic factors."], answer: 0, exp: "Living organisms depend on non-living physical conditions." },
-            { id: 17, comp: 3, level: "Analyzing", badge: "badge-avg", q: "An experiment tested plant growth in Loam Soil vs Clay Soil, keeping light and water constant. Plant A in Loam grew 15cm; Plant B in Clay grew 5cm. What can be concluded?", options: ["Soil type (abiotic factor) significantly impacts plant growth (biotic factor).", "Light intensity was the only factor.", "Clay soil is a living organism.", "Plant A turned into a decomposer."], answer: 0, exp: "Abiotic soil composition affects root expansion and nutrient intake." },
-            { id: 18, comp: 3, level: "Analyzing", badge: "badge-avg", q: "Submerged aquatic weeds in an aquarium produce oxygen bubbles faster under bright lamp light than in the dark. Which statement analyzes this correctly?", options: ["Light (abiotic factor) speeds up photosynthesis in aquatic plants (biotic factor).", "Water temperature is a biotic factor.", "Oxygen gas is a primary consumer.", "Darkness acts as a scavenger."], answer: 0, exp: "Sunlight/light intensity powers photo-reactions in green plants." },
-            { id: 19, comp: 3, level: "Analyzing", badge: "badge-avg", q: "Cactus plants have thick fleshy stems to store water in dry deserts, while rainforest ferns have broad leaves to capture light in humid forests. What does this reveal?", options: ["Biotic factors adapt structural features to survive specific abiotic conditions.", "Deserts contain no abiotic factors.", "Rainforest ferns do not require water.", "Abiotic factors are created by carnivores."], answer: 0, exp: "Organisms evolve adaptations suited to surrounding non-living factors." },
-            { id: 20, comp: 3, level: "Creating", badge: "badge-diff", q: "You are designing a self-sustaining classroom glass aquarium. Which complete set of biotic and abiotic components will best ensure a balanced ecosystem?", options: ["Biotic: Elodea plant, Guppy fish, Snail | Abiotic: Clean water, Gravel soil, Sunlight, Suitable temperature", "Biotic: Clean water, Sunlight | Abiotic: Guppy fish, Snail", "Biotic: Plastic plants, Synthetic fish | Abiotic: Air pump, Water", "Biotic: Decomposers only | Abiotic: Darkness and dry soil"], answer: 0, exp: "A self-sustaining aquarium needs producers, consumers, water, substrate, and light energy." }
-        ];
+            // COMPETENCY 1: ECOSYSTEM INTERACTIONS (Items 1 - 10)
+            { id: 1, comp: 1, badge: "badge-easy", q: "How do green plants benefit from their interaction with sunlight?", options: ["Sunlight provides water for root growth.", "Sunlight supplies light energy for photosynthesis.", "Sunlight removes soil minerals.", "Sunlight acts as a consumer."], answer: 1, exp: "Green plants use sunlight to power photosynthesis and make sugar." },
+            { id: 2, comp: 1, badge: "badge-easy", q: "A mosquito drinks blood from a human, causing an itchy red bite and risk of illness. What describes this interaction?", options: ["Helpful interaction (Mutualism)", "Harmful interaction (Parasitism)", "Neutral interaction (Commensalism)", "Non-living interaction"], answer: 1, exp: "Parasitism (+/-) harms the host while feeding the parasite." },
+            { id: 3, comp: 1, badge: "badge-easy", q: "During a prolonged drought, a farm receives no rain for months. How does this affect garden crops?", options: ["Crops produce double yield.", "Lack of water causes plants to wilt and die.", "Crops convert soil directly into water.", "Sunlight replaces water in stems."], answer: 1, exp: "Water scarcity prevents vital transport and photosynthesis, wilting crops." },
+            { id: 4, comp: 1, badge: "badge-avg", q: "Honeybees collect sweet nectar from garden flowers and transfer pollen in the process. How does this interaction affect both organisms?", options: ["It harms both species.", "It benefits both the bee and the flower.", "It benefits only the bee while harming flowers.", "It has no effect on either."], answer: 1, exp: "Mutualism (+/+) provides food for bees and pollination for flowers." },
+            { id: 5, comp: 1, badge: "badge-avg", q: "An orchid grows on a high branch of a hardwood tree to reach sunlight without extracting nutrients from the tree. What type of interaction is this?", options: ["Harmful parasitism", "Beneficial commensalism", "Competitive predation", "Destructive flooding"], answer: 1, exp: "Commensalism (+/0) benefits the orchid while leaving the tree unharmed." },
+            { id: 6, comp: 1, badge: "badge-avg", q: "When weeds grow densely around vegetable crops, crop yields decrease significantly. Why does this harm occur?", options: ["Weeds supply excessive solar energy.", "Weeds compete with crops for limited soil nutrients, water, and sunlight.", "Weeds act as primary decomposers.", "Weeds absorb atmospheric oxygen."], answer: 1, exp: "Interspecific competition starves crops of essential growth resources." },
+            { id: 7, comp: 1, badge: "badge-avg", q: "Nitrogen-fixing bacteria live in root nodules of bean plants, supplying nitrogen to the plant while receiving shelter. This is an example of a:", options: ["Harmful parasitic relationship", "Helpful mutualistic relationship", "Destructive predator-prey relationship", "Competitive abiotic relationship"], answer: 1, exp: "Both bean plant and bacteria benefit from nutrient-shelter exchange." },
+            { id: 8, comp: 1, badge: "badge-avg", q: "How does clean freshwater in a pond support living tilapia fish?", options: ["Water provides hydration and dissolved oxygen habitat.", "Water acts as a primary predator.", "Water consumes green algae.", "Water replaces solar energy."], answer: 0, exp: "Freshwater is an abiotic component providing oxygen and fluid habitat." },
+            { id: 9, comp: 1, badge: "badge-avg", q: "Heavy typhoon flooding submerges farm fields for weeks. What harm does this cause to plant root systems?", options: ["Roots gain excess nitrogen gas.", "Waterlogged soil starves roots of oxygen, causing root decay.", "Sunlight increases inside the mud.", "Flooding turns plants into carnivores."], answer: 1, exp: "Excessive standing water deprives soil spaces of oxygen gas." },
+            { id: 10, comp: 1, badge: "badge-avg", q: "Field frogs prey on locust insects that destroy corn crops. How does this interaction impact the ecosystem?", options: ["It harms farmers by multiplying locusts.", "It brings good by controlling agricultural pest populations.", "It causes corn crops to wilt.", "It eliminates all abiotic soil minerals."], answer: 1, exp: "Predators keep herbivore pest populations in ecological balance." },
 
-        let currentQ = 0;
-        let userAnswers = new Array(questionsData.length).fill(null);
-        let timerSeconds = 0;
-        let timerInterval = null;
-
-        function initQuiz() {
-            const grid = document.getElementById('nav-grid');
-            const wrapper = document.getElementById('questions-wrapper');
-
-            grid.innerHTML = '';
-            wrapper.innerHTML = '';
-
-            questionsData.forEach((q, idx) => {
-                const navBtn = document.createElement('div');
-                navBtn.className = `nav-num ${idx === 0 ? 'active' : ''}`;
-                navBtn.innerText = idx + 1;
-                navBtn.onclick = () => jumpToQuestion(idx);
-                navBtn.id = `nav-item-${idx}`;
-                grid.appendChild(navBtn);
-
-                const card = document.createElement('div');
-                card.className = `question-card ${idx === 0 ? 'active' : ''}`;
-                card.id = `q-card-${idx}`;
-
-                card.innerHTML = `
-                    <div class="question-meta">
-                        <span class="q-badge ${q.badge}">${q.level}</span>
-                        <span class="q-badge" style="background:#e0f7fa; color:#0288d1;">Comp ${q.comp}</span>
-                    </div>
-                    <div class="question-text">${q.id}. ${q.q}</div>
-                    <div class="options-list">
-                        ${q.options.map((opt, oIdx) => `
-                            <button class="option-btn" onclick="selectOption(${idx}, ${oIdx})">
-                                <span class="option-letter">${String.fromCharCode(65 + oIdx)}</span>
-                                <span>${opt}</span>
-                            </button>
-                        `).join('')}
-                    </div>
-                `;
-
-                wrapper.appendChild(card);
-            });
-
-            startTimer();
-        }
-
-        function startTimer() {
-            clearInterval(timerInterval);
-            timerSeconds = 0;
-            timerInterval = setInterval(() => {
-                timerSeconds++;
-                const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
-                const secs = (timerSeconds % 60).toString().padStart(2, '0');
-                document.getElementById('quiz-timer').innerText = `Time: ${mins}:${secs}`;
-            }, 1000);
-        }
-
-        function jumpToQuestion(idx) {
-            document.querySelectorAll('.question-card').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.nav-num').forEach(n => n.classList.remove('active'));
-
-            currentQ = idx;
-            document.getElementById(`q-card-${idx}`).classList.add('active');
-            document.getElementById(`nav-item-${idx}`).classList.add('active');
-
-            updateControls();
-        }
-
-        function selectOption(qIdx, optIdx) {
-            userAnswers[qIdx] = optIdx;
-
-            const card = document.getElementById(`q-card-${qIdx}`);
-            const buttons = card.querySelectorAll('.option-btn');
-            buttons.forEach((btn, bIdx) => {
-                if (bIdx === optIdx) {
-                    btn.classList.add('selected');
-                } else {
-                    btn.classList.remove('selected');
-                }
-            });
-
-            document.getElementById(`nav-item-${qIdx}`).classList.add('answered');
-            updateProgress();
-        }
-
-        function updateProgress() {
-            const answeredCount = userAnswers.filter(a => a !== null).length;
-            const pct = (answeredCount / questionsData.length) * 100;
-            document.getElementById('quiz-progress').style.width = `${pct}%`;
-        }
-
-        function updateControls() {
-            document.getElementById('btn-prev').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
-            if (currentQ === questionsData.length - 1) {
-                document.getElementById('btn-next').style.display = 'none';
-                document.getElementById('btn-submit').style.display = 'inline-flex';
-            } else {
-                document.getElementById('btn-next').style.display = 'inline-flex';
-                document.getElementById('btn-submit').style.display = 'none';
-            }
-        }
-
-        function nextQuestion() {
-            if (currentQ < questionsData.length - 1) jumpToQuestion(currentQ + 1);
-        }
-
-        function prevQuestion() {
-            if (currentQ > 0) jumpToQuestion(currentQ - 1);
-        }
-
-        function submitQuiz() {
-            clearInterval(timerInterval);
-
-            let totalScore = 0;
-            let c1 = 0, c2 = 0, c3 = 0;
-
-            questionsData.forEach((q, idx) => {
-                if (userAnswers[idx] === q.answer) {
-                    totalScore++;
-                    if (q.comp === 1) c1++;
-                    if (q.comp === 2) c2++;
-                    if (q.comp === 3) c3++;
-                }
-            });
-
-            testFinishedScore = totalScore;
-            testFinishedPct = Math.round((totalScore / 20) * 100);
-
-            document.querySelector('.quiz-container').style.display = 'none';
-            const resBox = document.getElementById('result-box');
-            resBox.style.display = 'block';
-
-            document.getElementById('res-score').innerText = totalScore;
-            document.getElementById('res-percentage').innerText = `${testFinishedPct}% Mastery Rating`;
-
-            document.getElementById('comp1-score').innerText = `${c1} / 6`;
-            document.getElementById('comp2-score').innerText = `${c2} / 7`;
-            document.getElementById('comp3-score').innerText = `${c3} / 7`;
-
-            // Auto-update certificate details
-            document.getElementById('cert-score-val').innerText = `${totalScore} / 20`;
-            document.getElementById('cert-mastery-val').innerText = `${testFinishedPct}%`;
-        }
-
-        /* CERTIFICATE GENERATION & PRINT FUNCTIONS */
-        function updateCertName() {
-            const inputVal = document.getElementById('student-name-input').value.trim();
-            document.getElementById('cert-student-name').innerText = inputVal || "Grade 6 Scholar";
-        }
-
-        function printCertificate() {
-            window.print();
-        }
-
-        window.onload = () => {
-            initQuiz();
-            initSorterGame();
-            updateSim();
-
-            const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-            document.getElementById('cert-issue-date').innerText = today;
-        };
-    </script>
-</body>
-</html>
+            // COMPETENCY 2: SIMPLE MACHINES IDENTIFICATION (Items 11 - 20)
+            { id: 11, comp: 2, badge: "badge-easy", q: "Which simple machine is installed at school building entrances to help students in wheelchairs ascend easily?", options: ["Screw", "Inclined Plane (Ramp)", "Wedge", "Pulley"], answer: 1, exp: "Inclined planes connect lower and higher ground via a slanted surface." },
+            { id: 12, comp: 2, badge: "badge-easy", q: "When you use a pair of classroom scissors to cut paper, what simple machine edge performs the cutting action?", options: ["Wedge", "Screw", "Pulley", "Wheel and Axle"], answer: 0, exp: "Scissors blades act as sharp wedges that split paper fibers." },
+            { id: 13, comp: 2, badge: "badge-easy", q: "Which simple machine mechanism is located at the top of a school flagpole to raise the flag during morning assembly?", options: ["Wheelbarrow", "Pulley", "Inclined Plane", "Chisel"], answer: 1, exp: "A grooved pulley wheel and rope change the direction of force to lift the flag." },
+            { id: 14, comp: 2, badge: "badge-avg", q: "Turning a round classroom doorknob to open a door demonstrates which simple machine?", options: ["Wheel and Axle", "Wedge", "Inclined Plane", "Fixed Lever"], answer: 0, exp: "The large knob (wheel) turns a smaller internal shaft (axle) to retract the latch." },
+            { id: 15, comp: 2, badge: "badge-avg", q: "A chef at home uses a sharp knife to chop vegetables. The knife blade is an example of a:", options: ["Wedge", "Pulley", "Screw", "Class 3 Lever"], answer: 0, exp: "Knives consist of two back-to-back inclined planes forming a wedge." },
+            { id: 16, comp: 2, badge: "badge-avg", q: "Twisting a threaded jar lid tightly onto a glass jam jar at home utilizes which simple machine?", options:
