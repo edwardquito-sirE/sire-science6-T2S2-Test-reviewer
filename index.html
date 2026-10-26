@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 6 Science Master Reviewer - EcoSquad Summative 1 Explorer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --accent-lime: #8bc34a;
+            --bg-cream: #f4f8f3;
+            --card-bg: #ffffff;
+            --text-dark: #1b5e20;
+            --text-body: #2c3e50;
+            --sky-blue: #e0f7fa;
+            --ocean-blue: #0288d1;
+            --sun-yellow: #fbc02d;
+            --coral-orange: #ff7043;
+            --purple-accent: #8e24aa;
+            --shadow-soft: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-hover: 0 12px 32px rgba(0,0,0,0.15);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background: linear-gradient(135deg, #1b5e20, #388e3c, #66bb6a);
+            color: white;
+            padding: 22px 20px 14px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content h1 {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.2rem;
+            letter-spacing: 0.8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .header-content p {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-family: 'Fredoka', cursive;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: #ffffff;
+            color: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- CONTAINER & SECTIONS --- */
+        .container {
+            max-width: 1120px;
+            margin: 28px auto;
+            padding: 0 20px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- CARDS & MODULES --- */
+        .section-header {
+            background: white;
+            padding: 20px 25px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 25px;
+            border-left: 8px solid var(--light-green);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .section-header h2 {
+            font-family: 'Fredoka', cursive;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-competency {
+            background: #e8f5e9;
+            color: var(--primary-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid #c8e6c9;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 22px;
+            margin-bottom: 25px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-lime);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .icon-producer { background: #e8f5e9; color: #2e7d32; }
+        .icon-consumer { background: #fff3e0; color: #e65100; }
+        .icon-scavenger { background: #efebe9; color: #4e342e; }
+        .icon-decomposer { background: #f3e5f5; color: #7b1fa2; }
+        .icon-biotic { background: #e0f2f1; color: #00695c; }
+        .icon-abiotic { background: #e1f5fe; color: #0277bd; }
+
+        .info-card h3 {
+            font-family: 'Fredoka', cursive;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .info-card p {
+            font-size: 0.98rem;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--light-green);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #444;
+            margin-top: 10px;
+        }
+
+        /* --- ECOSYSTEM SIMULATOR INTERACTIVE --- */
+        .simulator-box {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 30px;
+            border: 2px dashed var(--light-green);
+        }
+
+        .sim-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .control-group {
+            background: #f1f8e9;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+        }
+
+        .control-group label {
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .control-group input[type="range"], .control-group select {
+            width: 100%;
+            accent-color: var(--primary-green);
+            padding: 4px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .sim-stage {
+            height: 240px;
+            background: linear-gradient(180deg, #81d4fa 0%, #e8f5e9 65%, #8d6e63 100%);
+            border-radius: var(--radius-md);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .sim-organism {
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .sim-organism svg {
+            width: 80px;
+            height: 80px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 6px;
+            color: white;
+        }
+
+        .status-healthy { background: #4caf50; }
+        .status-stressed { background: #ff9800; }
+        .status-dying { background: #f44336; }
+
+        /* --- PRACTICE GAMES ZONE --- */
+        .game-nav-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+
+        .game-tab-btn {
+            background: white;
+            border: 2px solid var(--light-green);
+            color: var(--primary-green);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: 'Fredoka', cursive;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .game-tab-btn.active, .game-tab-btn:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .game-container-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 25px;
+        }
+
+        .sorter-arena {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .drop-bucket {
+            border: 3px dashed #bbb;
+            border-radius: var(--radius-md);
+            padding: 18px;
+            min-height: 180px;
+            background: #fafafa;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .drop-bucket:hover {
+            background: #e8f5e9;
+            border-color: var(--primary-green);
+        }
+
+        .drop-bucket h3 {
+            font-family: 'Fredoka', cursive;
+            margin-bottom: 12px;
+        }
+
+        .sort-items-pool {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            min-height: 60px;
+            padding: 12px;
+            background: #f1f8e9;
+            border-radius: var(--radius-md);
+        }
+
+        .draggable-item {
+            background: white;
+            border: 2px solid var(--light-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: var(--primary-green);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            user-select: none;
+            transition: transform 0.2s;
+        }
+
+        .draggable-item:hover {
+            transform: scale(1.05);
+        }
+
+        .blitz-card {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: var(--radius-md);
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .blitz-organism-name {
+            font-family: 'Fredoka', cursive;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin: 10px 0;
+        }
+
+        .blitz-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- FLASHCARDS --- */
+        .game-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .flashcard {
+            background: white;
+            height: 190px;
+            border-radius: var(--radius-md);
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: var(--shadow-soft);
+            border-radius: var(--radius-md);
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .flashcard-front {
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            color: var(--primary-green);
+        }
+
+        .flashcard-back {
+            background: var(--primary-green);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* --- QUIZ SECTION --- */
+        .quiz-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 18px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .quiz-progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--light-green), var(--accent-lime));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .nav-num {
+            background: #f1f8e9;
+            border: 1px solid #c8e6c9;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-num.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        .nav-num.answered {
+            border-left: 4px solid #4caf50;
+        }
+
+        .question-card {
+            display: none;
+            background: #fafafa;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-md);
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .question-card.active {
+            display: block;
+        }
+
+        .question-meta {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .q-badge {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-easy { background: #e8f5e9; color: #2e7d32; }
+        .badge-avg { background: #fff3e0; color: #e65100; }
+        .badge-diff { background: #ffebee; color: #c62828; }
+
+        .question-text {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 18px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .option-btn:hover {
+            border-color: var(--light-green);
+            background: #f1f8e9;
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary-green);
+            background: #e8f5e9;
+            color: var(--primary-green);
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .option-btn.selected .option-letter {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'Fredoka', cursive;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1b5e20;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.3);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d6d6d6;
+        }
+
+        /* --- RESULT SUMMARY --- */
+        .result-box {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 20px rgba(46,125,50,0.3);
+        }
+
+        .score-num {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.8rem;
+            line-height: 1;
+        }
+
+        .score-denom {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .breakdown-table th, .breakdown-table td {
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .breakdown-table th {
+            background: #f1f8e9;
+            color: var(--primary-green);
+        }
+
+        /* --- PRINTABLE CERTIFICATE TAB STYLING --- */
+        .cert-controls-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .cert-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .cert-input-group input {
+            padding: 10px 16px;
+            border-radius: 20px;
+            border: 2px solid var(--light-green);
+            font-size: 1rem;
+            width: 100%;
+            outline: none;
+        }
+
+        .printable-cert-frame {
+            background: #ffffff;
+            border: 12px double var(--primary-green);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            background-image: radial-gradient(#e8f5e9 10%, transparent 11%);
+            background-size: 20px 20px;
+        }
+
+        .cert-header-icon {
+            font-size: 3.5rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .cert-title {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.4rem;
+            color: var(--primary-green);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cert-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .cert-name {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            border-bottom: 3px dashed var(--light-green);
+            display: inline-block;
+            padding: 0 30px 5px;
+            margin: 15px 0;
+        }
+
+        .cert-body-text {
+            font-size: 1.05rem;
+            max-width: 750px;
+            margin: 0 auto 25px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .cert-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .cert-footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .cert-seal {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--sun-yellow);
+            border: 4px dashed #f57f17;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: #5d4037;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .cert-signature-box {
+            text-align: center;
+            width: 200px;
+        }
+
+        .cert-signature-line {
+            border-bottom: 2px solid #333;
+            margin-bottom: 6px;
+        }
+
+        /* --- PRINT MEDIA RULES --- */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-cert-area, #printable-cert-area * {
+                visibility: visible;
+            }
+            #printable-cert-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 30px;
+                box-shadow: none;
+                border: 12px double var(--primary-green);
+                background-color: white !important;
+            }
+            header, nav, .cert-controls-card, .quiz-controls, .btn {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 { font-size: 1.6rem; }
+            .nav-grid { grid-template-columns: repeat(5, 1fr); }
+            .quiz-controls { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .cert-footer-row { flex-direction: column; align-items: center; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER SECTION -->
+    <header>
+        <div class="header-content">
+            <h1><i class="fa-solid fa-leaf"></i> EcoSquad Science 6 Master Reviewer</h1>
+            <p>Summative 1 Test Hub | Term 2 • School Year 2026-2027</p>
+            <nav>
+                <button class="nav-btn active" onclick="switchTab('roles')"><i class="fa-solid fa-sitemap"></i> Food Web Roles</button>
+                <button class="nav-btn" onclick="switchTab('interactions')"><i class="fa-solid fa-handshake"></i> Species Interactions</button>
+                <button class="nav-btn" onclick="switchTab('factors')"><i class="fa-solid fa-sun"></i> Biotic & Abiotic</button>
+                <button class="nav-btn" onclick="switchTab('simulator')"><i class="fa-solid fa-flask"></i> Eco-Simulator</button>
+                <button class="nav-btn" onclick="switchTab('practice-games')"><i class="fa-solid fa-gamepad"></i> Practice Games</button>
+                <button class="nav-btn" onclick="switchTab('flashcards')"><i class="fa-solid fa-layer-group"></i> Concept Deck</button>
+                <button class="nav-btn" style="background: var(--sun-yellow); color: #333;" onclick="switchTab('quiz')"><i class="fa-solid fa-pen-to-square"></i> 20-Item Mock Test</button>
+                <button class="nav-btn" style="background: var(--coral-orange); color: white;" onclick="switchTab('certificate-tab')"><i class="fa-solid fa-award"></i> Certificate</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- TAB 1: FOOD WEB ROLES -->
+        <div id="roles" class="tab-content active">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-sitemap"></i> Competency 1: Roles of Organisms in Food Webs</h2>
+                <span class="badge-competency">TOS Weight: 33% | Items 1–6</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <div class="card-icon icon-producer"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>1. Producers (Autotrophs)</h3>
+                    <p>Organisms that create their own food using sunlight, water, and carbon dioxide through <strong>Photosynthesis</strong>. They serve as the base of all ecological food webs.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Rice Plants, Corn, Mango Trees, Green Algae, Grass.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon icon-consumer"><i class="fa-solid fa-cow"></i></div>
+                    <h3>2. Consumers (Heterotrophs)</h3>
+                    <p>Organisms that cannot make their own food and must feed on other living organisms for energy.</p>
+                    <ul style="margin-left: 20px; font-size: 0.95rem; color: #555;">
+                        <li><strong>Herbivores (Primary):</strong> Eat producers directly (e.g., Caterpillars, Grasshoppers, Carabaos).</li>
+                        <li><strong>Carnivores (Secondary/Tertiary):</strong> Eat other animals (e.g., Frogs, Snakes, Philippine Eagles).</li>
+                        <li><strong>Omnivores:</strong> Eat both plants and animals (e.g., Chickens, Humans, Monkeys).</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon icon-scavenger"><i class="fa-solid fa-crow"></i></div>
+                    <h3>3. Scavengers</h3>
+                    <p>Animals that feed on dead bodies and decaying animal remains that <strong>they did not kill themselves</strong>. They keep natural habitats clean.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Vultures, Crows feeding on farm carcasses, Hyenas, Crows.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon icon-decomposer"><i class="fa-solid fa-bacteria"></i></div>
+                    <h3>4. Decomposers</h3>
+                    <p>Microorganisms and fungi that chemically break down dead organic matter, returning vital minerals and nutrients back into the soil for producers.</p>
+                    <div class="example-box">
+                        <strong>Examples:</strong> Mushrooms (Fungi), Soil Bacteria, Earthworms.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: SPECIES INTERACTIONS -->
+        <div id="interactions" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-handshake"></i> Competency 2: Ecological Relationships in Nature</h2>
+                <span class="badge-competency">TOS Weight: 33% | Items 7–13</span>
+            </div>
+
+            <div class="grid-3">
+                <div class="info-card">
+                    <div class="card-icon" style="background:#e8f5e9; color:#2e7d32;"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Mutualism (+ / +)</h3>
+                    <p>A symbiotic interaction where <strong>both species benefit</strong> from each other.</p>
+                    <div class="example-box">🐝 <strong>Bee & Flower:</strong> Bee gets sweet nectar; flower gets pollinated!</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon" style="background:#e0f7fa; color:#0288d1;"><i class="fa-solid fa-smile"></i></div>
+                    <h3>Commensalism (+ / 0)</h3>
+                    <p>One species <strong>benefits</strong>, while the host is <strong>neither helped nor harmed</strong>.</p>
+                    <div class="example-box">🌿 <strong>Orchid on Tree:</strong> Orchid gets high sunlight; tree suffers zero harm!</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon" style="background:#ffebee; color:#c62828;"><i class="fa-solid fa-bug"></i></div>
+                    <h3>Parasitism (+ / -)</h3>
+                    <p>One organism (parasite) <strong>benefits</strong> by living in/on a host and causing harm.</p>
+                    <div class="example-box">🦟 <strong>Mosquito & Human:</strong> Mosquito gains blood; human suffers itch and risk of illness.</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon" style="background:#fff3e0; color:#e65100;"><i class="fa-solid fa-skull-crossbones"></i></div>
+                    <h3>Predation</h3>
+                    <p>One organism (predator) actively hunts, kills, and eats another organism (prey).</p>
+                    <div class="example-box">🦅 <strong>Eagle & Flying Fox:</strong> Philippine Eagle hunts flying foxes for sustenance.</div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon" style="background:#f3e5f5; color:#7b1fa2;"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Competition</h3>
+                    <p>Organisms compete with one another for limited resources like water, light, nutrients, or space.</p>
+                    <div class="example-box">🌾 <strong>Weeds & Rice:</strong> Weeds compete with rice crops for soil minerals and sunlight.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: BIOTIC & ABIOTIC FACTORS -->
+        <div id="factors" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-sun"></i> Competency 3: Biotic & Abiotic Ecosystem Components</h2>
+                <span class="badge-competency">TOS Weight: 33% | Items 14–20</span>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <div class="card-icon icon-biotic"><i class="fa-solid fa-frog"></i></div>
+                    <h3>Biotic Factors</h3>
+                    <p>All the <strong>living or once-living organisms</strong> in an environment.</p>
+                    <ul style="margin-left: 20px; color: #555;">
+                        <li>🌱 Green Plants, Mangroves, Rice Crops, Ferns</li>
+                        <li>🐸 Frogs, Caterpillars, Snakes, Carabao, Mudskippers</li>
+                        <li>🍄 Mushrooms, Soil Bacteria, Earthworms</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon icon-abiotic"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <h3>Abiotic Factors</h3>
+                    <p>All the <strong>non-living physical and chemical elements</strong> that influence organism survival.</p>
+                    <ul style="margin-left: 20px; color: #555;">
+                        <li>☀️ <strong>Light:</strong> Drives photosynthesis energy production.</li>
+                        <li>💧 <strong>Water:</strong> Vital for cellular processes & transport.</li>
+                        <li>🌡️ <strong>Temperature:</strong> Governs biological metabolic rates.</li>
+                        <li>🪴 <strong>Soil Type:</strong> Loam, Clay, or Sand supplying essential minerals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ECOSYSTEM SIMULATOR -->
+        <div id="simulator" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-flask"></i> Interactive Ecosystem Simulator Lab</h2>
+                <span class="badge-competency">Abiotic Factor Experiment Sandbox</span>
+            </div>
+
+            <div class="simulator-box">
+                <p>Adjust the abiotic factor controls below to observe real-time health responses in our biotic organisms!</p>
+
+                <div class="sim-controls">
+                    <div class="control-group">
+                        <label><i class="fa-solid fa-sun"></i> Sunlight: <span id="val-sun">50</span>%</label>
+                        <input type="range" id="sim-sun" min="0" max="100" value="50" oninput="updateSim()">
+                    </div>
+                    <div class="control-group">
+                        <label><i class="fa-solid fa-droplet"></i> Water Level: <span id="val-water">50</span>%</label>
+                        <input type="range" id="sim-water" min="0" max="100" value="50" oninput="updateSim()">
+                    </div>
+                    <div class="control-group">
+                        <label><i class="fa-solid fa-temperature-high"></i> Temperature: <span id="val-temp">28</span>°C</label>
+                        <input type="range" id="sim-temp" min="10" max="45" value="28" oninput="updateSim()">
+                    </div>
+                    <div class="control-group">
+                        <label><i class="fa-solid fa-mountain"></i> Soil Type:</label>
+                        <select id="sim-soil" onchange="updateSim()">
+                            <option value="loam">Rich Loam Soil</option>
+                            <option value="clay">Dense Clay Soil</option>
+                            <option value="sand">Dry Sandy Soil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sim-stage" id="sim-stage">
+                    <div class="sim-organism" id="org-plant">
+                        <svg viewBox="0 0 100 100">
+                            <path d="M50 90 L50 40 M50 60 C30 50, 20 30, 50 30 C80 30, 70 50, 50 60" stroke="#2e7d32" stroke-width="6" fill="#4caf50"/>
+                        </svg>
+                        <div style="font-weight:700;">Corn Crop</div>
+                        <span class="status-badge status-healthy" id="status-plant">Thriving</span>
+                    </div>
+
+                    <div class="sim-organism" id="org-frog">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="30" fill="#66bb6a"/>
+                            <circle cx="40" cy="40" r="5" fill="#fff"/><circle cx="40" cy="40" r="2" fill="#000"/>
+                            <circle cx="60" cy="40" r="5" fill="#fff"/><circle cx="60" cy="40" r="2" fill="#000"/>
+                        </svg>
+                        <div style="font-weight:700;">Field Frog</div>
+                        <span class="status-badge status-healthy" id="status-frog">Active</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: PRACTICE GAMES -->
+        <div id="practice-games" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-gamepad"></i> Interactive Practice Arena</h2>
+                <span class="badge-competency">Mastery Through Play</span>
+            </div>
+
+            <div class="game-nav-bar">
+                <button class="game-tab-btn active" onclick="switchGame('game-sorter')"><i class="fa-solid fa-boxes-stacked"></i> Game 1: Biotic vs Abiotic Sorter</button>
+                <button class="game-tab-btn" onclick="switchGame('game-blitz')"><i class="fa-solid fa-bolt"></i> Game 2: Food Web Role Blitz</button>
+                <button class="game-tab-btn" onclick="switchGame('game-symbiosis')"><i class="fa-solid fa-puzzle-piece"></i> Game 3: Symbiosis Detective</button>
+            </div>
+
+            <!-- GAME 1: SORTER -->
+            <div id="game-sorter" class="game-container-card">
+                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Biotic & Abiotic Factor Sorting Challenge</h3>
+                <p style="font-size:0.95rem; color:#666;">Click an item from the pool, then click the correct category bucket to place it!</p>
+
+                <div class="sort-items-pool" id="sorter-pool"></div>
+
+                <div class="sorter-arena">
+                    <div class="drop-bucket" onclick="placeSelectedItem('biotic')">
+                        <h3 style="color:#00695c;"><i class="fa-solid fa-frog"></i> BIOTIC FACTORS</h3>
+                        <p style="font-size:0.85rem; color:#777; margin-bottom:10px;">Living or once-living organisms</p>
+                        <div id="biotic-bucket" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+                    </div>
+                    <div class="drop-bucket" onclick="placeSelectedItem('abiotic')">
+                        <h3 style="color:#0277bd;"><i class="fa-solid fa-sun"></i> ABIOTIC FACTORS</h3>
+                        <p style="font-size:0.85rem; color:#777; margin-bottom:10px;">Non-living physical elements</p>
+                        <div id="abiotic-bucket" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
+                    </div>
+                </div>
+
+                <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center;">
+                    <span id="sorter-score" style="font-weight:700; font-size:1.1rem; color:var(--primary-green);">Score: 0 / 8</span>
+                    <button class="btn btn-primary" onclick="initSorterGame()"><i class="fa-solid fa-rotate-right"></i> Reset Sorter Game</button>
+                </div>
+            </div>
+
+            <!-- GAME 2: FOOD WEB BLITZ -->
+            <div id="game-blitz" class="game-container-card" style="display:none;">
+                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Food Web Role Speed Blitz</h3>
+                <p style="font-size:0.95rem; color:#666; margin-bottom:15px;">Identify the ecological role of the highlighted organism as fast as you can!</p>
+
+                <div class="blitz-card">
+                    <span style="font-size:0.9rem; font-weight:700; color:#888;">Organism Target:</span>
+                    <div class="blitz-organism-name" id="blitz-target-name">Mango Tree</div>
+                    <div style="margin-top:15px;" class="blitz-buttons">
+                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Producer')">Producer</button>
+                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Consumer')">Consumer</button>
+                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Scavenger')">Scavenger</button>
+                        <button class="btn btn-secondary" onclick="checkBlitzAnswer('Decomposer')">Decomposer</button>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span id="blitz-streak" style="font-weight:700; font-size:1.1rem; color:var(--coral-orange);">Streak: 0 🔥</span>
+                    <span id="blitz-feedback" style="font-weight:700;"></span>
+                </div>
+            </div>
+
+            <!-- GAME 3: SYMBIOSIS DETECTIVE -->
+            <div id="game-symbiosis" class="game-container-card" style="display:none;">
+                <h3 style="font-family:'Fredoka',cursive; color:var(--primary-green); margin-bottom:8px;">Symbiosis Relationship Detective</h3>
+                <p style="font-size:0.95rem; color:#666; margin-bottom:15px;">Read the ecological scenario and select the correct relationship type!</p>
+
+                <div class="blitz-card" style="background:#f1f8e9; border-color:#c8e6c9;">
+                    <div id="sym-scenario" style="font-size:1.15rem; font-weight:700; color:#2c3e50;">"An orchid grows on the tall branch of a tree to access light. The tree receives zero benefit and zero harm."</div>
+                </div>
+
+                <div class="blitz-buttons">
+                    <button class="btn btn-primary" onclick="checkSymAnswer('Mutualism')">Mutualism (+/+)</button>
+                    <button class="btn btn-primary" onclick="checkSymAnswer('Commensalism')">Commensalism (+/0)</button>
+                    <button class="btn btn-primary" onclick="checkSymAnswer('Parasitism')">Parasitism (+/-)</button>
+                    <button class="btn btn-primary" onclick="checkSymAnswer('Predation')">Predation</button>
+                    <button class="btn btn-primary" onclick="checkSymAnswer('Competition')">Competition</button>
+                </div>
+
+                <div style="margin-top:20px; text-align:center;">
+                    <p id="sym-feedback" style="font-weight:700; font-size:1.05rem;"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: FLASHCARD DECK -->
+        <div id="flashcards" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-layer-group"></i> Master Flashcard Deck</h2>
+                <span class="badge-competency">Tap Cards to Reveal Definitions</span>
+            </div>
+
+            <div class="game-card-container">
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-seedling" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Producer</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>An autotroph that manufactures food using sunlight via photosynthesis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-bacteria" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Decomposer</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>Organism that chemically recycles organic nutrients back into the soil.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-crow" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Scavenger</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>Feeds on dead organisms that it did not kill itself (e.g. Vulture).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-handshake" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Mutualism</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>A symbiotic interaction where BOTH participating species benefit (+/+).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-bug" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Parasitism</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>One organism derives nourishment from a host while causing harm (+/-).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <i class="fa-solid fa-sun" style="font-size:2rem; margin-bottom:10px;"></i>
+                            <h3>Abiotic Factor</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <p>Non-living physical factors: Light, Water, Temperature, Soil Type.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 7: 20-ITEM MOCK TEST -->
+        <div id="quiz" class="tab-content">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div>
+                        <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);"><i class="fa-solid fa-pen-to-square"></i> Summative 1 Mock Test</h2>
+                        <p style="font-size:0.9rem; color:#666;">20 Items | Aligned with Term 2 TOS Specifications</p>
+                    </div>
+                    <div style="text-align:right;">
+                        <span style="font-size:1.2rem; font-weight:700; color:var(--primary-green);" id="quiz-timer">Time: 00:00</span>
+                    </div>
+                </div>
+
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress"></div>
+                </div>
+
+                <div class="nav-grid" id="nav-grid" style="margin-top:15px;"></div>
+                <div id="questions-wrapper"></div>
+
+                <div class="quiz-controls">
+                    <button class="btn btn-secondary" onclick="prevQuestion()" id="btn-prev"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" id="btn-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn btn-primary" style="background:var(--coral-orange); display:none;" onclick="submitQuiz()" id="btn-submit"><i class="fa-solid fa-paper-plane"></i> Submit Test</button>
+                </div>
+            </div>
+
+            <!-- RESULT DISPLAY -->
+            <div class="result-box" id="result-box">
+                <div class="score-circle">
+                    <span class="score-num" id="res-score">0</span>
+                    <span class="score-denom">out of 20</span>
+                </div>
+                <h2 style="font-family:'Fredoka',cursive; color:var(--primary-green);" id="res-rating">Great Effort!</h2>
+                <p id="res-percentage" style="font-weight:700; font-size:1.1rem; margin-bottom:20px;">0% Mastery</p>
+
+                <table class="breakdown-table">
+                    <thead>
+                        <tr>
+                            <th>Competency</th>
+                            <th>Items</th>
+                            <th>Your Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Roles in Food Webs</td>
+                            <td>Items 1 - 6</td>
+                            <td id="comp1-score">0 / 6</td>
+                        </tr>
+                        <tr>
+                            <td>2. Species Interactions</td>
+                            <td>Items 7 - 13</td>
+                            <td id="comp2-score">0 / 7</td>
+                        </tr>
+                        <tr>
+                            <td>3. Biotic & Abiotic Factors</td>
+                            <td>Items 14 - 20</td>
+                            <td id="comp3-score">0 / 7</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top:20px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                    <button class="btn btn-primary" onclick="switchTab('certificate-tab')"><i class="fa-solid fa-award"></i> View & Print Certificate</button>
+                    <button class="btn btn-secondary" onclick="location.reload()"><i class="fa-solid fa-rotate-right"></i> Retake Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 8: PRINTABLE CERTIFICATE TAB -->
+        <div id="certificate-tab" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-award"></i> Official Certificate of Achievement</h2>
+                <span class="badge-competency">Printable Student Record</span>
+            </div>
+
+            <div class="cert-controls-card">
+                <div class="cert-input-group">
+                    <label for="student-name-input" style="font-weight:700; color:var(--primary-green); flex-shrink:0;"><i class="fa-solid fa-user-graduate"></i> Student Name:</label>
+                    <input type="text" id="student-name-input" placeholder="Type full student name here..." value="Grade 6 Scholar" oninput="updateCertName()">
+                </div>
+                <button class="btn btn-primary" onclick="printCertificate()"><i class="fa-solid fa-print"></i> Print Certificate</button>
+            </div>
+
+            <div id="printable-cert-area" class="printable-cert-frame">
+                <div class="cert-header-icon"><i class="fa-solid fa-award"></i></div>
+                <h1 class="cert-title">Certificate of Achievement</h1>
+                <p class="cert-subtitle">Grade 6 Elementary Science • EcoSquad Summative Assessment 1</p>
+                <p style="font-size:1.1rem; color:#666;">This certificate is proudly presented to</p>
+
+                <div class="cert-name" id="cert-student-name">Grade 6 Scholar</div>
+
+                <p class="cert-body-text">
+                    for successfully reviewing, practicing, and completing the comprehensive review module in 
+                    <strong>Grade 6 Science (Term 2)</strong> covering <em>Food Web Roles, Species Interactions, and Biotic & Abiotic Ecosystem Components</em>.
+                </p>
+
+                <div class="cert-info-grid">
+                    <div>Assessment Score: <span id="cert-score-val">-- / 20</span></div>
+                    <div>Mastery Rating: <span id="cert-mastery-val">--%</span></div>
+                    <div>School Year: 2026-2027</div>
+                    <div>Date Issued: <span id="cert-issue-date">October 7, 2026</span></div>
+                </div>
+
+                <div class="cert-footer-row">
+                    <div class="cert-seal">
+                        <i class="fa-solid fa-shield-halved" style="font-size:1.8rem; margin-bottom:4px;"></i>
+                        <span>VERIFIED</span>
+                    </div>
+                    <div class="cert-signature-box">
+                        <div class="cert-signature-line"></div>
+                        <p style="font-size:0.9rem; font-weight:700; color:#333;">Science Teacher / Facilitator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let testFinishedScore = null;
+        let testFinishedPct = null;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            const targetTab = document.getElementById(tabId);
+            if(targetTab) targetTab.classList.add('active');
+
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(tabId)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function switchGame(gameId) {
+            document.getElementById('game-sorter').style.display = 'none';
+            document.getElementById('game-blitz').style.display = 'none';
+            document.getElementById('game-symbiosis').style.display = 'none';
+            document.querySelectorAll('.game-tab-btn').forEach(b => b.classList.remove('active'));
+
+            document.getElementById(gameId).style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+
+        /* SIMULATOR LOGIC */
+        function updateSim() {
+            const sun = document.getElementById('sim-sun').value;
+            const water = document.getElementById('sim-water').value;
+            const temp = document.getElementById('sim-temp').value;
+
+            document.getElementById('val-sun').innerText = sun;
+            document.getElementById('val-water').innerText = water;
+            document.getElementById('val-temp').innerText = temp;
+
+            const plantStatus = document.getElementById('status-plant');
+            const frogStatus = document.getElementById('status-frog');
+
+            if (sun > 30 && water > 30 && temp >= 20 && temp <= 35) {
+                plantStatus.className = "status-badge status-healthy";
+                plantStatus.innerText = "Thriving";
+                frogStatus.className = "status-badge status-healthy";
+                frogStatus.innerText = "Active";
+            } else if (water < 20 || sun < 20 || temp > 38) {
+                plantStatus.className = "status-badge status-dying";
+                plantStatus.innerText = "Wilting";
+                frogStatus.className = "status-badge status-stressed";
+                frogStatus.innerText = "Stressed";
+            } else {
+                plantStatus.className = "status-badge status-stressed";
+                plantStatus.innerText = "Moderate";
+                frogStatus.className = "status-badge status-healthy";
+                frogStatus.innerText = "Normal";
+            }
+        }
+
+        /* GAME 1: SORTER LOGIC */
+        const sorterData = [
+            { id: 'item1', name: '☀️ Sunlight', type: 'abiotic' },
+            { id: 'item2', name: '🐛 Caterpillar', type: 'biotic' },
+            { id: 'item3', name: '💧 Fresh Water', type: 'abiotic' },
+            { id: 'item4', name: '🍄 Mushroom', type: 'biotic' },
+            { id: 'item5', name: '🌡️ Temperature', type: 'abiotic' },
+            { id: 'item6', name: '🌾 Rice Crop', type: 'biotic' },
+            { id: 'item7', name: '🪴 Loam Soil', type: 'abiotic' },
+            { id: 'item8', name: '🦅 Philippine Eagle', type: 'biotic' }
+        ];
+
+        let selectedSorterItem = null;
+        let sorterScore = 0;
+
+        function initSorterGame() {
+            const pool = document.getElementById('sorter-pool');
+            const bioBucket = document.getElementById('biotic-bucket');
+            const abioBucket = document.getElementById('abiotic-bucket');
+
+            pool.innerHTML = '';
+            bioBucket.innerHTML = '';
+            abioBucket.innerHTML = '';
+            sorterScore = 0;
+            selectedSorterItem = null;
+            document.getElementById('sorter-score').innerText = 'Score: 0 / 8';
+
+            sorterData.forEach(item => {
+                const el = document.createElement('div');
+                el.className = 'draggable-item';
+                el.innerText = item.name;
+                el.id = item.id;
+                el.onclick = () => selectSorterItem(item, el);
+                pool.appendChild(el);
+            });
+        }
+
+        function selectSorterItem(item, element) {
+            document.querySelectorAll('.draggable-item').forEach(e => e.style.border = '2px solid var(--light-green)');
+            selectedSorterItem = item;
+            element.style.border = '3px solid var(--coral-orange)';
+        }
+
+        function placeSelectedItem(targetType) {
+            if (!selectedSorterItem) return;
+
+            const elem = document.getElementById(selectedSorterItem.id);
+            if (!elem) return;
+
+            if (selectedSorterItem.type === targetType) {
+                const bucket = targetType === 'biotic' ? document.getElementById('biotic-bucket') : document.getElementById('abiotic-bucket');
+                bucket.appendChild(elem);
+                elem.onclick = null;
+                elem.style.border = '2px solid #4caf50';
+                elem.style.background = '#e8f5e9';
+                sorterScore++;
+                document.getElementById('sorter-score').innerText = `Score: ${sorterScore} / 8`;
+                selectedSorterItem = null;
+            } else {
+                alert("Oops! Think again: Is it living (biotic) or physical non-living (abiotic)?");
+            }
+        }
+
+        /* GAME 2: FOOD WEB BLITZ LOGIC */
+        const blitzData = [
+            { name: "Mango Tree", role: "Producer" },
+            { name: "Grasshopper", role: "Consumer" },
+            { name: "Vulture", role: "Scavenger" },
+            { name: "Mushroom", role: "Decomposer" },
+            { name: "Green Algae", role: "Producer" },
+            { name: "Carabao", role: "Consumer" }
+        ];
+        let blitzIndex = 0;
+        let blitzStreak = 0;
+
+        function checkBlitzAnswer(role) {
+            if (blitzData[blitzIndex].role === role) {
+                blitzStreak++;
+                document.getElementById('blitz-feedback').innerText = "Correct! +1 Streak";
+                document.getElementById('blitz-feedback').style.color = "green";
+            } else {
+                blitzStreak = 0;
+                document.getElementById('blitz-feedback').innerText = `Incorrect! ${blitzData[blitzIndex].name} is a ${blitzData[blitzIndex].role}`;
+                document.getElementById('blitz-feedback').style.color = "red";
+            }
+            document.getElementById('blitz-streak').innerText = `Streak: ${blitzStreak} 🔥`;
+            blitzIndex = (blitzIndex + 1) % blitzData.length;
+            document.getElementById('blitz-target-name').innerText = blitzData[blitzIndex].name;
+        }
+
+        /* GAME 3: SYMBIOSIS DETECTIVE */
+        const symData = [
+            { text: '"An orchid grows on the tall branch of a tree to reach sunlight without harming the tree."', answer: 'Commensalism' },
+            { text: '"A honeybee gathers nectar from flowers and pollinates them in return."', answer: 'Mutualism' },
+            { text: '"A mosquito sucks blood from a human, leaving itchy red bites."', answer: 'Parasitism' },
+            { text: '"A Philippine Eagle hunts and catches a flying fox for dinner."', answer: 'Predation' },
+            { text: '"Weeds in a garden absorb soil minerals and shade out young vegetable sprouts."', answer: 'Competition' }
+        ];
+        let symIndex = 0;
+
+        function checkSymAnswer(type) {
+            const feedback = document.getElementById('sym-feedback');
+            if (symData[symIndex].answer === type) {
+                feedback.innerText = "Correct Detective Work! 🎉";
+                feedback.style.color = "green";
+            } else {
+                feedback.innerText = `Incorrect. Correct answer was ${symData[symIndex].answer}.`;
+                feedback.style.color = "red";
+            }
+            setTimeout(() => {
+                symIndex = (symIndex + 1) % symData.length;
+                document.getElementById('sym-scenario').innerText = symData[symIndex].text;
+                feedback.innerText = "";
+            }, 1500);
+        }
+
+        /* MOCK TEST DATA STRICTLY ALIGNED TO TOS */
+        const questionsData = [
+            { id: 1, comp: 1, level: "Remembering", badge: "badge-easy", q: "What is the primary source of energy that producers use to manufacture their own food?", options: ["Soil nutrients", "Sunlight", "Water vapour", "Organic waste"], answer: 1, exp: "Producers use sunlight as energy to drive photosynthesis." },
+            { id: 2, comp: 1, level: "Remembering", badge: "badge-easy", q: "Which organism functions as a decomposer in a farm ecosystem?", options: ["Vulture", "Grasshopper", "Mushroom (Fungus)", "Carabao"], answer: 2, exp: "Mushrooms chemically recycle dead tissue back into nutrients." },
+            { id: 3, comp: 1, level: "Understanding", badge: "badge-easy", q: "How does a scavenger differ from a predator in a food web?", options: ["Scavengers produce food using light.", "Scavengers eat dead animals they did not kill, while predators hunt living prey.", "Scavengers recycle soil nutrients, while predators make food.", "Scavengers live on hosts."], answer: 1, exp: "Scavengers consume existing dead remains; predators actively hunt live prey." },
+            { id: 4, comp: 1, level: "Understanding", badge: "badge-easy", q: "Why are herbivores classified as primary consumers in a food chain?", options: ["They decompose dead tissue.", "They directly consume autotrophs (producers) for energy.", "They capture light directly.", "They hunt secondary consumers."], answer: 1, exp: "Primary consumers eat plants/producers directly." },
+            { id: 5, comp: 1, level: "Applying", badge: "badge-avg", q: "In a cornfield food chain (Corn Plant → Caterpillar → Bird → Snake), what will immediately happen if a pesticide eliminates all caterpillars?", options: ["The corn plant population will increase rapidly.", "The bird population will double.", "The snake population will eat corn.", "Solar energy flow will stop."], answer: 0, exp: "Fewer herbivores mean less crop damage, allowing corn to grow unchecked." },
+            { id: 6, comp: 1, level: "Applying", badge: "badge-avg", q: "A farmer observes a crow feeding on a dead carabao in the field. How should this crow be classified based on its role?", options: ["Producer", "Decomposer", "Scavenger", "Primary Consumer"], answer: 2, exp: "Eating carcasses killed by other factors makes the crow a scavenger." },
+            { id: 7, comp: 2, level: "Understanding", badge: "badge-easy", q: "Honeybees collect nectar from flowers and pollinate them in return. What interaction is shown?", options: ["Parasitism", "Mutualism", "Commensalism", "Competition"], answer: 1, exp: "Mutualism (+/+) benefits both species." },
+            { id: 8, comp: 2, level: "Applying", badge: "badge-avg", q: "An orchid grows on a high branch of a mahogany tree to reach sunlight. The tree is not harmed nor helped. This is an example of:", options: ["Commensalism", "Parasitism", "Predation", "Mutualism"], answer: 0, exp: "Commensalism (+/0) benefits one organism without affecting the host." },
+            { id: 9, comp: 2, level: "Applying", badge: "badge-avg", q: "Weeds growing alongside rice plants absorb sunlight, water, and soil nutrients, reducing rice growth. What interaction exists?", options: ["Mutualism", "Competition", "Commensalism", "Predation"], answer: 1, exp: "Competition occurs when species struggle for shared limited resources." },
+            { id: 10, comp: 2, level: "Applying", badge: "badge-avg", q: "Ticks attach to a stray dog's skin to feed on blood, causing weakness and skin infections in the dog. What interaction is present?", options: ["Parasitism", "Commensalism", "Mutualism", "Predation"], answer: 0, exp: "Parasitism (+/-) harms the host while feeding the parasite." },
+            { id: 11, comp: 2, level: "Analyzing", badge: "badge-avg", q: "A wildlife report shows that when the Philippine Eagle population increases in a forest, the flying fox population decreases. How do these two species interact?", options: ["Eagles and flying foxes exist in mutualism.", "Eagles act as predators and flying foxes serve as prey.", "Flying foxes act as parasites.", "Eagles and flying foxes compete for soil."], answer: 1, exp: "Predators regulate prey numbers through hunting." },
+            { id: 12, comp: 2, level: "Analyzing", badge: "badge-avg", q: "Which statement correctly distinguishes Predation from Parasitism?", options: ["Predators kill prey quickly for food; parasites feed on hosts over time while usually keeping them alive.", "Predators benefit both species.", "Predators live inside host tissue.", "Predators recycle minerals."], answer: 0, exp: "Predation involves immediate killing, while parasitism sustains the host for prolonged feeding." },
+            { id: 13, comp: 2, level: "Evaluating", badge: "badge-diff", q: "A local village plans to remove all frogs from nearby ponds to stop croaking noise. How would you evaluate this plan?", options: ["Good plan, because frogs consume solar energy.", "Poor plan, because frogs control insect pest populations through predation.", "Good plan, because frogs are parasites.", "Poor plan, because frogs are producers."], answer: 1, exp: "Removing predatory frogs leads to pest insect outbreaks." },
+            { id: 14, comp: 3, level: "Remembering", badge: "badge-easy", q: "Which group contains ONLY abiotic factors in an ecosystem?", options: ["Sunlight, Water, Temperature, Soil Type", "Trees, Insects, Water, Bacteria", "Birds, Temperature, Soil, Fungi", "Earthworms, Light, Plants, Frogs"], answer: 0, exp: "Light, water, temp, and soil type are all non-living physical elements." },
+            { id: 15, comp: 3, level: "Applying", badge: "badge-avg", q: "In a coastal mangrove swamp, mangrove trees, mudskipper fish, and crabs exist alongside salty water, muddy soil, and warm sunlight. Which are the biotic factors?", options: ["Salty water, muddy soil, warm sunlight", "Mangrove trees, mudskipper fish, crabs", "Warm sunlight and mudskipper fish", "Salty water and mangrove trees"], answer: 1, exp: "Biotic factors comprise all living organisms." },
+            { id: 16, comp: 3, level: "Applying", badge: "badge-avg", q: "During a prolonged drought with no rainfall (water scarcity) and high temperature, garden plants begin to wilt. This demonstrates that:", options: ["Abiotic factors directly influence the survival of biotic factors.", "Biotic factors can survive without any abiotic factors.", "Temperature is a biotic component.", "Decomposers eliminate abiotic factors."], answer: 0, exp: "Living organisms depend on non-living physical conditions." },
+            { id: 17, comp: 3, level: "Analyzing", badge: "badge-avg", q: "An experiment tested plant growth in Loam Soil vs Clay Soil, keeping light and water constant. Plant A in Loam grew 15cm; Plant B in Clay grew 5cm. What can be concluded?", options: ["Soil type (abiotic factor) significantly impacts plant growth (biotic factor).", "Light intensity was the only factor.", "Clay soil is a living organism.", "Plant A turned into a decomposer."], answer: 0, exp: "Abiotic soil composition affects root expansion and nutrient intake." },
+            { id: 18, comp: 3, level: "Analyzing", badge: "badge-avg", q: "Submerged aquatic weeds in an aquarium produce oxygen bubbles faster under bright lamp light than in the dark. Which statement analyzes this correctly?", options: ["Light (abiotic factor) speeds up photosynthesis in aquatic plants (biotic factor).", "Water temperature is a biotic factor.", "Oxygen gas is a primary consumer.", "Darkness acts as a scavenger."], answer: 0, exp: "Sunlight/light intensity powers photo-reactions in green plants." },
+            { id: 19, comp: 3, level: "Analyzing", badge: "badge-avg", q: "Cactus plants have thick fleshy stems to store water in dry deserts, while rainforest ferns have broad leaves to capture light in humid forests. What does this reveal?", options: ["Biotic factors adapt structural features to survive specific abiotic conditions.", "Deserts contain no abiotic factors.", "Rainforest ferns do not require water.", "Abiotic factors are created by carnivores."], answer: 0, exp: "Organisms evolve adaptations suited to surrounding non-living factors." },
+            { id: 20, comp: 3, level: "Creating", badge: "badge-diff", q: "You are designing a self-sustaining classroom glass aquarium. Which complete set of biotic and abiotic components will best ensure a balanced ecosystem?", options: ["Biotic: Elodea plant, Guppy fish, Snail | Abiotic: Clean water, Gravel soil, Sunlight, Suitable temperature", "Biotic: Clean water, Sunlight | Abiotic: Guppy fish, Snail", "Biotic: Plastic plants, Synthetic fish | Abiotic: Air pump, Water", "Biotic: Decomposers only | Abiotic: Darkness and dry soil"], answer: 0, exp: "A self-sustaining aquarium needs producers, consumers, water, substrate, and light energy." }
+        ];
+
+        let currentQ = 0;
+        let userAnswers = new Array(questionsData.length).fill(null);
+        let timerSeconds = 0;
+        let timerInterval = null;
+
+        function initQuiz() {
+            const grid = document.getElementById('nav-grid');
+            const wrapper = document.getElementById('questions-wrapper');
+
+            grid.innerHTML = '';
+            wrapper.innerHTML = '';
+
+            questionsData.forEach((q, idx) => {
+                const navBtn = document.createElement('div');
+                navBtn.className = `nav-num ${idx === 0 ? 'active' : ''}`;
+                navBtn.innerText = idx + 1;
+                navBtn.onclick = () => jumpToQuestion(idx);
+                navBtn.id = `nav-item-${idx}`;
+                grid.appendChild(navBtn);
+
+                const card = document.createElement('div');
+                card.className = `question-card ${idx === 0 ? 'active' : ''}`;
+                card.id = `q-card-${idx}`;
+
+                card.innerHTML = `
+                    <div class="question-meta">
+                        <span class="q-badge ${q.badge}">${q.level}</span>
+                        <span class="q-badge" style="background:#e0f7fa; color:#0288d1;">Comp ${q.comp}</span>
+                    </div>
+                    <div class="question-text">${q.id}. ${q.q}</div>
+                    <div class="options-list">
+                        ${q.options.map((opt, oIdx) => `
+                            <button class="option-btn" onclick="selectOption(${idx}, ${oIdx})">
+                                <span class="option-letter">${String.fromCharCode(65 + oIdx)}</span>
+                                <span>${opt}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                `;
+
+                wrapper.appendChild(card);
+            });
+
+            startTimer();
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerSeconds = 0;
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+                const secs = (timerSeconds % 60).toString().padStart(2, '0');
+                document.getElementById('quiz-timer').innerText = `Time: ${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function jumpToQuestion(idx) {
+            document.querySelectorAll('.question-card').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-num').forEach(n => n.classList.remove('active'));
+
+            currentQ = idx;
+            document.getElementById(`q-card-${idx}`).classList.add('active');
+            document.getElementById(`nav-item-${idx}`).classList.add('active');
+
+            updateControls();
+        }
+
+        function selectOption(qIdx, optIdx) {
+            userAnswers[qIdx] = optIdx;
+
+            const card = document.getElementById(`q-card-${qIdx}`);
+            const buttons = card.querySelectorAll('.option-btn');
+            buttons.forEach((btn, bIdx) => {
+                if (bIdx === optIdx) {
+                    btn.classList.add('selected');
+                } else {
+                    btn.classList.remove('selected');
+                }
+            });
+
+            document.getElementById(`nav-item-${qIdx}`).classList.add('answered');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            const pct = (answeredCount / questionsData.length) * 100;
+            document.getElementById('quiz-progress').style.width = `${pct}%`;
+        }
+
+        function updateControls() {
+            document.getElementById('btn-prev').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+            if (currentQ === questionsData.length - 1) {
+                document.getElementById('btn-next').style.display = 'none';
+                document.getElementById('btn-submit').style.display = 'inline-flex';
+            } else {
+                document.getElementById('btn-next').style.display = 'inline-flex';
+                document.getElementById('btn-submit').style.display = 'none';
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQ < questionsData.length - 1) jumpToQuestion(currentQ + 1);
+        }
+
+        function prevQuestion() {
+            if (currentQ > 0) jumpToQuestion(currentQ - 1);
+        }
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+
+            let totalScore = 0;
+            let c1 = 0, c2 = 0, c3 = 0;
+
+            questionsData.forEach((q, idx) => {
+                if (userAnswers[idx] === q.answer) {
+                    totalScore++;
+                    if (q.comp === 1) c1++;
+                    if (q.comp === 2) c2++;
+                    if (q.comp === 3) c3++;
+                }
+            });
+
+            testFinishedScore = totalScore;
+            testFinishedPct = Math.round((totalScore / 20) * 100);
+
+            document.querySelector('.quiz-container').style.display = 'none';
+            const resBox = document.getElementById('result-box');
+            resBox.style.display = 'block';
+
+            document.getElementById('res-score').innerText = totalScore;
+            document.getElementById('res-percentage').innerText = `${testFinishedPct}% Mastery Rating`;
+
+            document.getElementById('comp1-score').innerText = `${c1} / 6`;
+            document.getElementById('comp2-score').innerText = `${c2} / 7`;
+            document.getElementById('comp3-score').innerText = `${c3} / 7`;
+
+            // Auto-update certificate details
+            document.getElementById('cert-score-val').innerText = `${totalScore} / 20`;
+            document.getElementById('cert-mastery-val').innerText = `${testFinishedPct}%`;
+        }
+
+        /* CERTIFICATE GENERATION & PRINT FUNCTIONS */
+        function updateCertName() {
+            const inputVal = document.getElementById('student-name-input').value.trim();
+            document.getElementById('cert-student-name').innerText = inputVal || "Grade 6 Scholar";
+        }
+
+        function printCertificate() {
+            window.print();
+        }
+
+        window.onload = () => {
+            initQuiz();
+            initSorterGame();
+            updateSim();
+
+            const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            document.getElementById('cert-issue-date').innerText = today;
+        };
+    </script>
+</body>
+</html>
